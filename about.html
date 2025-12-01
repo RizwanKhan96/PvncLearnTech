@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        PVNCCDSB Learning Technologies
-        About Page (about.html)
-
-        This page provides information about the Learning Technologies department,
-        its mission, team, and how it supports PVNCCDSB schools.
-    -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | PVNCCDSB Learning Technologies</title>
-    <meta name="description" content="Learn about the PVNCCDSB Learning Technologies department, our mission, and how we support teaching and learning across our Catholic schools.">
+    <meta name="description" content="Learn about the PVNCCDSB Learning Technologies team and how we support teaching and learning across our Catholic schools.">
 
     <style>
         :root {
             --color-primary: #1D3557;
             --color-primary-light: #457B9D;
             --color-accent: #E63946;
-            --color-background: #F8FAFC;
+            --color-background: #E8EDF2;
             --color-surface: #FFFFFF;
             --color-text-main: #1F2933;
             --color-text-muted: #6B7280;
-            --color-border: #E5E7EB;
+            --color-border: #D1D5DB;
             --color-focus: #FBBF24;
-
             --space-xs: 4px;
             --space-sm: 8px;
             --space-md: 16px;
             --space-lg: 24px;
             --space-xl: 32px;
-
             --content-width: 1100px;
         }
 
@@ -42,9 +32,11 @@
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: var(--color-background);
+            background: linear-gradient(to bottom, #E8EDF2 0%, #D6DDE5 100%);
+            background-attachment: fixed;
             color: var(--color-text-main);
             line-height: 1.5;
+            min-height: 100vh;
         }
 
         a {
@@ -144,7 +136,9 @@
         }
 
         main {
+            background-color: rgba(255, 255, 255, 0.85);
             padding: var(--space-xl) 0 var(--space-lg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .page-header {
@@ -164,99 +158,104 @@
             font-size: 0.95rem;
         }
 
-        .content-section {
-            background-color: var(--color-surface);
-            border-radius: 8px;
-            border: 1px solid var(--color-border);
-            padding: var(--space-lg);
-            margin-bottom: var(--space-lg);
+        .section {
+            margin-bottom: var(--space-xl);
         }
 
-        .content-section h2 {
+        .section h2 {
             margin-top: 0;
             margin-bottom: var(--space-md);
             font-size: 1.3rem;
-            color: var(--color-primary);
         }
 
-        .content-section h3 {
-            margin-top: var(--space-md);
+        .section p {
+            margin-top: 0;
             margin-bottom: var(--space-sm);
-            font-size: 1.1rem;
-        }
-
-        .content-section p {
-            margin-top: 0;
-            margin-bottom: var(--space-md);
             font-size: 0.95rem;
         }
 
-        .content-section ul {
-            margin-top: 0;
-            margin-bottom: var(--space-md);
-            padding-left: var(--space-lg);
-        }
-
-        .content-section li {
-            margin-bottom: var(--space-xs);
-            font-size: 0.95rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: var(--space-md);
-            margin-top: var(--space-md);
-        }
-
-        .value-card {
-            background-color: var(--color-background);
-            padding: var(--space-md);
+        .team-member {
+            background-color: var(--color-primary);
+            color: white;
             border-radius: 8px;
-            border: 1px solid var(--color-border);
+            margin-bottom: var(--space-sm);
+            overflow: hidden;
         }
 
-        .value-card h3 {
-            margin-top: 0;
-            margin-bottom: var(--space-xs);
-            font-size: 1rem;
-            color: var(--color-primary);
+        .team-member-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md);
+            cursor: pointer;
+            user-select: none;
         }
 
-        .value-card p {
-            margin-top: 0;
-            margin-bottom: 0;
+        .team-member-header:hover {
+            background-color: #16324A;
+        }
+
+        .team-member-info h3 {
+            margin: 0 0 var(--space-xs);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .team-member-info p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #E5E7EB;
+        }
+
+        .team-member-toggle {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            transition: transform 0.2s;
+        }
+
+        .team-member.expanded .team-member-toggle {
+            transform: rotate(180deg);
+        }
+
+        .team-member-details {
+            display: none;
+            padding: 0 var(--space-md) var(--space-md);
             font-size: 0.9rem;
         }
 
-        .highlight-box {
-            background-color: #FEF3C7;
-            border: 1px solid #FDE68A;
+        .team-member.expanded .team-member-details {
+            display: block;
+        }
+
+        .team-member-details ul {
+            margin: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            list-style: disc;
+        }
+
+        .team-member-details li {
+            margin-bottom: var(--space-xs);
+        }
+
+        .contact-info {
+            background-color: var(--color-surface);
             border-radius: 8px;
+            border: 1px solid var(--color-border);
             padding: var(--space-md);
-            margin-bottom: var(--space-md);
+            margin-top: var(--space-lg);
         }
 
-        .highlight-box p {
-            margin: 0;
+        .contact-info h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.2rem;
+        }
+
+        .contact-info p {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
             font-size: 0.95rem;
-        }
-
-        .button-primary {
-            display: inline-block;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: 4px;
-            border: none;
-            background-color: var(--color-primary);
-            color: white;
-            font-size: 0.95rem;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .button-primary:hover {
-            background-color: #16324A;
-            text-decoration: none;
         }
 
         footer {
@@ -266,18 +265,37 @@
             margin-top: var(--space-lg);
         }
 
-        .footer-inner {
-            font-size: 0.85rem;
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
         }
 
-        .footer-inner a {
+        .footer-column {
+            flex: 1 1 220px;
+            font-size: 0.9rem;
+        }
+
+        .footer-column h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+            color: white;
+        }
+
+        .footer-column p {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-column a {
             color: #93C5FD;
         }
 
-        @media (max-width: 900px) {
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
+        .footer-bottom {
+            margin-top: var(--space-md);
+            font-size: 0.8rem;
+            color: #9CA3AF;
         }
 
         @media (max-width: 700px) {
@@ -303,7 +321,7 @@
         <div class="container header-inner">
             <div>
                 <p class="site-title">PVNCCDSB Learning Technologies</p>
-                <p class="site-subtitle">About our department</p>
+                <p class="site-subtitle">About our team</p>
             </div>
 
             <nav aria-label="Primary">
@@ -334,170 +352,223 @@
         <section class="page-header" aria-labelledby="about-heading">
             <h1 id="about-heading">About Learning Technologies</h1>
             <p>
-                Supporting teaching and learning with technology across the Peterborough Victoria Northumberland
-                and Clarington Catholic District School Board.
+                Learning Technologies is a team of professionals within IT Services, working with staff at PVNCCDSB to embed technology that supports digital literacy, creativity, innovation, collaboration, and learning needs of all students.
             </p>
         </section>
 
-        <!-- MISSION SECTION -->
-        <section class="content-section" aria-labelledby="mission-heading">
-            <h2 id="mission-heading">Our Mission</h2>
+        <section class="section" aria-labelledby="mission-heading">
+            <h2 id="mission-heading">Our mission</h2>
             <p>
-                The Learning Technologies department exists to support effective teaching and learning
-                through the thoughtful integration of technology in Catholic education.
+                We support teaching and learning by providing guidance, resources, and technical assistance
+                for using technology effectively in Catholic education.
             </p>
             <p>
-                We work alongside educators, administrators, and students to ensure that technology
-                serves as a tool for growth, creativity, and connection—always grounded in our
-                Catholic values and commitment to the whole person.
+                Our work focuses on Google Workspace for Education, Chromebooks, and board-approved
+                digital tools that enhance classroom instruction and student engagement.
             </p>
         </section>
 
-        <!-- WHAT WE DO SECTION -->
-        <section class="content-section" aria-labelledby="what-we-do-heading">
-            <h2 id="what-we-do-heading">What We Do</h2>
-            
-            <h3>Supporting Educators</h3>
-            <p>
-                We provide practical support, training, and resources to help teachers use technology
-                confidently and effectively in their classrooms.
-            </p>
-            <ul>
-                <li>Professional learning sessions on Google Workspace for Education</li>
-                <li>One-on-one coaching and troubleshooting</li>
-                <li>Classroom technology setup and support</li>
-                <li>Curriculum-aligned technology integration strategies</li>
-            </ul>
+        <section class="section" aria-labelledby="team-heading">
+            <h2 id="team-heading">Learning Technologies Specialists 705.748.4861</h2>
 
-            <h3>Supporting Students</h3>
-            <p>
-                We ensure students have the tools, access, and skills they need to learn and grow
-                in a technology-rich environment.
-            </p>
-            <ul>
-                <li>Chromebook distribution and device management</li>
-                <li>Student account setup and access support</li>
-                <li>Digital citizenship and online safety education</li>
-                <li>Technical troubleshooting and helpdesk support</li>
-            </ul>
-
-            <h3>Infrastructure and Systems</h3>
-            <p>
-                Behind the scenes, we maintain the systems and infrastructure that make
-                teaching and learning possible.
-            </p>
-            <ul>
-                <li>Google Workspace administration and security</li>
-                <li>Network connectivity and Wi-Fi access</li>
-                <li>Device management and inventory</li>
-                <li>Educational software and application management</li>
-            </ul>
-        </section>
-
-        <!-- OUR VALUES SECTION -->
-        <section class="content-section" aria-labelledby="values-heading">
-            <h2 id="values-heading">Our Values</h2>
-            <p>
-                Technology in Catholic education is never just about devices or software.
-                Our work is guided by principles that honor the dignity of each person and
-                the mission of Catholic schools.
-            </p>
-
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3>Accessibility</h3>
-                    <p>
-                        Every student and staff member deserves equitable access to the tools
-                        and support they need to succeed.
-                    </p>
+            <div class="team-member" id="team-ryan">
+                <div class="team-member-header" onclick="toggleTeamMember('team-ryan')" role="button" tabindex="0" aria-expanded="false">
+                    <div class="team-member-info">
+                        <h3>Learning Technologies Specialist | Ryan Karkic - ext 1281</h3>
+                        <p>Click to view supported schools</p>
+                    </div>
+                    <span class="team-member-toggle">▼</span>
                 </div>
-
-                <div class="value-card">
-                    <h3>Simplicity</h3>
-                    <p>
-                        Technology should serve learning, not complicate it. We focus on
-                        practical, user-friendly solutions.
-                    </p>
+                <div class="team-member-details">
+                    <p><strong>Ryan supports the following schools:</strong></p>
+                    <ul>
+                        <li>St. Thomas Aquinas CSS</li>
+                        <li>St. Peter CSS</li>
+                        <li>St. Francis of Assisi CSS</li>
+                        <li>St. John Paul II CSS</li>
+                        <li>St. Luke CSS</li>
+                        <li>St. Mary CSS (Lindsay)</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="value-card">
-                    <h3>Stewardship</h3>
-                    <p>
-                        We care for the resources entrusted to us—devices, data, and the
-                        time and attention of those we serve.
-                    </p>
+            <div class="team-member" id="team-david">
+                <div class="team-member-header" onclick="toggleTeamMember('team-david')" role="button" tabindex="0" aria-expanded="false">
+                    <div class="team-member-info">
+                        <h3>Learning Technologies Specialist | David Derby - ext 1281</h3>
+                        <p>Click to view supported schools</p>
+                    </div>
+                    <span class="team-member-toggle">▼</span>
                 </div>
+                <div class="team-member-details">
+                    <p><strong>David supports the following schools:</strong></p>
+                    <ul>
+                        <li>St. Stephen CSS</li>
+                        <li>Holy Family CSS</li>
+                        <li>St. Mary CSS (Cobourg)</li>
+                        <li>St. Joseph CSS (Bowmanville)</li>
+                        <li>St. Mother Teresa CSS</li>
+                        <li>Msgr. Leo Cleary CSS</li>
+                    </ul>
+                </div>
+            </div>
 
-                <div class="value-card">
-                    <h3>Integrity</h3>
-                    <p>
-                        We promote safe, responsible, and faith-filled use of technology
-                        that respects human dignity.
-                    </p>
+            <div class="team-member" id="team-gabor">
+                <div class="team-member-header" onclick="toggleTeamMember('team-gabor')" role="button" tabindex="0" aria-expanded="false">
+                    <div class="team-member-info">
+                        <h3>Learning Technologies Specialist | Gabor Horvath - ext 1281</h3>
+                        <p>Click to view supported schools</p>
+                    </div>
+                    <span class="team-member-toggle">▼</span>
+                </div>
+                <div class="team-member-details">
+                    <p><strong>Gabor supports the following schools:</strong></p>
+                    <ul>
+                        <li>St. Peter CSS</li>
+                        <li>Immaculate Conception CSS</li>
+                        <li>Msgr. O'Donoghue CSS</li>
+                        <li>St. Joseph CSS (Douro)</li>
+                        <li>St. Martin CSS</li>
+                        <li>St. Paul CSS (Lakefield)</li>
+                        <li>St. Teresa CSS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-member" id="team-michael">
+                <div class="team-member-header" onclick="toggleTeamMember('team-michael')" role="button" tabindex="0" aria-expanded="false">
+                    <div class="team-member-info">
+                        <h3>Learning Technologies Specialist | Michael Mazukas - ext 1281</h3>
+                        <p>Click to view supported schools</p>
+                    </div>
+                    <span class="team-member-toggle">▼</span>
+                </div>
+                <div class="team-member-details">
+                    <p><strong>Michael supports the following schools:</strong></p>
+                    <ul>
+                        <li>Holy Cross CSS</li>
+                        <li>St. Alphonsus CSS</li>
+                        <li>Our Lady of Mt. Carmel CSS</li>
+                        <li>St. John CSS (Peterborough)</li>
+                        <li>St. Patrick CSS</li>
+                        <li>St. Paul CSS (Peterborough)</li>
+                    </ul>
+                    <p style="margin-top: var(--space-md);"><strong>Additional responsibilities:</strong></p>
+                    <p>He also supports the Special Education department and coordinates the installation and distribution of assistive technology for all schools within PVNCCDSB.</p>
+                </div>
+            </div>
+
+            <div class="team-member" id="team-ben">
+                <div class="team-member-header" onclick="toggleTeamMember('team-ben')" role="button" tabindex="0" aria-expanded="false">
+                    <div class="team-member-info">
+                        <h3>Learning Technologies Specialist | Ben Cybulski - ext 1281</h3>
+                        <p>Click to view supported schools</p>
+                    </div>
+                    <span class="team-member-toggle">▼</span>
+                </div>
+                <div class="team-member-details">
+                    <p><strong>Ben will support the following schools:</strong></p>
+                    <ul>
+                        <li>St. Mary CSS</li>
+                        <li>Notre Dame CSS</li>
+                        <li>St. Joseph CSS (Cobourg)</li>
+                        <li>St. Matthew</li>
+                        <li>Holy Cross CSS (Peterborough)</li>
+                        <li>St. Mary CSS (Campbellford)</li>
+                        <li>St. Michael CSS</li>
+                        <li>St. Paul CSS (Norwood)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="team-member" id="team-software">
+                <div class="team-member-header" onclick="toggleTeamMember('team-software')" role="button" tabindex="0" aria-expanded="false">
+                    <div class="team-member-info">
+                        <h3>Software Support Specialist | Rowan Khan - ext 1281</h3>
+                        <p>Click to view responsibilities</p>
+                    </div>
+                    <span class="team-member-toggle">▼</span>
+                </div>
+                <div class="team-member-details">
+                    <p><strong>Rowan's responsibilities:</strong></p>
+                    <p>Riz is responsible for helpdesk, tier two support, special education Apple devices, and manages the distribution of teacher laptops for all schools within PVNCCDSB.</p>
+                </div>
+            </div>
+
+            <div class="team-member" id="team-supervisor">
+                <div class="team-member-header" onclick="toggleTeamMember('team-supervisor')" role="button" tabindex="0" aria-expanded="false">
+                    <div class="team-member-info">
+                        <h3>Supervisor of Learning Technologies | Carolyn Farrell - ext 1278</h3>
+                        <p>Click to view responsibilities</p>
+                    </div>
+                    <span class="team-member-toggle">▼</span>
+                </div>
+                <div class="team-member-details">
+                    <p><strong>Carolyn's responsibilities:</strong></p>
+                    <p>Carolyn is responsible for developing and implementing learning technology strategies that align with the Board's direction and strategic plan.</p>
                 </div>
             </div>
         </section>
 
-        <!-- GOOGLE ECOSYSTEM SECTION -->
-        <section class="content-section" aria-labelledby="ecosystem-heading">
-            <h2 id="ecosystem-heading">Our Google Ecosystem</h2>
+        <section class="contact-info" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact us</h2>
             <p>
-                PVNCCDSB uses Google Workspace for Education as the foundation of our
-                technology environment. This includes:
+                For technical support, please use the official helpdesk ticket system or email
+                <a href="mailto:helpdesk@example.org">helpdesk@example.org</a>.
             </p>
-            <ul>
-                <li><strong>Chromebooks</strong> – Primary student devices across all schools</li>
-                <li><strong>Google Classroom</strong> – Assignment distribution, feedback, and communication</li>
-                <li><strong>Google Drive</strong> – Cloud storage and file organization</li>
-                <li><strong>Gmail</strong> – Email for staff and students (where appropriate)</li>
-                <li><strong>Google Docs, Sheets, Slides</strong> – Collaborative creation and editing</li>
-                <li><strong>Google Meet</strong> – Video conferencing and virtual learning</li>
-            </ul>
             <p>
-                This integrated ecosystem allows for seamless collaboration, accessibility
-                from any device, and simplified management for our schools.
-            </p>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section class="content-section" aria-labelledby="contact-heading">
-            <h2 id="contact-heading">Get in Touch</h2>
-            
-            <div class="highlight-box">
-                <p>
-                    <strong>Need help or have a question?</strong> The best way to reach us is through
-                    the official helpdesk ticket system. This ensures your request is tracked and
-                    handled efficiently.
-                </p>
-            </div>
-
-            <p>
-                <a class="button-primary" href="support.html">
-                    View support information
-                </a>
-            </p>
-
-            <p>
-                You can also explore our <a href="resources.html">Resources library</a> for
-                self-service guides and tutorials, or check the <a href="calendar.html">Training calendar</a>
-                for upcoming learning opportunities.
+                For general inquiries about Learning Technologies, you can reach the team at
+                <strong>705.748.4861</strong> or through your school's assigned specialist.
             </p>
         </section>
     </main>
 
     <footer>
-        <div class="container footer-inner">
-            <p>
-                &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board.
-                Learning Technologies.
-            </p>
-            <p>
-                <a href="index.html">Back to home</a>
-            </p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About this site</h3>
+                    <p>
+                        The Learning Technologies site supports teaching and learning
+                        with technology across the Peterborough Victoria Northumberland
+                        and Clarington Catholic District School Board.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Key links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <p>
+                        For technical assistance, please use the official helpdesk ticket system
+                        or email the helpdesk.
+                    </p>
+                    <p>
+                        <a href="https://example-helpdesk-url" target="_blank" rel="noopener noreferrer">
+                            Open helpdesk ticket
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:helpdesk@example.org">
+                            helpdesk@example.org
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.</p>
+            </div>
         </div>
 
         <script>
-            // Set current year
             (function () {
                 var yearSpan = document.getElementById("year");
                 if (yearSpan) {
@@ -505,7 +576,19 @@
                 }
             })();
 
-            // Simple mobile nav toggle
+            function toggleTeamMember(memberId) {
+                var member = document.getElementById(memberId);
+                if (!member) return;
+
+                var isExpanded = member.classList.contains("expanded");
+                member.classList.toggle("expanded");
+
+                var header = member.querySelector(".team-member-header");
+                if (header) {
+                    header.setAttribute("aria-expanded", !isExpanded);
+                }
+            }
+
             function toggleMobileNav() {
                 var menu = document.getElementById("mobile-menu");
                 var button = document.querySelector(".nav-toggle-button");
