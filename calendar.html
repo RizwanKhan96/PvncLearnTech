@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        PVNCCDSB Learning Technologies
-        Training Calendar (calendar.html)
-
-        This page currently shows an "empty state" because there are
-        no scheduled training sessions. It is ready to host an embedded
-        Google Calendar in the future.
-
-        You can safely host this on GitHub Pages with no changes.
-    -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training Calendar | PVNCCDSB Learning Technologies</title>
@@ -21,19 +10,17 @@
         :root {
             --color-primary: #1D3557;
             --color-primary-light: #457B9D;
-            --color-background: #F8FAFC;
+            --color-background: #E8EDF2;
             --color-surface: #FFFFFF;
             --color-text-main: #1F2933;
             --color-text-muted: #6B7280;
-            --color-border: #E5E7EB;
+            --color-border: #D1D5DB;
             --color-focus: #FBBF24;
-
             --space-xs: 4px;
             --space-sm: 8px;
             --space-md: 16px;
             --space-lg: 24px;
             --space-xl: 32px;
-
             --content-width: 1100px;
         }
 
@@ -44,9 +31,11 @@
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: var(--color-background);
+            background: linear-gradient(to bottom, #E8EDF2 0%, #D6DDE5 100%);
+            background-attachment: fixed;
             color: var(--color-text-main);
             line-height: 1.5;
+            min-height: 100vh;
         }
 
         a {
@@ -146,7 +135,9 @@
         }
 
         main {
+            background-color: rgba(255, 255, 255, 0.85);
             padding: var(--space-xl) 0 var(--space-lg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .page-header {
@@ -197,12 +188,37 @@
             margin-top: var(--space-lg);
         }
 
-        .footer-inner {
-            font-size: 0.85rem;
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
         }
 
-        .footer-inner a {
+        .footer-column {
+            flex: 1 1 220px;
+            font-size: 0.9rem;
+        }
+
+        .footer-column h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+            color: white;
+        }
+
+        .footer-column p {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-column a {
             color: #93C5FD;
+        }
+
+        .footer-bottom {
+            margin-top: var(--space-md);
+            font-size: 0.8rem;
+            color: #9CA3AF;
         }
 
         @media (max-width: 700px) {
@@ -237,6 +253,7 @@
                     <a href="resources.html">Resources</a>
                     <a href="calendar.html" aria-current="page">Training Calendar</a>
                     <a href="support.html">Support Information</a>
+                    <a href="about.html">About</a>
                 </div>
 
                 <button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav()">
@@ -248,6 +265,7 @@
                     <a href="resources.html">Resources</a>
                     <a href="calendar.html" aria-current="page">Training Calendar</a>
                     <a href="support.html">Support Information</a>
+                    <a href="about.html">About</a>
                 </div>
             </nav>
         </div>
@@ -282,18 +300,51 @@
     </main>
 
     <footer>
-        <div class="container footer-inner">
-            <p>
-                &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board.
-                Learning Technologies.
-            </p>
-            <p>
-                <a href="index.html">Back to home</a>
-            </p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About this site</h3>
+                    <p>
+                        The Learning Technologies site supports teaching and learning
+                        with technology across the Peterborough Victoria Northumberland
+                        and Clarington Catholic District School Board.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Key links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <p>
+                        For technical assistance, please use the official helpdesk ticket system
+                        or email the helpdesk.
+                    </p>
+                    <p>
+                        <a href="https://example-helpdesk-url" target="_blank" rel="noopener noreferrer">
+                            Open helpdesk ticket
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:helpdesk@example.org">
+                            helpdesk@example.org
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.</p>
+            </div>
         </div>
 
         <script>
-            // Set current year
             (function () {
                 var yearSpan = document.getElementById("year");
                 if (yearSpan) {
@@ -301,7 +352,6 @@
                 }
             })();
 
-            // Simple mobile nav toggle
             function toggleMobileNav() {
                 var menu = document.getElementById("mobile-menu");
                 var button = document.querySelector(".nav-toggle-button");
