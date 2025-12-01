@@ -1,40 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        PVNCCDSB Learning Technologies
-        Resources Library (resources.html)
-
-        This page lists guides and support documents.
-        It uses very simple JavaScript for filtering by text and category.
-        Everything runs in the browser and works on GitHub Pages.
-    -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources | PVNCCDSB Learning Technologies</title>
     <meta name="description" content="Browse technology support resources for PVNCCDSB, including Chromebook guides, Google Classroom help, and digital citizenship materials.">
 
     <style>
-        /* Basic shared styles – kept similar to index.html for consistency */
-
         :root {
             --color-primary: #1D3557;
             --color-primary-light: #457B9D;
             --color-accent: #E63946;
-            --color-background: #F8FAFC;
+            --color-background: #E8EDF2;
             --color-surface: #FFFFFF;
             --color-text-main: #1F2933;
             --color-text-muted: #6B7280;
-            --color-border: #E5E7EB;
+            --color-border: #D1D5DB;
             --color-focus: #FBBF24;
-
             --space-xs: 4px;
             --space-sm: 8px;
             --space-md: 16px;
             --space-lg: 24px;
             --space-xl: 32px;
-
             --content-width: 1100px;
         }
 
@@ -45,9 +32,11 @@
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: var(--color-background);
+            background: linear-gradient(to bottom, #E8EDF2 0%, #D6DDE5 100%);
+            background-attachment: fixed;
             color: var(--color-text-main);
             line-height: 1.5;
+            min-height: 100vh;
         }
 
         a {
@@ -147,7 +136,9 @@
         }
 
         main {
+            background-color: rgba(255, 255, 255, 0.85);
             padding: var(--space-xl) 0 var(--space-lg);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .page-header {
@@ -268,12 +259,37 @@
             margin-top: var(--space-lg);
         }
 
-        .footer-inner {
-            font-size: 0.85rem;
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
         }
 
-        .footer-inner a {
+        .footer-column {
+            flex: 1 1 220px;
+            font-size: 0.9rem;
+        }
+
+        .footer-column h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+            color: white;
+        }
+
+        .footer-column p {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-column a {
             color: #93C5FD;
+        }
+
+        .footer-bottom {
+            margin-top: var(--space-md);
+            font-size: 0.8rem;
+            color: #9CA3AF;
         }
 
         @media (max-width: 900px) {
@@ -322,6 +338,7 @@
                     <a href="resources.html" aria-current="page">Resources</a>
                     <a href="calendar.html">Training Calendar</a>
                     <a href="support.html">Support Information</a>
+                    <a href="about.html">About</a>
                 </div>
 
                 <button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav()">
@@ -333,6 +350,7 @@
                     <a href="resources.html" aria-current="page">Resources</a>
                     <a href="calendar.html">Training Calendar</a>
                     <a href="support.html">Support Information</a>
+                    <a href="about.html">About</a>
                 </div>
             </nav>
         </div>
@@ -347,7 +365,6 @@
             </p>
         </section>
 
-        <!-- FILTERS: TEXT SEARCH AND CATEGORY BUTTONS -->
         <section class="filters" aria-label="Filter resources">
             <div class="filters-input-row">
                 <div style="flex:1 1 260px;">
@@ -363,10 +380,6 @@
             </div>
 
             <div class="category-buttons" aria-label="Filter by category">
-                <!-- 
-                    Each button sets a data-category value.
-                    The JavaScript below will show only cards that match the selected category.
-                -->
                 <button class="category-button active" type="button" data-category="all" onclick="setCategory('all', this)">All</button>
                 <button class="category-button" type="button" data-category="chromebook" onclick="setCategory('chromebook', this)">Chromebooks</button>
                 <button class="category-button" type="button" data-category="google-classroom" onclick="setCategory('google-classroom', this)">Google Classroom</button>
@@ -375,10 +388,8 @@
             </div>
         </section>
 
-        <!-- RESOURCES GRID -->
         <section aria-label="Resource list">
             <div id="resources-grid" class="resources-grid">
-                <!-- EXAMPLE RESOURCE 1 -->
                 <article class="resource-card"
                          data-title="Getting started with Chromebooks"
                          data-category="chromebook">
@@ -390,16 +401,11 @@
                         A step-by-step introduction to signing in on a Chromebook,
                         connecting to Wi‑Fi, and accessing Google Classroom.
                     </p>
-                    <!--
-                        When you have a real file, update the href to point to it.
-                        For example: href="files/chromebook-getting-started.pdf"
-                    -->
                     <a class="resource-link" href="#" aria-label="View Getting started with Chromebooks guide (PDF)">
                         View or download guide
                     </a>
                 </article>
 
-                <!-- EXAMPLE RESOURCE 2 -->
                 <article class="resource-card"
                          data-title="Google Classroom overview"
                          data-category="google-classroom">
@@ -416,7 +422,6 @@
                     </a>
                 </article>
 
-                <!-- EXAMPLE RESOURCE 3 -->
                 <article class="resource-card"
                          data-title="Resetting your Google password"
                          data-category="accounts">
@@ -433,7 +438,6 @@
                     </a>
                 </article>
 
-                <!-- EXAMPLE RESOURCE 4 -->
                 <article class="resource-card"
                          data-title="Digital citizenship conversation starters"
                          data-category="digital-citizenship">
@@ -450,7 +454,6 @@
                     </a>
                 </article>
 
-                <!-- EXAMPLE RESOURCE 5 -->
                 <article class="resource-card"
                          data-title="Connecting a Chromebook to Wi‑Fi at school"
                          data-category="chromebook">
@@ -467,7 +470,6 @@
                     </a>
                 </article>
 
-                <!-- EXAMPLE RESOURCE 6 -->
                 <article class="resource-card"
                          data-title="Organizing Google Drive for classroom work"
                          data-category="google-classroom">
@@ -492,30 +494,51 @@
     </main>
 
     <footer>
-        <div class="container footer-inner">
-            <p>
-                &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board.
-                Learning Technologies.
-            </p>
-            <p>
-                <a href="index.html">Back to home</a>
-            </p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About this site</h3>
+                    <p>
+                        The Learning Technologies site supports teaching and learning
+                        with technology across the Peterborough Victoria Northumberland
+                        and Clarington Catholic District School Board.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Key links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <p>
+                        For technical assistance, please use the official helpdesk ticket system
+                        or email the helpdesk.
+                    </p>
+                    <p>
+                        <a href="https://example-helpdesk-url" target="_blank" rel="noopener noreferrer">
+                            Open helpdesk ticket
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:helpdesk@example.org">
+                            helpdesk@example.org
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.</p>
+            </div>
         </div>
 
         <script>
-            /*
-                Simple JavaScript for this page:
-
-                1. Set current year in footer.
-                2. Provide a very basic filter for resources based on:
-                   - Text typed into the search box.
-                   - Category selected by clicking a category button.
-
-                All filtering happens on the client side in the browser.
-                This works on GitHub Pages because no server code is required.
-            */
-
-            // Set current year
             (function () {
                 var yearSpan = document.getElementById("year");
                 if (yearSpan) {
@@ -523,13 +546,10 @@
                 }
             })();
 
-            // Store the current category globally (default: "all")
             var currentCategory = "all";
 
             function setCategory(category, buttonElement) {
                 currentCategory = category;
-
-                // Update active button styling
                 var buttons = document.querySelectorAll(".category-button");
                 buttons.forEach(function (btn) {
                     btn.classList.remove("active");
@@ -537,8 +557,6 @@
                 if (buttonElement) {
                     buttonElement.classList.add("active");
                 }
-
-                // Re-run filtering when category changes
                 filterResources();
             }
 
@@ -577,7 +595,6 @@
                 }
             }
 
-            // Simple mobile nav toggle (same pattern as index.html)
             function toggleMobileNav() {
                 var menu = document.getElementById("mobile-menu");
                 var button = document.querySelector(".nav-toggle-button");
@@ -596,7 +613,6 @@
                 }
             }
 
-            // Optional: run filter once on load to handle any query parameter "q"
             (function applyInitialSearchFromQuery() {
                 var urlParams = new URLSearchParams(window.location.search);
                 var query = urlParams.get("q");
