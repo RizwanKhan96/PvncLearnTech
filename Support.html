@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        PVNCCDSB Learning Technologies
+        Support Information (support.html)
+
+        This page explains how to get technology support.
+        It does NOT include a contact form.
+        Instead, it points staff to the existing ticket system and helpdesk email.
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Information | PVNCCDSB Learning Technologies</title>
+    <meta name="description" content="Find information on how to request technology support at PVNCCDSB using the official helpdesk ticket system or helpdesk email.">
+
+    <style>
+        :root {
+            --color-primary: #1D3557;
+            --color-primary-light: #457B9D;
+            --color-background: #F8FAFC;
+            --color-surface: #FFFFFF;
+            --color-text-main: #1F2933;
+            --color-text-muted: #6B7280;
+            --color-border: #E5E7EB;
+            --color-focus: #FBBF24;
+            --color-accent: #E63946;
+
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+
+            --content-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-main);
+            line-height: 1.5;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        :focus {
+            outline: 2px solid var(--color-focus);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 16px;
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) 0;
+        }
+
+        .site-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .site-subtitle {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #E5E7EB;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a[aria-current="page"] {
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-focus);
+        }
+
+        .nav-toggle-button {
+            display: none;
+            background: none;
+            border: 1px solid #FFFFFF;
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0 var(--space-md);
+        }
+
+        .nav-links-mobile a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        main {
+            padding: var(--space-xl) 0 var(--space-lg);
+        }
+
+        .page-header {
+            margin-bottom: var(--space-lg);
+        }
+
+        .page-header h1 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.7rem;
+        }
+
+        .page-header p {
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .support-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+        }
+
+        .support-main {
+            flex: 2 1 320px;
+        }
+
+        .support-side {
+            flex: 1 1 260px;
+        }
+
+        .support-callout {
+            background-color: #FEF3C7;
+            border-radius: 8px;
+            border: 1px solid #FDE68A;
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .support-callout h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.2rem;
+        }
+
+        .support-callout p {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 0.95rem;
+        }
+
+        .button-primary {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            border: none;
+            background-color: var(--color-primary);
+            color: white;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button-primary:hover {
+            background-color: #16324A;
+            text-decoration: none;
+        }
+
+        .support-section {
+            margin-bottom: var(--space-lg);
+        }
+
+        .support-section h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.2rem;
+        }
+
+        .support-section p {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 0.95rem;
+        }
+
+        .support-side-card {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            padding: var(--space-md);
+            font-size: 0.9rem;
+        }
+
+        .support-side-card h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.05rem;
+        }
+
+        .support-side-card p {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+        }
+
+        footer {
+            background-color: #111827;
+            color: #D1D5DB;
+            padding: var(--space-lg) 0;
+            margin-top: var(--space-lg);
+        }
+
+        .footer-inner {
+            font-size: 0.85rem;
+        }
+
+        .footer-inner a {
+            color: #93C5FD;
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-wrap: wrap;
+                gap: var(--space-sm);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle-button {
+                display: inline-block;
+            }
+
+            .support-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="container header-inner">
+            <div>
+                <p class="site-title">PVNCCDSB Learning Technologies</p>
+                <p class="site-subtitle">Support information</p>
+            </div>
+
+            <nav aria-label="Primary">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html" aria-current="page">Support Information</a>
+                </div>
+
+                <button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav()">
+                    Menu
+                </button>
+
+                <div id="mobile-menu" class="nav-links-mobile" aria-label="Mobile">
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html" aria-current="page">Support Information</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="page-header" aria-labelledby="support-heading">
+            <h1 id="support-heading">Technology support information</h1>
+            <p>
+                This page explains how to request technology support within PVNCCDSB.
+                Support is coordinated through the board's official helpdesk ticket system.
+            </p>
+        </section>
+
+        <div class="support-layout">
+            <section class="support-main" aria-label="Support details">
+                <div class="support-callout">
+                    <h2>Submit a support ticket</h2>
+                    <p>
+                        Submitting a ticket through the official helpdesk system is the fastest way
+                        to get help. Tickets are tracked and routed to the appropriate support team.
+                    </p>
+                    <p>
+                        Please include as much detail as you can, such as the school,
+                        device type, and a clear description of the issue.
+                    </p>
+                    <!--
+                        IMPORTANT:
+                        Replace "https://example-helpdesk-url" with your real helpdesk address.
+                    -->
+                    <p>
+                        <a class="button-primary" href="https://example-helpdesk-url" target="_blank" rel="noopener noreferrer">
+                            Open helpdesk ticket
+                        </a>
+                    </p>
+                </div>
+
+                <div class="support-section">
+                    <h2>Contacting the helpdesk by email</h2>
+                    <p>
+                        If you cannot access the ticket system directly, you can email the helpdesk.
+                        Include your name, school, contact information, and a clear description of the issue.
+                    </p>
+                    <!--
+                        IMPORTANT:
+                        Replace "helpdesk@example.org" with your actual helpdesk email address.
+                    -->
+                    <p>
+                        Email: <a href="mailto:helpdesk@example.org">helpdesk@example.org</a>
+                    </p>
+                </div>
+
+                <div class="support-section">
+                    <h2>What types of issues can I submit?</h2>
+                    <p>
+                        The helpdesk can assist with many different types of issues, including:
+                    </p>
+                    <p>
+                        • Problems signing in to a device or Google account<br>
+                        • Issues with Chromebooks or classroom devices<br>
+                        • Network access and Wi‑Fi connection issues<br>
+                        • Questions about using board-approved tools in the classroom
+                    </p>
+                    <p>
+                        For classroom practice questions or ideas about using technology in teaching,
+                        you can also explore the <a href="resources.html">Technology resources library</a>.
+                    </p>
+                </div>
+            </section>
+
+            <aside class="support-side" aria-label="Additional support information">
+                <div class="support-side-card">
+                    <h2>Support hours</h2>
+                    <p>
+                        Typical helpdesk hours are during regular school days.
+                        Exact hours may vary, but tickets can be submitted at any time.
+                    </p>
+                    <p>
+                        Response times depend on issue type and volume.
+                        Urgent issues affecting many classrooms may be prioritized.
+                    </p>
+                </div>
+
+                <div class="support-side-card" style="margin-top: var(--space-md);">
+                    <h2>Emergency situations</h2>
+                    <p>
+                        For urgent, board-wide incidents or safety-related situations,
+                        please follow your school's established emergency communication procedures.
+                        The helpdesk ticket system should be used for technology issues that can
+                        be queued and processed.
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>
+                &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board.
+                Learning Technologies.
+            </p>
+            <p>
+                <a href="index.html">Back to home</a>
+            </p>
+        </div>
+
+        <script>
+            // Set current year
+            (function () {
+                var yearSpan = document.getElementById("year");
+                if (yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
+                }
+            })();
+
+            // Simple mobile nav toggle
+            function toggleMobileNav() {
+                var menu = document.getElementById("mobile-menu");
+                var button = document.querySelector(".nav-toggle-button");
+
+                if (!menu || !button) {
+                    return;
+                }
+
+                var isOpen = menu.style.display === "flex";
+                if (isOpen) {
+                    menu.style.display = "none";
+                    button.setAttribute("aria-expanded", "false");
+                } else {
+                    menu.style.display = "flex";
+                    button.setAttribute("aria-expanded", "true");
+                }
+            }
+        </script>
+    </footer>
+</body>
+</html>

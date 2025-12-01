@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        PVNCCDSB Learning Technologies
+        Resources Library (resources.html)
+
+        This page lists guides and support documents.
+        It uses very simple JavaScript for filtering by text and category.
+        Everything runs in the browser and works on GitHub Pages.
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources | PVNCCDSB Learning Technologies</title>
+    <meta name="description" content="Browse technology support resources for PVNCCDSB, including Chromebook guides, Google Classroom help, and digital citizenship materials.">
+
+    <style>
+        /* Basic shared styles – kept similar to index.html for consistency */
+
+        :root {
+            --color-primary: #1D3557;
+            --color-primary-light: #457B9D;
+            --color-accent: #E63946;
+            --color-background: #F8FAFC;
+            --color-surface: #FFFFFF;
+            --color-text-main: #1F2933;
+            --color-text-muted: #6B7280;
+            --color-border: #E5E7EB;
+            --color-focus: #FBBF24;
+
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+
+            --content-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-main);
+            line-height: 1.5;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        :focus {
+            outline: 2px solid var(--color-focus);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 16px;
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) 0;
+        }
+
+        .site-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .site-subtitle {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #E5E7EB;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a[aria-current="page"] {
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-focus);
+        }
+
+        .nav-toggle-button {
+            display: none;
+            background: none;
+            border: 1px solid #FFFFFF;
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0 var(--space-md);
+        }
+
+        .nav-links-mobile a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        main {
+            padding: var(--space-xl) 0 var(--space-lg);
+        }
+
+        .page-header {
+            margin-bottom: var(--space-lg);
+        }
+
+        .page-header h1 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.7rem;
+        }
+
+        .page-header p {
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .filters {
+            margin-bottom: var(--space-md);
+            padding: var(--space-md);
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .filters label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .filters-input-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+
+        .filters-input-row input[type="search"] {
+            flex: 1 1 220px;
+            padding: var(--space-sm);
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            font-size: 0.95rem;
+        }
+
+        .category-buttons {
+            margin-top: var(--space-sm);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .category-button {
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            background-color: white;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: var(--color-text-main);
+        }
+
+        .category-button.active {
+            background-color: var(--color-primary-light);
+            color: white;
+            border-color: var(--color-primary-light);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--space-md);
+        }
+
+        .resource-card {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            padding: var(--space-md);
+            font-size: 0.9rem;
+        }
+
+        .resource-card h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+            font-size: 1rem;
+        }
+
+        .resource-meta {
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-xs);
+        }
+
+        .resource-description {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+        }
+
+        .resource-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .no-results {
+            margin-top: var(--space-md);
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+        }
+
+        footer {
+            background-color: #111827;
+            color: #D1D5DB;
+            padding: var(--space-lg) 0;
+            margin-top: var(--space-lg);
+        }
+
+        .footer-inner {
+            font-size: 0.85rem;
+        }
+
+        .footer-inner a {
+            color: #93C5FD;
+        }
+
+        @media (max-width: 900px) {
+            .resources-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-wrap: wrap;
+                gap: var(--space-sm);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle-button {
+                display: inline-block;
+            }
+
+            .nav-links-mobile {
+                display: none;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="container header-inner">
+            <div>
+                <p class="site-title">PVNCCDSB Learning Technologies</p>
+                <p class="site-subtitle">Resources library</p>
+            </div>
+
+            <nav aria-label="Primary">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="resources.html" aria-current="page">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html">Support Information</a>
+                </div>
+
+                <button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav()">
+                    Menu
+                </button>
+
+                <div id="mobile-menu" class="nav-links-mobile" aria-label="Mobile">
+                    <a href="index.html">Home</a>
+                    <a href="resources.html" aria-current="page">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html">Support Information</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="page-header" aria-labelledby="resources-heading">
+            <h1 id="resources-heading">Technology resources</h1>
+            <p>
+                Browse guides and documents to support the use of technology in PVNCCDSB schools.
+                All resources are based on our Google ecosystem and classroom needs.
+            </p>
+        </section>
+
+        <!-- FILTERS: TEXT SEARCH AND CATEGORY BUTTONS -->
+        <section class="filters" aria-label="Filter resources">
+            <div class="filters-input-row">
+                <div style="flex:1 1 260px;">
+                    <label for="resource-search">Search resources</label>
+                    <input
+                        id="resource-search"
+                        type="search"
+                        placeholder="Search by keyword (for example: Chromebook, Classroom, Wi‑Fi)"
+                        aria-label="Search resources"
+                        oninput="filterResources()"
+                    >
+                </div>
+            </div>
+
+            <div class="category-buttons" aria-label="Filter by category">
+                <!-- 
+                    Each button sets a data-category value.
+                    The JavaScript below will show only cards that match the selected category.
+                -->
+                <button class="category-button active" type="button" data-category="all" onclick="setCategory('all', this)">All</button>
+                <button class="category-button" type="button" data-category="chromebook" onclick="setCategory('chromebook', this)">Chromebooks</button>
+                <button class="category-button" type="button" data-category="google-classroom" onclick="setCategory('google-classroom', this)">Google Classroom</button>
+                <button class="category-button" type="button" data-category="accounts" onclick="setCategory('accounts', this)">Accounts &amp; login</button>
+                <button class="category-button" type="button" data-category="digital-citizenship" onclick="setCategory('digital-citizenship', this)">Digital citizenship</button>
+            </div>
+        </section>
+
+        <!-- RESOURCES GRID -->
+        <section aria-label="Resource list">
+            <div id="resources-grid" class="resources-grid">
+                <!-- EXAMPLE RESOURCE 1 -->
+                <article class="resource-card"
+                         data-title="Getting started with Chromebooks"
+                         data-category="chromebook">
+                    <h2>Getting started with Chromebooks</h2>
+                    <p class="resource-meta">
+                        Category: Chromebooks · Format: PDF guide
+                    </p>
+                    <p class="resource-description">
+                        A step-by-step introduction to signing in on a Chromebook,
+                        connecting to Wi‑Fi, and accessing Google Classroom.
+                    </p>
+                    <!--
+                        When you have a real file, update the href to point to it.
+                        For example: href="files/chromebook-getting-started.pdf"
+                    -->
+                    <a class="resource-link" href="#" aria-label="View Getting started with Chromebooks guide (PDF)">
+                        View or download guide
+                    </a>
+                </article>
+
+                <!-- EXAMPLE RESOURCE 2 -->
+                <article class="resource-card"
+                         data-title="Google Classroom overview"
+                         data-category="google-classroom">
+                    <h2>Google Classroom overview</h2>
+                    <p class="resource-meta">
+                        Category: Google Classroom · Format: PDF guide
+                    </p>
+                    <p class="resource-description">
+                        A simple overview of how Google Classroom is used in PVNCCDSB, including
+                        organizing assignments, giving feedback, and communicating with students.
+                    </p>
+                    <a class="resource-link" href="#" aria-label="View Google Classroom overview guide (PDF)">
+                        View or download guide
+                    </a>
+                </article>
+
+                <!-- EXAMPLE RESOURCE 3 -->
+                <article class="resource-card"
+                         data-title="Resetting your Google password"
+                         data-category="accounts">
+                    <h2>Resetting your Google password</h2>
+                    <p class="resource-meta">
+                        Category: Accounts &amp; login · Format: PDF guide
+                    </p>
+                    <p class="resource-description">
+                        Guidance on what to do if you cannot sign in, including how password resets
+                        work within the board's systems.
+                    </p>
+                    <a class="resource-link" href="#" aria-label="View Resetting your Google password guide (PDF)">
+                        View or download guide
+                    </a>
+                </article>
+
+                <!-- EXAMPLE RESOURCE 4 -->
+                <article class="resource-card"
+                         data-title="Digital citizenship conversation starters"
+                         data-category="digital-citizenship">
+                    <h2>Digital citizenship conversation starters</h2>
+                    <p class="resource-meta">
+                        Category: Digital citizenship · Format: PDF or slideshow
+                    </p>
+                    <p class="resource-description">
+                        Short prompts to support classroom conversations about online behaviour,
+                        faith, and responsible decision making.
+                    </p>
+                    <a class="resource-link" href="#" aria-label="View Digital citizenship conversation starters resource">
+                        View or download resource
+                    </a>
+                </article>
+
+                <!-- EXAMPLE RESOURCE 5 -->
+                <article class="resource-card"
+                         data-title="Connecting a Chromebook to Wi‑Fi at school"
+                         data-category="chromebook">
+                    <h2>Connecting a Chromebook to Wi‑Fi at school</h2>
+                    <p class="resource-meta">
+                        Category: Chromebooks · Format: PDF guide
+                    </p>
+                    <p class="resource-description">
+                        Steps for joining the school wireless network on a Chromebook,
+                        including common issues and simple troubleshooting tips.
+                    </p>
+                    <a class="resource-link" href="#" aria-label="View Connecting a Chromebook to Wi‑Fi at school guide (PDF)">
+                        View or download guide
+                    </a>
+                </article>
+
+                <!-- EXAMPLE RESOURCE 6 -->
+                <article class="resource-card"
+                         data-title="Organizing Google Drive for classroom work"
+                         data-category="google-classroom">
+                    <h2>Organizing Google Drive for classroom work</h2>
+                    <p class="resource-meta">
+                        Category: Google Classroom · Format: PDF guide
+                    </p>
+                    <p class="resource-description">
+                        Suggestions for structuring folders and files in Google Drive to keep classroom
+                        materials organized and easy to find.
+                    </p>
+                    <a class="resource-link" href="#" aria-label="View Organizing Google Drive for classroom work guide (PDF)">
+                        View or download guide
+                    </a>
+                </article>
+            </div>
+
+            <p id="no-results-message" class="no-results" style="display:none;">
+                No resources match your search or selected category. Try clearing the search box or choosing "All".
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>
+                &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board.
+                Learning Technologies.
+            </p>
+            <p>
+                <a href="index.html">Back to home</a>
+            </p>
+        </div>
+
+        <script>
+            /*
+                Simple JavaScript for this page:
+
+                1. Set current year in footer.
+                2. Provide a very basic filter for resources based on:
+                   - Text typed into the search box.
+                   - Category selected by clicking a category button.
+
+                All filtering happens on the client side in the browser.
+                This works on GitHub Pages because no server code is required.
+            */
+
+            // Set current year
+            (function () {
+                var yearSpan = document.getElementById("year");
+                if (yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
+                }
+            })();
+
+            // Store the current category globally (default: "all")
+            var currentCategory = "all";
+
+            function setCategory(category, buttonElement) {
+                currentCategory = category;
+
+                // Update active button styling
+                var buttons = document.querySelectorAll(".category-button");
+                buttons.forEach(function (btn) {
+                    btn.classList.remove("active");
+                });
+                if (buttonElement) {
+                    buttonElement.classList.add("active");
+                }
+
+                // Re-run filtering when category changes
+                filterResources();
+            }
+
+            function filterResources() {
+                var searchInput = document.getElementById("resource-search");
+                var searchValue = "";
+                if (searchInput && searchInput.value) {
+                    searchValue = searchInput.value.toLowerCase();
+                }
+
+                var cards = document.querySelectorAll(".resource-card");
+                var anyVisible = false;
+
+                cards.forEach(function (card) {
+                    var title = card.getAttribute("data-title") || "";
+                    var category = card.getAttribute("data-category") || "";
+
+                    var matchesCategory = (currentCategory === "all") || (category === currentCategory);
+                    var matchesSearch = true;
+
+                    if (searchValue) {
+                        matchesSearch = title.toLowerCase().indexOf(searchValue) !== -1;
+                    }
+
+                    if (matchesCategory && matchesSearch) {
+                        card.style.display = "block";
+                        anyVisible = true;
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+
+                var noResultsMessage = document.getElementById("no-results-message");
+                if (noResultsMessage) {
+                    noResultsMessage.style.display = anyVisible ? "none" : "block";
+                }
+            }
+
+            // Simple mobile nav toggle (same pattern as index.html)
+            function toggleMobileNav() {
+                var menu = document.getElementById("mobile-menu");
+                var button = document.querySelector(".nav-toggle-button");
+
+                if (!menu || !button) {
+                    return;
+                }
+
+                var isOpen = menu.style.display === "flex";
+                if (isOpen) {
+                    menu.style.display = "none";
+                    button.setAttribute("aria-expanded", "false");
+                } else {
+                    menu.style.display = "flex";
+                    button.setAttribute("aria-expanded", "true");
+                }
+            }
+
+            // Optional: run filter once on load to handle any query parameter "q"
+            (function applyInitialSearchFromQuery() {
+                var urlParams = new URLSearchParams(window.location.search);
+                var query = urlParams.get("q");
+                if (query) {
+                    var input = document.getElementById("resource-search");
+                    if (input) {
+                        input.value = query;
+                        filterResources();
+                    }
+                }
+            })();
+        </script>
+    </footer>
+</body>
+</html>

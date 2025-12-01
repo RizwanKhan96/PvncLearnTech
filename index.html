@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        PVNCCDSB Learning Technologies
+        Homepage (index.html)
+
+        This file is written to be:
+        - Simple and beginner-friendly
+        - Easy to host on GitHub Pages (static only)
+        - Easy to move into WordPress later if you choose
+        - Light on memory: no external libraries, no frameworks
+
+        To use:
+        - Place this file in the root of your GitHub repository.
+        - Other pages (resources, calendar, support) should also be in the same folder.
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PVNCCDSB Learning Technologies</title>
+
+    <meta name="description" content="Learning Technologies support and resources for students and staff at Peterborough Victoria Northumberland and Clarington Catholic District School Board.">
+
+    <style>
+        /*
+            BASIC GLOBAL STYLES
+            -------------------
+            This CSS is intentionally simple.
+            It avoids advanced features to keep it easy to understand and maintain.
+        */
+
+        :root {
+            /* Brand colors (Catholic school board appropriate) */
+            --color-primary: #1D3557;     /* Deep blue - trust */
+            --color-primary-light: #457B9D;
+            --color-accent: #E63946;      /* Red - emphasis */
+            --color-background: #F8FAFC;  /* Light grey/white */
+            --color-surface: #FFFFFF;
+            --color-text-main: #1F2933;
+            --color-text-muted: #6B7280;
+            --color-border: #E5E7EB;
+            --color-focus: #FBBF24;
+
+            /* Simple spacing scale */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+
+            /* Basic maximum width for content */
+            --content-width: 1100px;
+        }
+
+        /* Reset some default browser spacing for consistency */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-main);
+            line-height: 1.5;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Utility class for layout container */
+        .container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        /* Focus outline for keyboard users (accessibility) */
+        :focus {
+            outline: 2px solid var(--color-focus);
+            outline-offset: 2px;
+        }
+
+        /* Skip link for screen readers and keyboard navigation */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 16px;
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        /* HEADER AND NAVIGATION */
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) 0;
+        }
+
+        .site-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .site-subtitle {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #E5E7EB;
+        }
+
+        nav {
+            /* On large screens, nav links are shown in a row.
+               On small screens, we hide them and show a menu button instead. */
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a[aria-current="page"] {
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-focus);
+        }
+
+        /* Simple mobile navigation (no JS frameworks) */
+
+        .nav-toggle-button {
+            display: none; /* Hidden on larger screens */
+            background: none;
+            border: 1px solid #FFFFFF;
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-toggle-button:focus {
+            outline-color: var(--color-focus);
+        }
+
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0 var(--space-md);
+        }
+
+        .nav-links-mobile a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            background-color: var(--color-primary-light);
+            color: white;
+            padding: var(--space-xl) 0;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .hero-main {
+            flex: 1 1 280px;
+        }
+
+        .hero-main h1 {
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-main p {
+            margin-top: 0;
+            margin-bottom: var(--space-md);
+            color: #E5E7EB;
+        }
+
+        .hero-search-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+
+        .hero-search-input {
+            flex: 1 1 200px;
+            padding: var(--space-sm);
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
+            font-size: 0.95rem;
+        }
+
+        .hero-search-button {
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            border: none;
+            background-color: var(--color-accent);
+            color: white;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .hero-search-button:hover {
+            background-color: #C5303B;
+        }
+
+        .hero-side {
+            flex: 1 1 260px;
+            background-color: rgba(15, 23, 42, 0.15);
+            padding: var(--space-md);
+            border-radius: 8px;
+        }
+
+        .hero-side h2 {
+            font-size: 1.05rem;
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero-side p {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+        }
+
+        /* QUICK LINKS SECTION */
+
+        .section {
+            padding: var(--space-xl) 0;
+        }
+
+        .section-header {
+            margin-bottom: var(--space-md);
+        }
+
+        .section-header h2 {
+            margin: 0 0 var(--space-xs);
+            font-size: 1.3rem;
+        }
+
+        .section-header p {
+            margin: 0;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--space-md);
+        }
+
+        .quick-link-card {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            padding: var(--space-md);
+        }
+
+        .quick-link-card h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+            font-size: 1rem;
+        }
+
+        .quick-link-card p {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        .quick-link-card a {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* FEATURED RESOURCES */
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--space-md);
+        }
+
+        .resource-card {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            padding: var(--space-md);
+        }
+
+        .resource-card h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+            font-size: 1rem;
+        }
+
+        .resource-card p {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+        }
+
+        /* SUPPORT CALLOUT */
+
+        .support-callout {
+            background-color: #FEF3C7;
+            border: 1px solid #FDE68A;
+            border-radius: 8px;
+            padding: var(--space-md);
+        }
+
+        .support-callout h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+            font-size: 1.1rem;
+        }
+
+        .support-callout p {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 0.95rem;
+        }
+
+        .support-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .button-primary {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            border: none;
+            background-color: var(--color-primary);
+            color: white;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button-primary:hover {
+            background-color: #16324A;
+            text-decoration: none;
+        }
+
+        .button-outline {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            border: 1px solid var(--color-primary);
+            background-color: white;
+            color: var(--color-primary);
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button-outline:hover {
+            background-color: #E5E7EB;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #111827;
+            color: #D1D5DB;
+            padding: var(--space-lg) 0;
+            margin-top: var(--space-xl);
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+        }
+
+        .footer-column {
+            flex: 1 1 220px;
+            font-size: 0.9rem;
+        }
+
+        .footer-column h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1rem;
+            color: white;
+        }
+
+        .footer-column p {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+        }
+
+        .footer-column a {
+            color: #93C5FD;
+        }
+
+        .footer-bottom {
+            margin-top: var(--space-md);
+            font-size: 0.8rem;
+            color: #9CA3AF;
+        }
+
+        /* RESPONSIVE STYLES */
+
+        @media (max-width: 900px) {
+            .quick-links-grid,
+            .resources-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-wrap: wrap;
+                gap: var(--space-sm);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle-button {
+                display: inline-block;
+            }
+
+            .quick-links-grid,
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <!-- HEADER WITH NAVIGATION -->
+    <header>
+        <div class="container header-inner">
+            <div>
+                <p class="site-title">PVNCCDSB Learning Technologies</p>
+                <p class="site-subtitle">Supporting teaching and learning with technology</p>
+            </div>
+
+            <!-- Desktop navigation -->
+            <nav aria-label="Primary">
+                <!-- 
+                    For larger screens, we show this .nav-links row.
+                    For small screens, we hide this and show the mobile version.
+                -->
+                <div class="nav-links">
+                    <a href="index.html" aria-current="page">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html">Support Information</a>
+                </div>
+
+                <!-- Mobile nav toggle button -->
+                <button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav()">
+                    Menu
+                </button>
+
+                <!-- Mobile navigation links -->
+                <div id="mobile-menu" class="nav-links-mobile" aria-label="Mobile">
+                    <a href="index.html" aria-current="page">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html">Support Information</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+        <!-- HERO SECTION -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <div class="container hero-grid">
+                <div class="hero-main">
+                    <h1 id="hero-heading">Learning Technologies Support</h1>
+                    <p>
+                        Resources and guidance for using technology in PVNCCDSB classrooms.
+                        Find simple step-by-step guides, quick reference documents, and support information.
+                    </p>
+
+                    <!-- Simple search form (client-side redirect only) -->
+                    <!-- On GitHub Pages this will redirect to the resources page with a query string. -->
+                    <form class="hero-search-form" action="resources.html" method="get">
+                        <label for="hero-search" class="visually-hidden">Search resources</label>
+                        <input
+                            id="hero-search"
+                            name="q"
+                            type="search"
+                            class="hero-search-input"
+                            placeholder="Search for a guide or topic (for example: Chromebook, password)"
+                            aria-label="Search resources"
+                        >
+                        <button type="submit" class="hero-search-button">
+                            Search
+                        </button>
+                    </form>
+                </div>
+
+                <div class="hero-side" aria-label="At-a-glance information">
+                    <h2>How this site can help</h2>
+                    <p>
+                        This site is focused on practical, easy-to-follow resources that support
+                        classroom use of technology across our Catholic schools.
+                    </p>
+                    <p>
+                        All tools and guides are based on our Google ecosystem, including
+                        Chromebooks, Google Workspace for Education, and board-approved applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK LINKS -->
+        <section class="section" aria-labelledby="quick-links-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="quick-links-heading">Common starting points</h2>
+                    <p>Use these shortcuts to reach popular areas of the site.</p>
+                </div>
+
+                <div class="quick-links-grid">
+                    <article class="quick-link-card">
+                        <h3>Browse all resources</h3>
+                        <p>View the full collection of guides, documents, and reference materials.</p>
+                        <p><a href="resources.html" class="button-primary">Go to Resources</a></p>
+                    </article>
+
+                    <article class="quick-link-card">
+                        <h3>Training calendar</h3>
+                        <p>See upcoming learning opportunities and technology training sessions.</p>
+                        <p><a href="calendar.html" class="button-primary">View Calendar</a></p>
+                    </article>
+
+                    <article class="quick-link-card">
+                        <h3>Support information</h3>
+                        <p>Find details about how to contact the helpdesk and submit support tickets.</p>
+                        <p><a href="support.html" class="button-primary">Get Support</a></p>
+                    </article>
+
+                    <article class="quick-link-card">
+                        <h3>Chromebook basics</h3>
+                        <p>Get started with logging in, connecting to Wi‑Fi, and using Google Classroom.</p>
+                        <p><a href="resources.html" class="button-primary">Find Chromebook Guides</a></p>
+                    </article>
+
+                    <article class="quick-link-card">
+                        <h3>Google Classroom</h3>
+                        <p>Explore tips for creating classes, assigning work, and organizing materials.</p>
+                        <p><a href="resources.html" class="button-primary">Find Classroom Guides</a></p>
+                    </article>
+
+                    <article class="quick-link-card">
+                        <h3>Digital citizenship</h3>
+                        <p>Support safe, responsible, and faith-filled use of technology.</p>
+                        <p><a href="resources.html" class="button-primary">View Resources</a></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED RESOURCES -->
+        <section class="section" aria-labelledby="featured-resources-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="featured-resources-heading">Featured resources</h2>
+                    <p>Here are a few examples of the types of resources you will find.</p>
+                </div>
+
+                <div class="resources-grid">
+                    <article class="resource-card">
+                        <h3>Getting started with Chromebooks</h3>
+                        <p>A basic introduction to signing in, connecting to the network, and accessing Google Classroom.</p>
+                        <p><strong>Type:</strong> PDF guide</p>
+                        <p><a href="resources.html">View in resources library</a></p>
+                    </article>
+
+                    <article class="resource-card">
+                        <h3>Google Classroom overview</h3>
+                        <p>A walkthrough of key features for organizing assignments, giving feedback, and communicating with students.</p>
+                        <p><strong>Type:</strong> PDF guide</p>
+                        <p><a href="resources.html">View in resources library</a></p>
+                    </article>
+
+                    <article class="resource-card">
+                        <h3>Digital citizenship conversation starters</h3>
+                        <p>Short prompts to help support classroom discussions about online behaviour and faith-based decision making.</p>
+                        <p><strong>Type:</strong> PDF or slideshow</p>
+                        <p><a href="resources.html">View in resources library</a></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPPORT CALLOUT -->
+        <section class="section" aria-labelledby="support-heading">
+            <div class="container">
+                <div class="support-callout">
+                    <h2 id="support-heading">Need help with technology?</h2>
+                    <p>
+                        If you are experiencing a technical issue, please use the board's official
+                        helpdesk process so your request can be tracked and handled efficiently.
+                    </p>
+                    <div class="support-actions">
+                        <!--
+                            IMPORTANT:
+                            Replace the example URL below with your actual ticket system URL.
+                            For example: https://helpdesk.pvnccdsb.on.ca or similar.
+                        -->
+                        <a class="button-primary" href="https://example-helpdesk-url" target="_blank" rel="noopener noreferrer">
+                            Open a support ticket
+                        </a>
+
+                        <!--
+                            IMPORTANT:
+                            Replace the email address below with your actual helpdesk email.
+                        -->
+                        <a class="button-outline" href="mailto:helpdesk@example.org">
+                            Email the helpdesk
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>About this site</h3>
+                    <p>
+                        The Learning Technologies site supports teaching and learning
+                        with technology across the Peterborough Victoria Northumberland
+                        and Clarington Catholic District School Board.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Key links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources</a></p>
+                    <p><a href="calendar.html">Training calendar</a></p>
+                    <p><a href="support.html">Support information</a></p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <p>
+                        For technical assistance, please use the official helpdesk ticket system
+                        or email the helpdesk.
+                    </p>
+                    <p>
+                        <a href="https://example-helpdesk-url" target="_blank" rel="noopener noreferrer">
+                            Open helpdesk ticket
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:helpdesk@example.org">
+                            helpdesk@example.org
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.</p>
+            </div>
+        </div>
+
+        <script>
+            /*
+                Simple JavaScript used on this page:
+                - Set the current year in the footer automatically
+                - Handle the mobile navigation show/hide
+
+                This is intentionally basic so it is easy to understand.
+            */
+
+            // Set current year
+            (function () {
+                var yearSpan = document.getElementById("year");
+                if (yearSpan) {
+                    var currentYear = new Date().getFullYear();
+                    yearSpan.textContent = currentYear;
+                }
+            })();
+
+            // Toggle mobile navigation
+            function toggleMobileNav() {
+                var menu = document.getElementById("mobile-menu");
+                var button = document.querySelector(".nav-toggle-button");
+
+                if (!menu || !button) {
+                    return;
+                }
+
+                // If menu is currently visible, hide it; otherwise show it.
+                var isOpen = menu.style.display === "flex";
+                if (isOpen) {
+                    menu.style.display = "none";
+                    button.setAttribute("aria-expanded", "false");
+                } else {
+                    menu.style.display = "flex";
+                    button.setAttribute("aria-expanded", "true");
+                }
+            }
+        </script>
+    </footer>
+</body>
+</html>
