@@ -1,60 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        PVNCCDSB Learning Technologies
-        Homepage (index.html)
-
-        This file is written to be:
-        - Simple and beginner-friendly
-        - Easy to host on GitHub Pages (static only)
-        - Easy to move into WordPress later if you choose
-        - Light on memory: no external libraries, no frameworks
-
-        To use:
-        - Place this file in the root of your GitHub repository.
-        - Other pages (resources, calendar, support) should also be in the same folder.
-    -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>PVNCCDSB Learning Technologies</title>
-
     <meta name="description" content="Learning Technologies support and resources for students and staff at Peterborough Victoria Northumberland and Clarington Catholic District School Board.">
 
     <style>
-        /*
-            BASIC GLOBAL STYLES
-            -------------------
-            This CSS is intentionally simple.
-            It avoids advanced features to keep it easy to understand and maintain.
-        */
-
         :root {
-            /* Brand colors (Catholic school board appropriate) */
-            --color-primary: #1D3557;     /* Deep blue - trust */
+            --color-primary: #1D3557;
             --color-primary-light: #457B9D;
-            --color-accent: #E63946;      /* Red - emphasis */
-            --color-background: #F8FAFC;  /* Light grey/white */
+            --color-accent: #E63946;
+            --color-background: #E8EDF2;
             --color-surface: #FFFFFF;
             --color-text-main: #1F2933;
             --color-text-muted: #6B7280;
-            --color-border: #E5E7EB;
+            --color-border: #D1D5DB;
             --color-focus: #FBBF24;
-
-            /* Simple spacing scale */
             --space-xs: 4px;
             --space-sm: 8px;
             --space-md: 16px;
             --space-lg: 24px;
             --space-xl: 32px;
-
-            /* Basic maximum width for content */
             --content-width: 1100px;
         }
 
-        /* Reset some default browser spacing for consistency */
         * {
             box-sizing: border-box;
         }
@@ -62,9 +32,11 @@
         body {
             margin: 0;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background-color: var(--color-background);
+            background: linear-gradient(to bottom, #E8EDF2 0%, #D6DDE5 100%);
+            background-attachment: fixed;
             color: var(--color-text-main);
             line-height: 1.5;
+            min-height: 100vh;
         }
 
         a {
@@ -82,20 +54,17 @@
             height: auto;
         }
 
-        /* Utility class for layout container */
         .container {
             max-width: var(--content-width);
             margin: 0 auto;
             padding: 0 var(--space-md);
         }
 
-        /* Focus outline for keyboard users (accessibility) */
         :focus {
             outline: 2px solid var(--color-focus);
             outline-offset: 2px;
         }
 
-        /* Skip link for screen readers and keyboard navigation */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -109,8 +78,6 @@
         .skip-link:focus {
             top: 16px;
         }
-
-        /* HEADER AND NAVIGATION */
 
         header {
             background-color: var(--color-primary);
@@ -137,8 +104,6 @@
         }
 
         nav {
-            /* On large screens, nav links are shown in a row.
-               On small screens, we hide them and show a menu button instead. */
         }
 
         .nav-links {
@@ -156,10 +121,8 @@
             border-bottom: 2px solid var(--color-focus);
         }
 
-        /* Simple mobile navigation (no JS frameworks) */
-
         .nav-toggle-button {
-            display: none; /* Hidden on larger screens */
+            display: none;
             background: none;
             border: 1px solid #FFFFFF;
             color: white;
@@ -184,7 +147,11 @@
             font-size: 0.95rem;
         }
 
-        /* HERO SECTION */
+        main {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: var(--space-xl) 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
 
         .hero {
             background-color: var(--color-primary-light);
@@ -262,8 +229,6 @@
             margin-bottom: var(--space-sm);
         }
 
-        /* QUICK LINKS SECTION */
-
         .section {
             padding: var(--space-xl) 0;
         }
@@ -314,8 +279,6 @@
             font-weight: 600;
         }
 
-        /* FEATURED RESOURCES */
-
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -341,8 +304,6 @@
             font-size: 0.9rem;
             color: var(--color-text-muted);
         }
-
-        /* SUPPORT CALLOUT */
 
         .support-callout {
             background-color: #FEF3C7;
@@ -403,8 +364,6 @@
             text-decoration: none;
         }
 
-        /* FOOTER */
-
         footer {
             background-color: #111827;
             color: #D1D5DB;
@@ -445,8 +404,6 @@
             color: #9CA3AF;
         }
 
-        /* RESPONSIVE STYLES */
-
         @media (max-width: 900px) {
             .quick-links-grid,
             .resources-grid {
@@ -480,10 +437,8 @@
     </style>
 </head>
 <body>
-    <!-- Skip link for accessibility -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- HEADER WITH NAVIGATION -->
     <header>
         <div class="container header-inner">
             <div>
@@ -491,12 +446,7 @@
                 <p class="site-subtitle">Supporting teaching and learning with technology</p>
             </div>
 
-            <!-- Desktop navigation -->
             <nav aria-label="Primary">
-                <!-- 
-                    For larger screens, we show this .nav-links row.
-                    For small screens, we hide this and show the mobile version.
-                -->
                 <div class="nav-links">
                     <a href="index.html" aria-current="page">Home</a>
                     <a href="resources.html">Resources</a>
@@ -505,12 +455,10 @@
                     <a href="about.html">About</a>
                 </div>
 
-                <!-- Mobile nav toggle button -->
                 <button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav()">
                     Menu
                 </button>
 
-                <!-- Mobile navigation links -->
                 <div id="mobile-menu" class="nav-links-mobile" aria-label="Mobile">
                     <a href="index.html" aria-current="page">Home</a>
                     <a href="resources.html">Resources</a>
@@ -522,10 +470,7 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main id="main-content">
-
-        <!-- HERO SECTION -->
         <section class="hero" aria-labelledby="hero-heading">
             <div class="container hero-grid">
                 <div class="hero-main">
@@ -535,8 +480,6 @@
                         Find simple step-by-step guides, quick reference documents, and support information.
                     </p>
 
-                    <!-- Simple search form (client-side redirect only) -->
-                    <!-- On GitHub Pages this will redirect to the resources page with a query string. -->
                     <form class="hero-search-form" action="resources.html" method="get">
                         <label for="hero-search" class="visually-hidden">Search resources</label>
                         <input
@@ -567,7 +510,6 @@
             </div>
         </section>
 
-        <!-- QUICK LINKS -->
         <section class="section" aria-labelledby="quick-links-heading">
             <div class="container">
                 <div class="section-header">
@@ -607,15 +549,14 @@
                     </article>
 
                     <article class="quick-link-card">
-                        <h3>Digital citizenship</h3>
-                        <p>Support safe, responsible, and faith-filled use of technology.</p>
-                        <p><a href="resources.html" class="button-primary">View Resources</a></p>
+                        <h3>About our team</h3>
+                        <p>Learn about the Learning Technologies team and who supports your school.</p>
+                        <p><a href="about.html" class="button-primary">About Us</a></p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- FEATURED RESOURCES -->
         <section class="section" aria-labelledby="featured-resources-heading">
             <div class="container">
                 <div class="section-header">
@@ -648,7 +589,6 @@
             </div>
         </section>
 
-        <!-- SUPPORT CALLOUT -->
         <section class="section" aria-labelledby="support-heading">
             <div class="container">
                 <div class="support-callout">
@@ -658,19 +598,9 @@
                         helpdesk process so your request can be tracked and handled efficiently.
                     </p>
                     <div class="support-actions">
-                        <!--
-                            IMPORTANT:
-                            Replace the example URL below with your actual ticket system URL.
-                            For example: https://helpdesk.pvnccdsb.on.ca or similar.
-                        -->
                         <a class="button-primary" href="https://example-helpdesk-url" target="_blank" rel="noopener noreferrer">
                             Open a support ticket
                         </a>
-
-                        <!--
-                            IMPORTANT:
-                            Replace the email address below with your actual helpdesk email.
-                        -->
                         <a class="button-outline" href="mailto:helpdesk@example.org">
                             Email the helpdesk
                         </a>
@@ -678,10 +608,8 @@
                 </div>
             </div>
         </section>
-
     </main>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -698,8 +626,9 @@
                     <h3>Key links</h3>
                     <p><a href="index.html">Home</a></p>
                     <p><a href="resources.html">Resources</a></p>
-                    <p><a href="calendar.html">Training calendar</a></p>
-                    <p><a href="support.html">Support information</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About</a></p>
                 </div>
 
                 <div class="footer-column">
@@ -727,15 +656,6 @@
         </div>
 
         <script>
-            /*
-                Simple JavaScript used on this page:
-                - Set the current year in the footer automatically
-                - Handle the mobile navigation show/hide
-
-                This is intentionally basic so it is easy to understand.
-            */
-
-            // Set current year
             (function () {
                 var yearSpan = document.getElementById("year");
                 if (yearSpan) {
@@ -744,7 +664,6 @@
                 }
             })();
 
-            // Toggle mobile navigation
             function toggleMobileNav() {
                 var menu = document.getElementById("mobile-menu");
                 var button = document.querySelector(".nav-toggle-button");
@@ -753,7 +672,6 @@
                     return;
                 }
 
-                // If menu is currently visible, hide it; otherwise show it.
                 var isOpen = menu.style.display === "flex";
                 if (isOpen) {
                     menu.style.display = "none";
