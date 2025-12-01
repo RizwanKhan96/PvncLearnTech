@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        PVNCCDSB Learning Technologies
+        About Page (about.html)
+
+        This page provides information about the Learning Technologies department,
+        its mission, team, and how it supports PVNCCDSB schools.
+    -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | PVNCCDSB Learning Technologies</title>
+    <meta name="description" content="Learn about the PVNCCDSB Learning Technologies department, our mission, and how we support teaching and learning across our Catholic schools.">
+
+    <style>
+        :root {
+            --color-primary: #1D3557;
+            --color-primary-light: #457B9D;
+            --color-accent: #E63946;
+            --color-background: #F8FAFC;
+            --color-surface: #FFFFFF;
+            --color-text-main: #1F2933;
+            --color-text-muted: #6B7280;
+            --color-border: #E5E7EB;
+            --color-focus: #FBBF24;
+
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+
+            --content-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--color-background);
+            color: var(--color-text-main);
+            line-height: 1.5;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        :focus {
+            outline: 2px solid var(--color-focus);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 16px;
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-md) 0;
+        }
+
+        .site-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .site-subtitle {
+            font-size: 0.9rem;
+            margin: 0;
+            color: #E5E7EB;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a[aria-current="page"] {
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-focus);
+        }
+
+        .nav-toggle-button {
+            display: none;
+            background: none;
+            border: 1px solid #FFFFFF;
+            color: white;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links-mobile {
+            display: none;
+            flex-direction: column;
+            gap: var(--space-sm);
+            padding: var(--space-sm) 0 var(--space-md);
+        }
+
+        .nav-links-mobile a {
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        main {
+            padding: var(--space-xl) 0 var(--space-lg);
+        }
+
+        .page-header {
+            margin-bottom: var(--space-lg);
+        }
+
+        .page-header h1 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            font-size: 1.7rem;
+        }
+
+        .page-header p {
+            margin-top: 0;
+            margin-bottom: 0;
+            color: var(--color-text-muted);
+            font-size: 0.95rem;
+        }
+
+        .content-section {
+            background-color: var(--color-surface);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .content-section h2 {
+            margin-top: 0;
+            margin-bottom: var(--space-md);
+            font-size: 1.3rem;
+            color: var(--color-primary);
+        }
+
+        .content-section h3 {
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-sm);
+            font-size: 1.1rem;
+        }
+
+        .content-section p {
+            margin-top: 0;
+            margin-bottom: var(--space-md);
+            font-size: 0.95rem;
+        }
+
+        .content-section ul {
+            margin-top: 0;
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-lg);
+        }
+
+        .content-section li {
+            margin-bottom: var(--space-xs);
+            font-size: 0.95rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .value-card {
+            background-color: var(--color-background);
+            padding: var(--space-md);
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+
+        .value-card h3 {
+            margin-top: 0;
+            margin-bottom: var(--space-xs);
+            font-size: 1rem;
+            color: var(--color-primary);
+        }
+
+        .value-card p {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background-color: #FEF3C7;
+            border: 1px solid #FDE68A;
+            border-radius: 8px;
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .button-primary {
+            display: inline-block;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 4px;
+            border: none;
+            background-color: var(--color-primary);
+            color: white;
+            font-size: 0.95rem;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button-primary:hover {
+            background-color: #16324A;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #111827;
+            color: #D1D5DB;
+            padding: var(--space-lg) 0;
+            margin-top: var(--space-lg);
+        }
+
+        .footer-inner {
+            font-size: 0.85rem;
+        }
+
+        .footer-inner a {
+            color: #93C5FD;
+        }
+
+        @media (max-width: 900px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-inner {
+                flex-wrap: wrap;
+                gap: var(--space-sm);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-toggle-button {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header>
+        <div class="container header-inner">
+            <div>
+                <p class="site-title">PVNCCDSB Learning Technologies</p>
+                <p class="site-subtitle">About our department</p>
+            </div>
+
+            <nav aria-label="Primary">
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html">Support Information</a>
+                    <a href="about.html" aria-current="page">About</a>
+                </div>
+
+                <button class="nav-toggle-button" type="button" aria-expanded="false" aria-controls="mobile-menu" onclick="toggleMobileNav()">
+                    Menu
+                </button>
+
+                <div id="mobile-menu" class="nav-links-mobile" aria-label="Mobile">
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="calendar.html">Training Calendar</a>
+                    <a href="support.html">Support Information</a>
+                    <a href="about.html" aria-current="page">About</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="container">
+        <section class="page-header" aria-labelledby="about-heading">
+            <h1 id="about-heading">About Learning Technologies</h1>
+            <p>
+                Supporting teaching and learning with technology across the Peterborough Victoria Northumberland
+                and Clarington Catholic District School Board.
+            </p>
+        </section>
+
+        <!-- MISSION SECTION -->
+        <section class="content-section" aria-labelledby="mission-heading">
+            <h2 id="mission-heading">Our Mission</h2>
+            <p>
+                The Learning Technologies department exists to support effective teaching and learning
+                through the thoughtful integration of technology in Catholic education.
+            </p>
+            <p>
+                We work alongside educators, administrators, and students to ensure that technology
+                serves as a tool for growth, creativity, and connection—always grounded in our
+                Catholic values and commitment to the whole person.
+            </p>
+        </section>
+
+        <!-- WHAT WE DO SECTION -->
+        <section class="content-section" aria-labelledby="what-we-do-heading">
+            <h2 id="what-we-do-heading">What We Do</h2>
+            
+            <h3>Supporting Educators</h3>
+            <p>
+                We provide practical support, training, and resources to help teachers use technology
+                confidently and effectively in their classrooms.
+            </p>
+            <ul>
+                <li>Professional learning sessions on Google Workspace for Education</li>
+                <li>One-on-one coaching and troubleshooting</li>
+                <li>Classroom technology setup and support</li>
+                <li>Curriculum-aligned technology integration strategies</li>
+            </ul>
+
+            <h3>Supporting Students</h3>
+            <p>
+                We ensure students have the tools, access, and skills they need to learn and grow
+                in a technology-rich environment.
+            </p>
+            <ul>
+                <li>Chromebook distribution and device management</li>
+                <li>Student account setup and access support</li>
+                <li>Digital citizenship and online safety education</li>
+                <li>Technical troubleshooting and helpdesk support</li>
+            </ul>
+
+            <h3>Infrastructure and Systems</h3>
+            <p>
+                Behind the scenes, we maintain the systems and infrastructure that make
+                teaching and learning possible.
+            </p>
+            <ul>
+                <li>Google Workspace administration and security</li>
+                <li>Network connectivity and Wi-Fi access</li>
+                <li>Device management and inventory</li>
+                <li>Educational software and application management</li>
+            </ul>
+        </section>
+
+        <!-- OUR VALUES SECTION -->
+        <section class="content-section" aria-labelledby="values-heading">
+            <h2 id="values-heading">Our Values</h2>
+            <p>
+                Technology in Catholic education is never just about devices or software.
+                Our work is guided by principles that honor the dignity of each person and
+                the mission of Catholic schools.
+            </p>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Accessibility</h3>
+                    <p>
+                        Every student and staff member deserves equitable access to the tools
+                        and support they need to succeed.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Simplicity</h3>
+                    <p>
+                        Technology should serve learning, not complicate it. We focus on
+                        practical, user-friendly solutions.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Stewardship</h3>
+                    <p>
+                        We care for the resources entrusted to us—devices, data, and the
+                        time and attention of those we serve.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>
+                        We promote safe, responsible, and faith-filled use of technology
+                        that respects human dignity.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- GOOGLE ECOSYSTEM SECTION -->
+        <section class="content-section" aria-labelledby="ecosystem-heading">
+            <h2 id="ecosystem-heading">Our Google Ecosystem</h2>
+            <p>
+                PVNCCDSB uses Google Workspace for Education as the foundation of our
+                technology environment. This includes:
+            </p>
+            <ul>
+                <li><strong>Chromebooks</strong> – Primary student devices across all schools</li>
+                <li><strong>Google Classroom</strong> – Assignment distribution, feedback, and communication</li>
+                <li><strong>Google Drive</strong> – Cloud storage and file organization</li>
+                <li><strong>Gmail</strong> – Email for staff and students (where appropriate)</li>
+                <li><strong>Google Docs, Sheets, Slides</strong> – Collaborative creation and editing</li>
+                <li><strong>Google Meet</strong> – Video conferencing and virtual learning</li>
+            </ul>
+            <p>
+                This integrated ecosystem allows for seamless collaboration, accessibility
+                from any device, and simplified management for our schools.
+            </p>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="content-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Get in Touch</h2>
+            
+            <div class="highlight-box">
+                <p>
+                    <strong>Need help or have a question?</strong> The best way to reach us is through
+                    the official helpdesk ticket system. This ensures your request is tracked and
+                    handled efficiently.
+                </p>
+            </div>
+
+            <p>
+                <a class="button-primary" href="support.html">
+                    View support information
+                </a>
+            </p>
+
+            <p>
+                You can also explore our <a href="resources.html">Resources library</a> for
+                self-service guides and tutorials, or check the <a href="calendar.html">Training calendar</a>
+                for upcoming learning opportunities.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <p>
+                &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board.
+                Learning Technologies.
+            </p>
+            <p>
+                <a href="index.html">Back to home</a>
+            </p>
+        </div>
+
+        <script>
+            // Set current year
+            (function () {
+                var yearSpan = document.getElementById("year");
+                if (yearSpan) {
+                    yearSpan.textContent = new Date().getFullYear();
+                }
+            })();
+
+            // Simple mobile nav toggle
+            function toggleMobileNav() {
+                var menu = document.getElementById("mobile-menu");
+                var button = document.querySelector(".nav-toggle-button");
+
+                if (!menu || !button) {
+                    return;
+                }
+
+                var isOpen = menu.style.display === "flex";
+                if (isOpen) {
+                    menu.style.display = "none";
+                    button.setAttribute("aria-expanded", "false");
+                } else {
+                    menu.style.display = "flex";
+                    button.setAttribute("aria-expanded", "true");
+                }
+            }
+        </script>
+    </footer>
+</body>
+</html>
