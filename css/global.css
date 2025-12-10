@@ -1,109 +1,152 @@
-/* PVNCCDSB Learning Technologies - Global Design System
- * Professional CSS Design System - Extracted from resources.html
- * Aligned with Catholic School Brand Colors and Best Practices
+/* ============================================================================
+ * PVNCCDSB Learning Technologies - Global CSS
+ * ============================================================================
+ * PURPOSE:
+ *   - Design system tokens (colors, typography, spacing)
+ *   - Base element styles (headings, paragraphs, lists, forms)
+ *   - Global utilities and accessibility support
+ *
+ * FILES IN THIS SYSTEM:
+ *   1. css/global.css      : Design tokens & base styles (this file)
+ *   2. css/components.css  : Reusable components (header, cards, buttons, etc.)
+ *   3. css/responsive.css  : Media queries & responsive breakpoints
+ *
+ * USAGE IN HTML:
+ *   <link rel="stylesheet" href="css/global.css">
+ *   <link rel="stylesheet" href="css/components.css">
+ *   <link rel="stylesheet" href="css/responsive.css">
+ *
+ * MAINTENANCE:
+ *   - Update CSS variables in :root to cascade changes globally
+ *   - Never add component-specific styles here
+ *   - All inline styles in HTML files should be removed
+ *
+ * LAST UPDATED: 2025-12-10
+ * MAINTAINER: Learning Technologies Team
+ * ============================================================================
+ */
+
+/* ============================================================================
+ * DESIGN SYSTEM - CSS CUSTOM PROPERTIES (VARIABLES)
+ * ============================================================================
+ * Central place to define all design tokens. Changes here cascade everywhere.
+ * Format: --system-name: value; (e.g., --color-primary, --space-md)
  */
 
 :root {
     /* ===== COLORS - CATHOLIC SCHOOL BRAND ===== */
-    /* Primary Colors - Professional Navy */
-    --color-primary: #003D7A;
-    --color-primary-dark: #002952;
-    --color-primary-light: #1E5B99;
+    /* Navy blue primary brand color with light/dark variants */
+    --color-primary: #003D7A;              /* Navy Blue - Primary brand */
+    --color-primary-dark: #002952;         /* Darker navy for contrast */
+    --color-primary-light: #1E5B99;        /* Lighter navy for highlights */
     
-    /* Secondary - Catholic Brand Purple */
-    --color-secondary: #6B2C91;
+    /* Secondary colors for visual hierarchy */
+    --color-secondary: #6B2C91;            /* Purple - Secondary accent */
     
-    /* Accent - Gold */
-    --color-accent: #D4AF37;
-    --color-accent-dark: #B8942E;
+    /* Accent colors for highlights, hover states */
+    --color-accent: #D4AF37;               /* Gold - Primary accent */
+    --color-accent-dark: #B8942E;          /* Gold - Darker for hover */
     
-    /* Status Colors */
-    --color-success: #0F8A3D;
-    --color-info: #0073B1;
-    --color-warning: #F59E0B;
+    /* Status colors for messaging */
+    --color-success: #0F8A3D;              /* Green - Success states */
+    --color-info: #0073B1;                 /* Blue - Information states */
+    --color-warning: #F59E0B;              /* Amber - Warning states */
     
-    /* Neutrals */
-    --color-white: #FFFFFF;
-    --color-gray-50: #F9FAFB;
-    --color-gray-100: #F3F4F6;
-    --color-gray-200: #E5E7EB;
-    --color-gray-300: #D1D5DB;
-    --color-gray-400: #9CA3AF;
-    --color-gray-500: #6B7280;
-    --color-gray-600: #4B5563;
-    --color-gray-700: #374151;
-    --color-gray-800: #1F2937;
-    --color-gray-900: #111827;
+    /* Neutral grayscale for text, borders, backgrounds */
+    --color-white: #FFFFFF;                /* Pure white */
+    --color-gray-50: #F9FAFB;              /* Almost white - page backgrounds */
+    --color-gray-100: #F3F4F6;             /* Very light gray - subtle backgrounds */
+    --color-gray-200: #E5E7EB;             /* Light gray - borders, dividers */
+    --color-gray-300: #D1D5DB;             /* Light-medium gray */
+    --color-gray-400: #9CA3AF;             /* Medium gray */
+    --color-gray-500: #6B7280;             /* Medium-dark gray */
+    --color-gray-600: #4B5563;             /* Dark gray - secondary text */
+    --color-gray-700: #374151;             /* Darker gray */
+    --color-gray-800: #1F2937;             /* Very dark gray - footer */
+    --color-gray-900: #111827;             /* Darkest gray - footer backgrounds */
     
-    /* Semantic */
-    --color-background: var(--color-gray-50);
-    --color-surface: var(--color-white);
-    --color-text-primary: var(--color-gray-900);
-    --color-text-secondary: var(--color-gray-600);
-    --color-border: var(--color-gray-200);
+    /* Semantic colors - purpose-based, use instead of raw hex */
+    --color-background: var(--color-gray-50);      /* Page background */
+    --color-surface: var(--color-white);           /* Cards, containers */
+    --color-text-primary: var(--color-gray-900);   /* Main text */
+    --color-text-secondary: var(--color-gray-600); /* Secondary text */
+    --color-border: var(--color-gray-200);         /* Borders, dividers */
     
     /* ===== TYPOGRAPHY ===== */
+    /* Font families */
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'Courier New', monospace;
     
-    --font-size-xs: 0.75rem;      /* 12px */
-    --font-size-sm: 0.875rem;     /* 14px */
-    --font-size-base: 1rem;       /* 16px */
-    --font-size-lg: 1.125rem;     /* 18px */
-    --font-size-xl: 1.25rem;      /* 20px */
-    --font-size-2xl: 1.5rem;      /* 24px */
-    --font-size-3xl: 1.875rem;    /* 30px */
-    --font-size-4xl: 2.25rem;     /* 36px */
+    /* Type scale - progressively larger sizes */
+    --font-size-xs: 0.75rem;      /* 12px - Captions, small labels */
+    --font-size-sm: 0.875rem;     /* 14px - Small text, labels */
+    --font-size-base: 1rem;       /* 16px - Body text, default */
+    --font-size-lg: 1.125rem;     /* 18px - Lead text, larger labels */
+    --font-size-xl: 1.25rem;      /* 20px - Subheadings */
+    --font-size-2xl: 1.5rem;      /* 24px - Section headings */
+    --font-size-3xl: 1.875rem;    /* 30px - Page headings */
+    --font-size-4xl: 2.25rem;     /* 36px - Hero headings */
     
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
+    /* Font weights for emphasis */
+    --font-weight-normal: 400;     /* Regular text */
+    --font-weight-medium: 500;     /* Medium emphasis */
+    --font-weight-semibold: 600;   /* Strong emphasis */
+    --font-weight-bold: 700;       /* Very strong emphasis */
     
-    --line-height-tight: 1.2;
-    --line-height-normal: 1.5;
-    --line-height-relaxed: 1.75;
+    /* Line heights for readability */
+    --line-height-tight: 1.2;      /* Headlines (120% of font size) */
+    --line-height-normal: 1.5;     /* Body text (150% of font size) */
+    --line-height-relaxed: 1.75;   /* Spacious text (175% of font size) */
     
-    /* ===== SPACING ===== */
-    --space-xs: 0.25rem;   /* 4px */
-    --space-sm: 0.5rem;    /* 8px */
-    --space-md: 1rem;      /* 16px */
-    --space-lg: 1.5rem;    /* 24px */
-    --space-xl: 2rem;      /* 32px */
-    --space-2xl: 3rem;     /* 48px */
-    --space-3xl: 4rem;     /* 64px */
+    /* ===== SPACING SCALE ===== */
+    /* Consistent spacing rhythm for margins and padding */
+    --space-xs: 0.25rem;    /* 4px   - Minimal spacing */
+    --space-sm: 0.5rem;     /* 8px   - Small spacing */
+    --space-md: 1rem;       /* 16px  - Standard spacing */
+    --space-lg: 1.5rem;     /* 24px  - Large spacing */
+    --space-xl: 2rem;       /* 32px  - Extra large spacing */
+    --space-2xl: 3rem;      /* 48px  - Section spacing */
+    --space-3xl: 4rem;      /* 64px  - Major sections */
     
     /* ===== BORDER RADIUS ===== */
-    --radius-sm: 0.375rem;  /* 6px */
-    --radius-md: 0.5rem;    /* 8px */
-    --radius-lg: 0.75rem;   /* 12px */
-    --radius-xl: 1rem;      /* 16px */
+    /* Rounded corners - from subtle to very rounded */
+    --radius-sm: 0.375rem;  /* 6px   - Subtle rounding */
+    --radius-md: 0.5rem;    /* 8px   - Standard radius */
+    --radius-lg: 0.75rem;   /* 12px  - Large radius */
+    --radius-xl: 1rem;      /* 16px  - Extra large radius */
     
     /* ===== SHADOWS ===== */
+    /* Layered shadows for depth - sm, md, lg, xl */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     
     /* ===== TRANSITIONS ===== */
-    --transition: all 0.2s ease;
+    /* Smooth animation timing for interactive elements */
+    --transition: all 0.2s ease;  /* 200ms smooth transition */
     
     /* ===== LAYOUT ===== */
-    --container-max: 1280px;
+    /* Maximum content width for wide screens */
+    --container-max: 1280px;      /* Desktop container width */
 }
 
-/* ===== RESET & BASE ===== */
+/* ============================================================================
+ * GLOBAL RESETS
+ * ============================================================================
+ * Normalize default browser styles across all elements
+ */
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box;      /* Include padding/border in element width */
     margin: 0;
     padding: 0;
 }
 
 html {
-    font-size: 16px;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
+    font-size: 16px;             /* Base font size for rem calculations */
+    scroll-behavior: smooth;     /* Smooth scrolling for anchor links */
+    -webkit-font-smoothing: antialiased;  /* Better text rendering */
 }
 
 body {
@@ -114,7 +157,11 @@ body {
     font-size: var(--font-size-base);
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* ============================================================================
+ * TYPOGRAPHY BASE STYLES
+ * ============================================================================
+ * Default styles for all text elements
+ */
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -175,7 +222,10 @@ a:hover {
     color: var(--color-primary-light);
 }
 
-/* ===== LISTS ===== */
+/* ============================================================================
+ * LISTS
+ * ============================================================================
+ */
 
 ul, ol {
     margin: 0 0 var(--space-md) var(--space-lg);
@@ -187,7 +237,10 @@ li {
     margin-bottom: var(--space-sm);
 }
 
-/* ===== CODE ===== */
+/* ============================================================================
+ * CODE & PREFORMATTED TEXT
+ * ============================================================================
+ */
 
 code {
     font-family: var(--font-mono);
@@ -216,7 +269,11 @@ pre code {
     font-size: inherit;
 }
 
-/* ===== FORM ELEMENTS ===== */
+/* ============================================================================
+ * FORM ELEMENTS
+ * ============================================================================
+ * Consistent styling for all form inputs
+ */
 
 input,
 textarea,
@@ -251,7 +308,10 @@ label {
     color: var(--color-text-primary);
 }
 
-/* ===== TABLES ===== */
+/* ============================================================================
+ * TABLES
+ * ============================================================================
+ */
 
 table {
     width: 100%;
@@ -281,7 +341,10 @@ tbody tr:hover {
     background: var(--color-gray-50);
 }
 
-/* ===== IMAGES ===== */
+/* ============================================================================
+ * IMAGES & MEDIA
+ * ============================================================================
+ */
 
 img {
     max-width: 100%;
@@ -289,7 +352,11 @@ img {
     display: block;
 }
 
-/* ===== ACCESSIBILITY ===== */
+/* ============================================================================
+ * ACCESSIBILITY & UTILITIES
+ * ============================================================================
+ * Skip links, screen reader text, focus indicators
+ */
 
 .skip-link {
     position: absolute;
