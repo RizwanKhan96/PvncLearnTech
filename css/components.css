@@ -141,8 +141,10 @@
 /* ===== TOOLBAR/SEARCH SECTION ===== */
 
 .toolbar-section {
-  background: linear-gradient(135deg, rgba(0, 61, 122, 0.08), rgba(0, 61, 122, 0.04));
+  background: white;
   padding: var(--space-xl) var(--space-lg);
+  border-top: 1px solid var(--color-gray-200);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .toolbar-container {
