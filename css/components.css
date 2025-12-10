@@ -138,13 +138,37 @@
   min-height: 44px;
 }
 
+/* ===== PAGE HEADER ===== */
+
+.page-header {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  color: white;
+  padding: var(--space-2xl) 0;
+}
+
+.page-header__container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.page-header__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+.page-header__description {
+  font-size: var(--font-size-lg);
+  color: #F3F4F6;
+  max-width: 800px;
+}
+
 /* ===== TOOLBAR/SEARCH SECTION ===== */
 
 .toolbar-section {
   background: white;
   padding: var(--space-xl) var(--space-lg);
-  border-top: 1px solid var(--color-gray-200);
-  border-bottom: 1px solid var(--color-gray-200);
 }
 
 .toolbar-container {
@@ -220,14 +244,14 @@
 
 .btn--primary {
   background: var(--color-primary);
-  color: white;  /* Ensure white text */
+  color: white;
 }
 
 .btn--primary:hover {
   background: var(--color-primary-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  color: white;  /* Keep white on hover */
+  color: white;
 }
 
 .btn--secondary {
@@ -282,11 +306,11 @@
 /* ===== CARDS ===== */
 
 .card {
-  background: white;
+  background: #F0F4F8;
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-gray-200);
+  border: 1px solid #E0E7F1;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
@@ -344,10 +368,10 @@
 
 /* Feature Cards */
 .feature-card {
-  background: white;
+  background: #F0F4F8;
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
-  border: 2px solid var(--color-gray-200);
+  border: 2px solid #E0E7F1;
   transition: var(--transition);
 }
 
@@ -390,8 +414,8 @@
 
 .feature-card__tag {
   display: inline-block;
-  background: rgba(0, 61, 122, 0.15);
-  color: var(--color-primary);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
