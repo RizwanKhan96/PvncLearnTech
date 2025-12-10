@@ -164,66 +164,6 @@
   max-width: 800px;
 }
 
-/* ===== TOOLBAR/SEARCH SECTION ===== */
-
-.toolbar-section {
-  background: #FFFFFF;
-  padding: var(--space-xl) var(--space-lg);
-}
-
-.toolbar-container {
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0;
-}
-
-.search-bar {
-  display: flex;
-  gap: var(--space-sm);
-  max-width: 600px;
-}
-
-.search-input {
-  flex: 1;
-  padding: var(--space-md);
-  border: 2px solid var(--color-accent);
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-base);
-  font-family: inherit;
-  background: #FFFFFF;
-  color: var(--color-text-primary);
-  transition: var(--transition);
-}
-
-.search-input::placeholder {
-  color: var(--color-text-light);
-}
-
-.search-input:focus {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 2px;
-  border-color: var(--color-accent);
-}
-
-.search-button {
-  background: var(--color-accent);
-  color: var(--color-primary-dark);
-  border: none;
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-md);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: var(--font-size-base);
-  min-height: auto;
-}
-
-.search-button:hover {
-  background: var(--color-accent-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
-}
-
 /* ===== BUTTONS ===== */
 
 .btn {
