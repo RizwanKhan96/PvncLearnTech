@@ -9,25 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- External Stylesheets: MUST be in this order -->
-    <!-- Design tokens, variables, and base styles -->
+    <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/global.css">
-    <!-- Component-specific styles (buttons, cards, alerts, etc.) -->
     <link rel="stylesheet" href="css/components.css">
-    <!-- Responsive design and media query overrides -->
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <!-- ACCESSIBILITY: Skip to main content link for keyboard navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- ============================================================
-         HEADER SECTION: Navigation and branding
-         Uses standard header, header__top, header__main components
-         Includes mobile menu button (hidden on desktop, shows on mobile)
-         ============================================================ -->
     <header class="header">
-        <!-- Header Top Bar: Organization info and quick links -->
         <div class="header__top">
             <div class="header__top-content">
                 <div>PVNCCDSB - Faith • Excellence • Service</div>
@@ -42,10 +32,8 @@
             </div>
         </div>
         
-        <!-- Header Main: Logo, title, and primary navigation -->
         <div class="header__main">
             <div class="header__content">
-                <!-- Branding: Logo and site title -->
                 <div class="header__branding">
                     <div class="header__logo">LT</div>
                     <div class="header__title-group">
@@ -54,7 +42,6 @@
                     </div>
                 </div>
 
-                <!-- Primary Navigation Menu (hidden on mobile, visible on desktop) -->
                 <nav class="nav" aria-label="Main navigation">
                     <a href="index.html" class="nav__link">
                         <span>🏠</span> Home
@@ -65,7 +52,6 @@
                     <a href="calendar.html" class="nav__link">
                         <span>📅</span> Training
                     </a>
-                    <!-- Current page indicator -->
                     <a href="support.html" class="nav__link nav__link--active">
                         <span>🆘</span> Support
                     </a>
@@ -74,51 +60,35 @@
                     </a>
                 </nav>
 
-                <!-- Mobile Menu Button (shown only on screens < 768px) -->
                 <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
             </div>
         </div>
     </header>
 
-    <!-- ============================================================
-         MAIN CONTENT AREA
-         Page-specific content goes here (hero, support options, FAQ, etc.)
-         ============================================================ -->
     <main id="main-content">
-        <!-- HERO SECTION: Page title and introduction
-             Styles: .hero, .hero__container, .hero__icon, .hero__title, .hero__subtitle -->
-        <section class="hero">
-            <div class="hero__container">
-                <div class="hero__icon">🆘</div>
-                <h1 class="hero__title">IT Support & Help Desk</h1>
-                <p class="hero__subtitle">Get technical assistance and troubleshooting support for technology issues</p>
+        <!-- PAGE HEADER: Replaces hero section for page title and description -->
+        <section class="page-header">
+            <div class="page-header__container">
+                <h2 class="page-header__title">IT Support & Help Desk</h2>
+                <p class="page-header__description">Get technical assistance and troubleshooting support for technology issues</p>
             </div>
         </section>
 
-        <!-- MAIN CONTENT WRAPPER: Contains support options, contact info, and FAQ
-             Styles: .main-content (sets max-width and padding) -->
         <div class="main-content">
-            <!-- ALERT COMPONENT: Info box about support services
-                 Styles: .alert, .alert--info, .alert__title
-                 Purpose: Quick overview of available support channels -->
+            <!-- Alert: Support Overview -->
             <div class="alert alert--info">
                 <div class="alert__title">ℹ️ Multiple Ways to Get Help</div>
                 <p>The PVNCCDSB IT Help Desk provides support through several channels. Choose the method that works best for your situation. For urgent issues, please call during business hours. For non-urgent requests, submit a ticket through our online portal.</p>
             </div>
 
-            <!-- SUPPORT OPTIONS SECTION: Primary contact methods
-                 Styles: .section__title (includes bottom border accent)
-                 Content: Ticket system, phone, email, office hours -->
+            <!-- Support Options Section -->
             <h2 class="section__title">Getting Support</h2>
             
-            <!-- CONTACT CARD GRID: Multiple support contact options
-                 Layout: Responsive grid (auto-fit columns on desktop, single column on mobile)
-                 Note: See responsive.css for media query adjustments -->
+            <!-- Contact Card Grid -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-                <!-- CONTACT CARD 1: Online Ticket System
-                     Used for non-urgent support requests and documentation -->
+                <!-- Contact Card 1: Online Ticket System -->
                 <div style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 2rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
-                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #003D7A; margin-bottom: 0.5rem;">🎆 Submit a Ticket</h3>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #003D7A; margin-bottom: 0.5rem;">🏆 Submit a Ticket</h3>
                     <p style="color: #6B7280; margin-bottom: 1rem; line-height: 1.6;">
                         Submit a support ticket through our online help desk system. Best for non-urgent requests, software issues, and hardware support. You'll receive a ticket number to track progress.
                     </p>
@@ -132,8 +102,7 @@
                     </p>
                 </div>
 
-                <!-- CONTACT CARD 2: Phone Support
-                     Used for urgent issues that need immediate attention -->
+                <!-- Contact Card 2: Phone Support -->
                 <div style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 2rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
                     <h3 style="font-size: 1.25rem; font-weight: 700; color: #003D7A; margin-bottom: 0.5rem;">📄 Phone Support</h3>
                     <p style="color: #6B7280; margin-bottom: 1rem; line-height: 1.6;">
@@ -149,8 +118,7 @@
                     </p>
                 </div>
 
-                <!-- CONTACT CARD 3: Email Support
-                     Used for less urgent issues and detailed problem descriptions -->
+                <!-- Contact Card 3: Email Support -->
                 <div style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 2rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);">
                     <h3 style="font-size: 1.25rem; font-weight: 700; color: #003D7A; margin-bottom: 0.5rem;">📧 Email Support</h3>
                     <p style="color: #6B7280; margin-bottom: 1rem; line-height: 1.6;">
@@ -167,16 +135,12 @@
                 </div>
             </div>
 
-            <!-- COMMON ISSUES SECTION: Quick troubleshooting guide
-                 Styles: .section__title (includes bottom border accent)
-                 Content: Most frequently encountered issues and solutions -->
+            <!-- Common Issues Section -->
             <h2 class="section__title">Common Issues & Quick Fixes</h2>
             
-            <!-- PRIORITY ISSUES LIST: Color-coded by urgency
-                 Layout: Responsive layout (single column on mobile, 2 columns on desktop)
-                 Status colors: Critical (red), Warning (yellow), Info (blue) -->
+            <!-- Issues Grid -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-                <!-- CRITICAL ISSUE CARD: Service Down -->
+                <!-- Critical Issue: Cannot Access Classroom -->
                 <div style="border-left: 4px solid #DC2626; background: rgba(220, 38, 38, 0.05); padding: 1.5rem; border-radius: 0.5rem;">
                     <h3 style="font-size: 1.125rem; font-weight: 600; color: #DC2626; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                         🔴 Cannot Access Google Classroom
@@ -192,7 +156,7 @@
                     </ul>
                 </div>
 
-                <!-- WARNING ISSUE CARD: Limited Spots -->
+                <!-- Warning Issue: Forgot Password -->
                 <div style="border-left: 4px solid #F59E0B; background: rgba(245, 158, 11, 0.05); padding: 1.5rem; border-radius: 0.5rem;">
                     <h3 style="font-size: 1.125rem; font-weight: 600; color: #F59E0B; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                         ⚠️ Forgot Your Password
@@ -208,7 +172,7 @@
                     </ul>
                 </div>
 
-                <!-- INFO ISSUE CARD: Setup Help -->
+                <!-- Info Issue: Device Setup -->
                 <div style="border-left: 4px solid #0073B1; background: rgba(0, 115, 177, 0.1); padding: 1.5rem; border-radius: 0.5rem;">
                     <h3 style="font-size: 1.125rem; font-weight: 600; color: #0073B1; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                         📄 How to Set Up Your Device
@@ -224,7 +188,7 @@
                     </ul>
                 </div>
 
-                <!-- INFO ISSUE CARD: Account Access -->
+                <!-- Info Issue: Tool Access -->
                 <div style="border-left: 4px solid #0073B1; background: rgba(0, 115, 177, 0.1); padding: 1.5rem; border-radius: 0.5rem;">
                     <h3 style="font-size: 1.125rem; font-weight: 600; color: #0073B1; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                         📄 Getting Access to a New Tool
@@ -240,7 +204,7 @@
                     </ul>
                 </div>
 
-                <!-- WARNING ISSUE CARD: Connectivity -->
+                <!-- Warning Issue: Connectivity -->
                 <div style="border-left: 4px solid #F59E0B; background: rgba(245, 158, 11, 0.05); padding: 1.5rem; border-radius: 0.5rem;">
                     <h3 style="font-size: 1.125rem; font-weight: 600; color: #F59E0B; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                         ⚠️ Internet Connection Issues
@@ -256,7 +220,7 @@
                     </ul>
                 </div>
 
-                <!-- CRITICAL ISSUE CARD: Printer Down -->
+                <!-- Critical Issue: Printer -->
                 <div style="border-left: 4px solid #DC2626; background: rgba(220, 38, 38, 0.05); padding: 1.5rem; border-radius: 0.5rem;">
                     <h3 style="font-size: 1.125rem; font-weight: 600; color: #DC2626; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
                         🔴 Printer Not Working
@@ -273,16 +237,12 @@
                 </div>
             </div>
 
-            <!-- FAQ SECTION: Frequently Asked Questions
-                 Styles: .section__title (includes bottom border accent)
-                 Content: Answers to common support questions -->
+            <!-- FAQ Section -->
             <h2 class="section__title">Frequently Asked Questions</h2>
             
-            <!-- FAQ ITEM: Expandable sections with questions and answers
-                 Layout: Single column (full width)
-                 Interactivity: Click to expand/collapse each answer -->
+            <!-- FAQ Items -->
             <div style="display: grid; gap: 1.5rem; margin-bottom: 3rem;">
-                <!-- FAQ ITEM 1 -->
+                <!-- FAQ 1 -->
                 <details style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.5rem; cursor: pointer;">
                     <summary style="font-weight: 600; color: #003D7A; font-size: 1.125rem; display: flex; align-items: center; gap: 0.5rem;">
                         ▶ What should I do if I think my account has been compromised?
@@ -292,7 +252,7 @@
                     </p>
                 </details>
 
-                <!-- FAQ ITEM 2 -->
+                <!-- FAQ 2 -->
                 <details style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.5rem; cursor: pointer;">
                     <summary style="font-weight: 600; color: #003D7A; font-size: 1.125rem; display: flex; align-items: center; gap: 0.5rem;">
                         ▶ Can I install software on my school device?
@@ -302,7 +262,7 @@
                     </p>
                 </details>
 
-                <!-- FAQ ITEM 3 -->
+                <!-- FAQ 3 -->
                 <details style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.5rem; cursor: pointer;">
                     <summary style="font-weight: 600; color: #003D7A; font-size: 1.125rem; display: flex; align-items: center; gap: 0.5rem;">
                         ▶ How do I back up my files?
@@ -312,7 +272,7 @@
                     </p>
                 </details>
 
-                <!-- FAQ ITEM 4 -->
+                <!-- FAQ 4 -->
                 <details style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.5rem; cursor: pointer;">
                     <summary style="font-weight: 600; color: #003D7A; font-size: 1.125rem; display: flex; align-items: center; gap: 0.5rem;">
                         ▶ What's the Help Desk response time for urgent issues?
@@ -322,7 +282,7 @@
                     </p>
                 </details>
 
-                <!-- FAQ ITEM 5 -->
+                <!-- FAQ 5 -->
                 <details style="background: white; border: 1px solid #E5E7EB; border-radius: 0.75rem; padding: 1.5rem; cursor: pointer;">
                     <summary style="font-weight: 600; color: #003D7A; font-size: 1.125rem; display: flex; align-items: center; gap: 0.5rem;">
                         ▶ Can I use personal devices on the school network?
@@ -333,7 +293,7 @@
                 </details>
             </div>
 
-            <!-- CONTACT FORM SECTION (Optional) -->
+            <!-- Final Alert -->
             <div class="alert alert--info">
                 <div class="alert__title">📧 Still Need Help?</div>
                 <p>
@@ -343,16 +303,9 @@
         </div>
     </main>
 
-    <!-- ============================================================
-         FOOTER SECTION: Site-wide footer
-         Contains: Quick links, support contact, social links
-         Styles: .footer, .footer__container, .footer__grid, etc.
-         ============================================================ -->
     <footer class="footer">
         <div class="footer__container">
-            <!-- Footer Grid: 4-column layout (auto-fits on smaller screens) -->
             <div class="footer__grid">
-                <!-- Footer Column 1: Department info -->
                 <div class="footer__column">
                     <h3>About Learning Technologies</h3>
                     <p>
@@ -365,7 +318,6 @@
                     </p>
                 </div>
 
-                <!-- Footer Column 2: Site navigation links -->
                 <div class="footer__column">
                     <h3>Quick Links</h3>
                     <p><a href="index.html">Home</a></p>
@@ -375,7 +327,6 @@
                     <p><a href="about.html">About Our Team</a></p>
                 </div>
 
-                <!-- Footer Column 3: Support contact information -->
                 <div class="footer__column">
                     <h3>Support & Contact</h3>
                     <p>
@@ -392,7 +343,6 @@
                     </p>
                 </div>
 
-                <!-- Footer Column 4: External board resources -->
                 <div class="footer__column">
                     <h3>Board Resources</h3>
                     <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
@@ -402,13 +352,10 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom: Copyright and social links -->
             <div class="footer__bottom">
-                <!-- Copyright notice with dynamic year -->
                 <div>
                     &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
                 </div>
-                <!-- Social media links -->
                 <div class="footer__social">
                     <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
                     <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
@@ -418,13 +365,7 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-         JAVASCRIPT: Minimal inline script for dynamic functionality
-         Only includes: Year in footer (no complex logic here)
-         NOTE: Additional functionality should be in separate js/ file
-         ============================================================ -->
     <script>
-        // Set current year in footer copyright notice
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
