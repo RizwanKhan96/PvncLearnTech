@@ -12,75 +12,36 @@
     <link rel="stylesheet" href="css/responsive.css">
     
     <style>
-        /* Hero Section - Professional Navy Blue */
+        /* Hero Section - Professional Navy Blue (matches resources.html) */
         .hero {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
             color: white;
-            padding: 4rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
+            padding: var(--space-2xl) 0;
         }
 
         .hero__container {
             max-width: var(--container-max);
             margin: 0 auto;
             padding: 0 var(--space-lg);
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero__content {
-            max-width: 800px;
-        }
-
-        .hero__badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.25);
-            color: var(--color-accent);
-            padding: var(--space-xs) var(--space-md);
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            margin-bottom: var(--space-md);
-            border: 1px solid rgba(212, 175, 55, 0.4);
         }
 
         .hero__title {
-            font-size: var(--font-size-5xl);
+            font-size: var(--font-size-3xl);
             font-weight: 700;
-            margin-bottom: var(--space-md);
-            line-height: 1.2;
-            color: white;
+            margin-bottom: var(--space-sm);
         }
 
         .hero__description {
             font-size: var(--font-size-lg);
-            line-height: 1.7;
-            margin-bottom: var(--space-xl);
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        /* Main content - white background */
-        .main {
-            background: white;
+            color: #F3F4F6;
+            max-width: 800px;
         }
     </style>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- Header -->
+    <!-- Header (same as resources.html) -->
     <header class="header">
         <div class="header__top">
             <div class="header__top-content">
@@ -120,60 +81,36 @@
     </header>
 
     <main id="main-content">
-        <!-- Hero Section -->
+        <!-- Hero Section (like page-header in resources.html) -->
         <section class="hero">
             <div class="hero__container">
-                <div class="hero__content">
-                    <span class="hero__badge">✝️ Catholic Education Technology</span>
-                    <h2 class="hero__title">Empowering Learning Through Technology</h2>
-                    <p class="hero__description">
-                        Comprehensive resources, training, and support for using technology 
-                        in PVNCCDSB classrooms. Discover guides, best practices, and tools 
-                        that align with our Catholic values and educational mission.
-                    </p>
-                    <form class="search-form" action="resources.html" method="get">
-                        <input 
-                            type="search" 
-                            name="q"
-                            class="search-form__input" 
-                            placeholder="Search guides, tools, or topics (e.g., Chromebook, Google Classroom)"
-                            aria-label="Search resources"
-                        >
-                        <button type="submit" class="search-form__button">Search</button>
-                    </form>
-                </div>
+                <h2 class="hero__title">Empowering Learning Through Technology</h2>
+                <p class="hero__description">
+                    Comprehensive resources, training, and support for using technology in PVNCCDSB classrooms. 
+                    Discover guides, best practices, and tools that align with our Catholic values and educational mission.
+                </p>
             </div>
         </section>
 
-        <!-- Stats Bar -->
-        <section class="stats-bar">
-            <div class="stats-bar__container">
-                <div class="stat">
-                    <div class="stat__icon">📚</div>
-                    <div class="stat__value">13</div>
-                    <div class="stat__label">Learning Guides</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__icon">👨‍🏫</div>
-                    <div class="stat__value">50+</div>
-                    <div class="stat__label">Training Sessions</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__icon">🏫</div>
-                    <div class="stat__value">45</div>
-                    <div class="stat__label">Schools Supported</div>
-                </div>
-                <div class="stat">
-                    <div class="stat__icon">⚡</div>
-                    <div class="stat__value">24/7</div>
-                    <div class="stat__label">Tech Support</div>
-                </div>
+        <!-- Search/Toolbar Section (like resources.html) -->
+        <section class="toolbar-section">
+            <div class="toolbar-container">
+                <form class="search-bar" action="resources.html" method="get">
+                    <input 
+                        type="search" 
+                        name="q"
+                        class="search-input" 
+                        placeholder="Search guides, tools, or topics (e.g., Chromebook, Google Classroom)"
+                        aria-label="Search resources"
+                    >
+                    <button type="submit" class="search-button">Search</button>
+                </form>
             </div>
         </section>
 
         <div class="main">
+            <!-- Support Alert -->
             <section class="section">
-                <!-- Support Alert -->
                 <div class="alert alert--warning">
                     <div class="alert__content">
                         <div class="alert__icon">⚠️</div>
@@ -195,8 +132,10 @@
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Quick Access Section -->
+            <!-- Quick Access Section -->
+            <section class="section">
                 <div class="section__header">
                     <span class="section__badge">Quick Access</span>
                     <h2 class="section__title">Start Here</h2>
@@ -367,7 +306,7 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (same as resources.html) -->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__grid">
