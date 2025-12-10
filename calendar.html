@@ -9,694 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            /* Catholic School Brand Colors */
-            --color-primary: #003D7A;
-            --color-primary-dark: #002952;
-            --color-primary-light: #1E5B99;
-            --color-accent: #D4AF37;
-            --color-accent-dark: #B8942E;
-            --color-secondary: #6B2C91;
-            --color-success: #0F8A3D;
-            --color-info: #0073B1;
-            --color-warning: #F59E0B;
-            
-            /* Neutrals */
-            --color-white: #FFFFFF;
-            --color-gray-50: #F9FAFB;
-            --color-gray-100: #F3F4F6;
-            --color-gray-200: #E5E7EB;
-            --color-gray-300: #D1D5DB;
-            --color-gray-400: #9CA3AF;
-            --color-gray-500: #6B7280;
-            --color-gray-600: #4B5563;
-            --color-gray-700: #374151;
-            --color-gray-800: #1F2937;
-            --color-gray-900: #111827;
-            
-            /* Semantic */
-            --color-background: var(--color-gray-50);
-            --color-surface: var(--color-white);
-            --color-text-primary: var(--color-gray-900);
-            --color-text-secondary: var(--color-gray-600);
-            --color-border: var(--color-gray-200);
-            
-            /* Spacing */
-            --space-xs: 0.25rem;
-            --space-sm: 0.5rem;
-            --space-md: 1rem;
-            --space-lg: 1.5rem;
-            --space-xl: 2rem;
-            --space-2xl: 3rem;
-            --space-3xl: 4rem;
-            
-            /* Typography */
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-size-xs: 0.75rem;
-            --font-size-sm: 0.875rem;
-            --font-size-base: 1rem;
-            --font-size-lg: 1.125rem;
-            --font-size-xl: 1.25rem;
-            --font-size-2xl: 1.5rem;
-            --font-size-3xl: 1.875rem;
-            --font-size-4xl: 2.25rem;
-            
-            /* Layout */
-            --container-max: 1280px;
-            --content-max: 1100px;
-            
-            /* Effects */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --radius-sm: 0.375rem;
-            --radius-md: 0.5rem;
-            --radius-lg: 0.75rem;
-            --radius-xl: 1rem;
-            
-            --transition: all 0.2s ease;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background-color: var(--color-background);
-            color: var(--color-text-primary);
-            line-height: 1.6;
-            font-size: var(--font-size-base);
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -100px;
-            left: var(--space-md);
-            background: var(--color-primary);
-            color: white;
-            padding: var(--space-sm) var(--space-md);
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            z-index: 1000;
-            font-weight: 600;
-        }
-
-        .skip-link:focus {
-            top: var(--space-md);
-            outline: 2px solid var(--color-accent);
-            outline-offset: 2px;
-        }
-
-        /* Header Styles */
-        .header {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-            box-shadow: var(--shadow-md);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header__top {
-            background: var(--color-primary-dark);
-            padding: var(--space-sm) 0;
-            font-size: var(--font-size-sm);
-        }
-
-        .header__top-content {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--color-gray-200);
-        }
-
-        .header__top-links {
-            display: flex;
-            gap: var(--space-lg);
-        }
-
-        .header__top-links a {
-            color: var(--color-gray-200);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-
-        .header__top-links a:hover {
-            color: var(--color-accent);
-        }
-
-        .header__main {
-            padding: var(--space-md) 0;
-        }
-
-        .header__content {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header__branding {
-            display: flex;
-            align-items: center;
-            gap: var(--space-md);
-        }
-
-        .header__logo {
-            width: 50px;
-            height: 50px;
-            background: var(--color-white);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: var(--font-size-2xl);
-            font-weight: 700;
-            color: var(--color-primary);
-            box-shadow: var(--shadow-md);
-        }
-
-        .header__title-group h1 {
-            font-size: var(--font-size-xl);
-            font-weight: 700;
-            color: var(--color-white);
-            margin-bottom: var(--space-xs);
-        }
-
-        .header__subtitle {
-            font-size: var(--font-size-sm);
-            color: var(--color-gray-200);
-            font-weight: 400;
-        }
-
-        .nav {
-            display: flex;
-            gap: var(--space-xs);
-        }
-
-        .nav__link {
-            color: var(--color-white);
-            text-decoration: none;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: var(--radius-md);
-            font-weight: 500;
-            font-size: var(--font-size-sm);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-
-        .nav__link:hover,
-        .nav__link--active {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .nav__link--active {
-            font-weight: 600;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: rgba(255, 255, 255, 0.15);
-            border: none;
-            color: white;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: var(--radius-md);
-            font-size: var(--font-size-base);
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
-            color: white;
-            padding: var(--space-3xl) 0;
-            text-align: center;
-        }
-
-        .hero__container {
-            max-width: var(--content-max);
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-        }
-
-        .hero__icon {
-            font-size: 4rem;
-            margin-bottom: var(--space-md);
-        }
-
-        .hero__title {
-            font-size: var(--font-size-4xl);
-            font-weight: 700;
-            margin-bottom: var(--space-md);
-            line-height: 1.2;
-        }
-
-        .hero__subtitle {
-            font-size: var(--font-size-xl);
-            margin-bottom: var(--space-xl);
-            opacity: 0.95;
-        }
-
-        /* Main Content */
-        .main-content {
-            max-width: var(--content-max);
-            margin: 0 auto;
-            padding: var(--space-3xl) var(--space-lg);
-        }
-
-        /* Alert Boxes */
-        .alert {
-            padding: var(--space-lg);
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--space-xl);
-            border-left: 4px solid;
-        }
-
-        .alert--info {
-            background: rgba(0, 115, 177, 0.1);
-            border-color: var(--color-info);
-            color: var(--color-gray-800);
-        }
-
-        .alert--success {
-            background: rgba(15, 138, 61, 0.1);
-            border-color: var(--color-success);
-            color: var(--color-gray-800);
-        }
-
-        .alert__title {
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-
-        /* Filter Section */
-        .filters {
-            background: var(--color-white);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            margin-bottom: var(--space-2xl);
-        }
-
-        .filters__title {
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            margin-bottom: var(--space-md);
-            color: var(--color-primary-dark);
-        }
-
-        .filters__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--space-md);
-        }
-
-        .filter-group {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xs);
-        }
-
-        .filter-group__label {
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            color: var(--color-text-secondary);
-        }
-
-        .filter-group__select {
-            padding: var(--space-sm) var(--space-md);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            font-family: var(--font-sans);
-            font-size: var(--font-size-base);
-            background: var(--color-white);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-group__select:hover {
-            border-color: var(--color-primary);
-        }
-
-        .filter-group__select:focus {
-            outline: 2px solid var(--color-primary);
-            outline-offset: 2px;
-        }
-
-        /* Section Title */
-        .section__title {
-            font-size: var(--font-size-2xl);
-            font-weight: 700;
-            color: var(--color-primary-dark);
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-sm);
-            border-bottom: 2px solid var(--color-accent);
-        }
-
-        /* Event Cards */
-        .events-grid {
-            display: grid;
-            gap: var(--space-xl);
-        }
-
-        .event-card {
-            background: var(--color-white);
-            border: 2px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .event-card:hover {
-            box-shadow: var(--shadow-lg);
-            border-color: var(--color-accent);
-        }
-
-        .event-card__header {
-            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
-            color: white;
-            padding: var(--space-lg);
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-md);
-        }
-
-        .event-card__date {
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: var(--radius-md);
-            padding: var(--space-sm) var(--space-md);
-            text-align: center;
-            min-width: 80px;
-            flex-shrink: 0;
-        }
-
-        .event-card__month {
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            text-transform: uppercase;
-            opacity: 0.9;
-        }
-
-        .event-card__day {
-            font-size: var(--font-size-3xl);
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .event-card__header-info {
-            flex: 1;
-        }
-
-        .event-card__title {
-            font-size: var(--font-size-xl);
-            font-weight: 700;
-            margin-bottom: var(--space-sm);
-        }
-
-        .event-card__meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-            font-size: var(--font-size-sm);
-            opacity: 0.95;
-        }
-
-        .event-card__meta-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-
-        .event-card__body {
-            padding: var(--space-xl);
-        }
-
-        .event-card__description {
-            color: var(--color-text-secondary);
-            margin-bottom: var(--space-lg);
-            line-height: 1.7;
-        }
-
-        .event-card__details {
-            display: grid;
-            gap: var(--space-md);
-            margin-bottom: var(--space-lg);
-        }
-
-        .event-card__detail {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-sm);
-        }
-
-        .event-card__detail-label {
-            font-weight: 600;
-            color: var(--color-primary-dark);
-            min-width: 100px;
-        }
-
-        .event-card__detail-value {
-            color: var(--color-text-secondary);
-        }
-
-        .event-card__tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-lg);
-        }
-
-        .event-card__tag {
-            background: var(--color-gray-100);
-            color: var(--color-text-secondary);
-            padding: var(--space-xs) var(--space-md);
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-        }
-
-        .event-card__footer {
-            display: flex;
-            gap: var(--space-md);
-            padding-top: var(--space-lg);
-            border-top: 1px solid var(--color-border);
-        }
-
-        .event-card__button {
-            flex: 1;
-            padding: var(--space-md) var(--space-lg);
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            text-decoration: none;
-            text-align: center;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-family: var(--font-sans);
-            font-size: var(--font-size-base);
-        }
-
-        .event-card__button--primary {
-            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
-            color: white;
-        }
-
-        .event-card__button--primary:hover {
-            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .event-card__button--secondary {
-            background: var(--color-white);
-            color: var(--color-primary);
-            border: 2px solid var(--color-primary);
-        }
-
-        .event-card__button--secondary:hover {
-            background: var(--color-primary);
-            color: white;
-        }
-
-        .event-card__status {
-            display: inline-block;
-            padding: var(--space-xs) var(--space-md);
-            border-radius: var(--radius-lg);
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .event-card__status--full {
-            background: rgba(220, 38, 38, 0.1);
-            color: #DC2626;
-        }
-
-        .event-card__status--spots {
-            background: rgba(245, 158, 11, 0.1);
-            color: var(--color-warning);
-        }
-
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: var(--space-3xl);
-            color: var(--color-text-secondary);
-        }
-
-        .empty-state__icon {
-            font-size: 4rem;
-            margin-bottom: var(--space-md);
-            opacity: 0.5;
-        }
-
-        .empty-state__title {
-            font-size: var(--font-size-xl);
-            font-weight: 600;
-            margin-bottom: var(--space-sm);
-            color: var(--color-text-primary);
-        }
-
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
-            color: var(--color-gray-300);
-            padding: var(--space-3xl) 0 var(--space-xl);
-            margin-top: var(--space-3xl);
-        }
-
-        .footer__container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 var(--space-lg);
-        }
-
-        .footer__grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--space-2xl);
-            margin-bottom: var(--space-2xl);
-        }
-
-        .footer__column h3 {
-            color: white;
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--space-md);
-            font-weight: 600;
-        }
-
-        .footer__column p {
-            margin-bottom: var(--space-sm);
-            line-height: 1.6;
-        }
-
-        .footer__column a {
-            color: var(--color-accent);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer__column a:hover {
-            color: var(--color-accent-dark);
-            text-decoration: underline;
-        }
-
-        .footer__bottom {
-            border-top: 1px solid var(--color-gray-700);
-            padding-top: var(--space-lg);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-            font-size: var(--font-size-sm);
-        }
-
-        .footer__social {
-            display: flex;
-            gap: var(--space-md);
-        }
-
-        .footer__social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: var(--font-size-lg);
-        }
-
-        .footer__social-link:hover {
-            background: var(--color-accent);
-            color: var(--color-primary-dark);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header__top {
-                display: none;
-            }
-
-            .nav {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero__title {
-                font-size: var(--font-size-2xl);
-            }
-
-            .filters__grid {
-                grid-template-columns: 1fr;
-            }
-
-            .event-card__header {
-                flex-direction: column;
-            }
-
-            .event-card__footer {
-                flex-direction: column;
-            }
-
-            .footer__bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-    </style>
+    <!-- External Stylesheets: MUST be in this order -->
+    <!-- Design tokens, variables, and base styles -->
+    <link rel="stylesheet" href="css/global.css">
+    <!-- Component-specific styles (buttons, cards, alerts, etc.) -->
+    <link rel="stylesheet" href="css/components.css">
+    <!-- Responsive design and media query overrides -->
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
+    <!-- ACCESSIBILITY: Skip to main content link for keyboard navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <!-- ============================================================
+         HEADER SECTION: Navigation and branding
+         Uses standard header, header__top, header__main components
+         Includes mobile menu button (hidden on desktop, shows on mobile)
+         ============================================================ -->
     <header class="header">
+        <!-- Header Top Bar: Organization info and quick links -->
         <div class="header__top">
             <div class="header__top-content">
                 <div>PVNCCDSB - Faith • Excellence • Service</div>
@@ -711,8 +42,10 @@
             </div>
         </div>
         
+        <!-- Header Main: Logo, title, and primary navigation -->
         <div class="header__main">
             <div class="header__content">
+                <!-- Branding: Logo and site title -->
                 <div class="header__branding">
                     <div class="header__logo">LT</div>
                     <div class="header__title-group">
@@ -721,6 +54,7 @@
                     </div>
                 </div>
 
+                <!-- Primary Navigation Menu (hidden on mobile, visible on desktop) -->
                 <nav class="nav" aria-label="Main navigation">
                     <a href="index.html" class="nav__link">
                         <span>🏠</span> Home
@@ -728,6 +62,7 @@
                     <a href="resources.html" class="nav__link">
                         <span>📚</span> Resources
                     </a>
+                    <!-- Current page indicator -->
                     <a href="calendar.html" class="nav__link nav__link--active">
                         <span>📅</span> Training
                     </a>
@@ -739,12 +74,19 @@
                     </a>
                 </nav>
 
+                <!-- Mobile Menu Button (shown only on screens < 768px) -->
                 <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
             </div>
         </div>
     </header>
 
+    <!-- ============================================================
+         MAIN CONTENT AREA
+         Page-specific content goes here (hero, filters, events, etc.)
+         ============================================================ -->
     <main id="main-content">
+        <!-- HERO SECTION: Page title and introduction
+             Styles: .hero, .hero__container, .hero__icon, .hero__title, .hero__subtitle -->
         <section class="hero">
             <div class="hero__container">
                 <div class="hero__icon">📅</div>
@@ -753,15 +95,25 @@
             </div>
         </section>
 
+        <!-- MAIN CONTENT WRAPPER: Contains filters, events grid, and alerts
+             Styles: .main-content (sets max-width and padding) -->
         <div class="main-content">
+            <!-- ALERT COMPONENT: Info box with icon and message
+                 Styles: .alert, .alert--info, .alert__title
+                 Purpose: Contextual information about training programs -->
             <div class="alert alert--info">
                 <div class="alert__title">ℹ️ About Our Training</div>
                 <p>The Learning Technologies team offers a variety of professional development opportunities throughout the year. Sessions range from introductory workshops to advanced training, covering tools, strategies, and best practices for technology integration in Catholic education.</p>
             </div>
 
+            <!-- FILTERS SECTION: Event filtering controls
+                 Styles: .filters, .filters__title, .filters__grid, .filter-group, .filter-group__label, .filter-group__select
+                 Purpose: Allow users to filter events by month, audience, format, and topic
+                 NOTE: Filter functionality requires JavaScript in separate js/ file -->
             <div class="filters">
                 <h2 class="filters__title">Filter Events</h2>
                 <div class="filters__grid">
+                    <!-- Each filter uses BEM naming convention for CSS specificity -->
                     <div class="filter-group">
                         <label class="filter-group__label" for="month-filter">Month</label>
                         <select id="month-filter" class="filter-group__select">
@@ -809,16 +161,42 @@
                 </div>
             </div>
 
+            <!-- SECTION TITLE: Visually separates upcoming events from filters
+                 Styles: .section__title (includes bottom border accent) -->
             <h2 class="section__title">Upcoming Events</h2>
 
+            <!-- EVENTS GRID: Responsive grid layout for event cards
+                 Styles: .events-grid (uses CSS Grid, gaps adjust on mobile)
+                 Layout: Single column on mobile, responsive on desktop
+                 Note: See responsive.css for media query overrides -->
             <div class="events-grid">
-                <!-- Event 1 -->
+                <!-- ====================================================
+                     EVENT CARD COMPONENT (Repeated for each event)
+                     ====================================================
+                     Styles: .event-card, .event-card__header, .event-card__body,
+                             .event-card__footer, .event-card__button, .event-card__status
+                     
+                     CARD STRUCTURE:
+                     1. Header: Date box + title + meta (time, format, audience)
+                     2. Body: Description, details, tags, status badges
+                     3. Footer: Register and More Details buttons
+                     
+                     RESPONSIVE BEHAVIOR:
+                     - Desktop: Header flex row (date left, info right)
+                     - Mobile: Header flex column (date top, info bottom) - see responsive.css
+                     
+                     STATUS BADGES:
+                     - event-card__status--spots: Limited spots available (warning)
+                     - event-card__status--full: Session full / Waitlist available (error)
+                     ==================================================== -->
                 <div class="event-card">
                     <div class="event-card__header">
+                        <!-- Date Display Box (left side on desktop, top on mobile) -->
                         <div class="event-card__date">
                             <div class="event-card__month">Dec</div>
                             <div class="event-card__day">10</div>
                         </div>
+                        <!-- Header Info (title and meta details) -->
                         <div class="event-card__header-info">
                             <h3 class="event-card__title">Introduction to Google Classroom</h3>
                             <div class="event-card__meta">
@@ -828,11 +206,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Card Body: Main content including description, details, tags -->
                     <div class="event-card__body">
                         <p class="event-card__description">
                             Learn the fundamentals of Google Classroom including creating classes, posting assignments, providing feedback, and using the grading features. Perfect for teachers new to Google Classroom or those wanting to strengthen their foundational skills.
                         </p>
 
+                        <!-- Event Details: Presenter, location, prerequisites -->
                         <div class="event-card__details">
                             <div class="event-card__detail">
                                 <span class="event-card__detail-label">Presenter:</span>
@@ -848,12 +228,14 @@
                             </div>
                         </div>
 
+                        <!-- Tag/Badge List: Topic, difficulty level, duration -->
                         <div class="event-card__tags">
                             <span class="event-card__tag">Google Workspace</span>
                             <span class="event-card__tag">Beginner</span>
                             <span class="event-card__tag">1.5 Hours</span>
                         </div>
 
+                        <!-- Card Footer: Action buttons -->
                         <div class="event-card__footer">
                             <a href="#" class="event-card__button event-card__button--primary">Register Now</a>
                             <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
@@ -861,7 +243,7 @@
                     </div>
                 </div>
 
-                <!-- Event 2 -->
+                <!-- EVENT CARD 2 -->
                 <div class="event-card">
                     <div class="event-card__header">
                         <div class="event-card__date">
@@ -878,6 +260,7 @@
                         </div>
                     </div>
                     <div class="event-card__body">
+                        <!-- STATUS BADGE: Limited spots remaining (warning state) -->
                         <span class="event-card__status event-card__status--spots">⚠️ Only 5 spots remaining</span>
                         
                         <p class="event-card__description" style="margin-top: 1rem;">
@@ -912,7 +295,7 @@
                     </div>
                 </div>
 
-                <!-- Event 3 -->
+                <!-- EVENT CARD 3 -->
                 <div class="event-card">
                     <div class="event-card__header">
                         <div class="event-card__date">
@@ -962,7 +345,7 @@
                     </div>
                 </div>
 
-                <!-- Event 4 -->
+                <!-- EVENT CARD 4 -->
                 <div class="event-card">
                     <div class="event-card__header">
                         <div class="event-card__date">
@@ -1012,7 +395,7 @@
                     </div>
                 </div>
 
-                <!-- Event 5 -->
+                <!-- EVENT CARD 5 -->
                 <div class="event-card">
                     <div class="event-card__header">
                         <div class="event-card__date">
@@ -1062,7 +445,7 @@
                     </div>
                 </div>
 
-                <!-- Event 6 -->
+                <!-- EVENT CARD 6 -->
                 <div class="event-card">
                     <div class="event-card__header">
                         <div class="event-card__date">
@@ -1079,6 +462,7 @@
                         </div>
                     </div>
                     <div class="event-card__body">
+                        <!-- STATUS BADGE: Session full with waitlist available (error state) -->
                         <span class="event-card__status event-card__status--full">🔴 Full - Waitlist Available</span>
                         
                         <p class="event-card__description" style="margin-top: 1rem;">
@@ -1115,6 +499,9 @@
                 </div>
             </div>
 
+            <!-- SUCCESS ALERT: Newsletter signup prompt
+                 Styles: .alert, .alert--success, .alert__title
+                 Purpose: Encourage users to stay updated on training opportunities -->
             <div class="alert alert--success" style="margin-top: 3rem;">
                 <div class="alert__title">📧 Stay Updated</div>
                 <p>Want to receive notifications about new training sessions? Subscribe to the Learning Technologies newsletter or contact your school's assigned specialist to be added to the professional development mailing list.</p>
@@ -1122,9 +509,16 @@
         </div>
     </main>
 
+    <!-- ============================================================
+         FOOTER SECTION: Site-wide footer
+         Contains: Quick links, support contact, social links
+         Styles: .footer, .footer__container, .footer__grid, etc.
+         ============================================================ -->
     <footer class="footer">
         <div class="footer__container">
+            <!-- Footer Grid: 4-column layout (auto-fits on smaller screens) -->
             <div class="footer__grid">
+                <!-- Footer Column 1: Department info -->
                 <div class="footer__column">
                     <h3>About Learning Technologies</h3>
                     <p>
@@ -1137,6 +531,7 @@
                     </p>
                 </div>
 
+                <!-- Footer Column 2: Site navigation links -->
                 <div class="footer__column">
                     <h3>Quick Links</h3>
                     <p><a href="index.html">Home</a></p>
@@ -1146,6 +541,7 @@
                     <p><a href="about.html">About Our Team</a></p>
                 </div>
 
+                <!-- Footer Column 3: Support contact information -->
                 <div class="footer__column">
                     <h3>Support & Contact</h3>
                     <p>
@@ -1162,6 +558,7 @@
                     </p>
                 </div>
 
+                <!-- Footer Column 4: External board resources -->
                 <div class="footer__column">
                     <h3>Board Resources</h3>
                     <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
@@ -1171,10 +568,13 @@
                 </div>
             </div>
 
+            <!-- Footer Bottom: Copyright and social links -->
             <div class="footer__bottom">
+                <!-- Copyright notice with dynamic year -->
                 <div>
                     &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
                 </div>
+                <!-- Social media links -->
                 <div class="footer__social">
                     <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
                     <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
@@ -1184,7 +584,13 @@
         </div>
     </footer>
 
+    <!-- ============================================================
+         JAVASCRIPT: Minimal inline script for dynamic functionality
+         Only includes: Year in footer (no filtering logic here)
+         NOTE: Additional filtering logic should be in separate js/ file
+         ============================================================ -->
     <script>
+        // Set current year in footer copyright notice
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
