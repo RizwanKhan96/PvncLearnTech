@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="css/responsive.css">
     
     <style>
-        /* Hero Section - Specific to homepage */
+        /* Hero Section - Professional Navy Blue */
         .hero {
-            background: linear-gradient(135deg, #2C5282 0%, #1D3557 100%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
             color: white;
             padding: 4rem 0;
             position: relative;
@@ -46,14 +46,14 @@
 
         .hero__badge {
             display: inline-block;
-            background: rgba(244, 162, 97, 0.2);
-            color: #F4A261;
+            background: rgba(212, 175, 55, 0.25);
+            color: var(--color-accent);
             padding: var(--space-xs) var(--space-md);
             border-radius: var(--radius-lg);
             font-size: var(--font-size-sm);
             font-weight: 600;
             margin-bottom: var(--space-md);
-            border: 1px solid rgba(244, 162, 97, 0.3);
+            border: 1px solid rgba(212, 175, 55, 0.4);
         }
 
         .hero__title {
@@ -69,6 +69,11 @@
             line-height: 1.7;
             margin-bottom: var(--space-xl);
             color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Main content - white background */
+        .main {
+            background: white;
         }
     </style>
 </head>
