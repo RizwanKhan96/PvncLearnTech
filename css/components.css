@@ -306,14 +306,15 @@
 /* ===== CARDS ===== */
 
 .card {
-  background: #F0F4F8;
-  border-radius: var(--radius-xl);
+  background: rgba(0, 61, 122, 0.06);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 61, 122, 0.25);
   padding: var(--space-xl);
   box-shadow: var(--shadow-sm);
-  border: 1px solid #E0E7F1;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .card:hover {
@@ -368,16 +369,18 @@
 
 /* Feature Cards */
 .feature-card {
-  background: #F0F4F8;
+  background: rgba(0, 61, 122, 0.06);
   border-radius: var(--radius-lg);
+  border: 1px solid rgba(0, 61, 122, 0.25);
   padding: var(--space-lg);
-  border: 2px solid #E0E7F1;
   transition: var(--transition);
+  overflow: hidden;
 }
 
 .feature-card:hover {
   border-color: var(--color-accent);
   box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .feature-card__header {
@@ -388,14 +391,15 @@
 }
 
 .feature-card__icon {
-  width: 40px;
-  height: 40px;
+  width: 56px;
+  height: 56px;
   background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-xl);
+  margin-bottom: 0;
+  font-size: var(--font-size-2xl);
   flex-shrink: 0;
 }
 
@@ -403,13 +407,15 @@
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
   color: var(--color-primary-dark);
+  margin-bottom: 0;
 }
 
 .feature-card__description {
   color: var(--color-text-secondary);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   margin-bottom: var(--space-md);
-  line-height: var(--line-height-normal);
+  line-height: 1.6;
+  flex-grow: 1;
 }
 
 .feature-card__tag {
@@ -419,7 +425,9 @@
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-sm);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* ===== ALERTS ===== */
