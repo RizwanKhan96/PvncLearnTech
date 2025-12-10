@@ -108,7 +108,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--color-text-primary);
-  background: #FFFFFF;
+  background: #F9FAFB;
 }
 
 *, *::before, *::after {
@@ -242,6 +242,11 @@ select {
   background: var(--color-white);
   color: var(--color-text-primary);
   transition: var(--transition);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-gray-500);
 }
 
 input:focus,
