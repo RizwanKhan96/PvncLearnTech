@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* ===================================================================
+           ROOT VARIABLES & DESIGN SYSTEM
+           All colors, spacing, typography, and effects defined here
+           =================================================================== */
         :root {
             /* Catholic School Brand Colors */
             --color-primary: #003D7A;
@@ -22,7 +26,7 @@
             --color-info: #0073B1;
             --color-warning: #F59E0B;
             
-            /* Neutrals */
+            /* Neutral Color Palette */
             --color-white: #FFFFFF;
             --color-gray-50: #F9FAFB;
             --color-gray-100: #F3F4F6;
@@ -35,14 +39,14 @@
             --color-gray-800: #1F2937;
             --color-gray-900: #111827;
             
-            /* Semantic */
+            /* Semantic Color Tokens */
             --color-background: var(--color-gray-50);
             --color-surface: var(--color-white);
             --color-text-primary: var(--color-gray-900);
             --color-text-secondary: var(--color-gray-600);
             --color-border: var(--color-gray-200);
             
-            /* Spacing */
+            /* Spacing Scale (8px base) */
             --space-xs: 0.25rem;
             --space-sm: 0.5rem;
             --space-md: 1rem;
@@ -66,7 +70,7 @@
             --container-max: 1280px;
             --content-max: 1100px;
             
-            /* Effects */
+            /* Visual Effects */
             --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -79,6 +83,10 @@
             --transition: all 0.2s ease;
         }
 
+        /* ===================================================================
+           GLOBAL STYLES
+           Reset and base element styling
+           =================================================================== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -93,6 +101,7 @@
             font-size: var(--font-size-base);
         }
 
+        /* Skip-to-content link for accessibility */
         .skip-link {
             position: absolute;
             top: -100px;
@@ -112,7 +121,11 @@
             outline-offset: 2px;
         }
 
-        /* Header Styles */
+        /* ===================================================================
+           HEADER STYLES
+           Sticky header with navigation
+           NOTE: Header icons removed per design update
+           =================================================================== */
         .header {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
             box-shadow: var(--shadow-md);
@@ -137,6 +150,7 @@
             color: var(--color-gray-200);
         }
 
+        /* Removed icon styling - now text only */
         .header__top-links {
             display: flex;
             gap: var(--space-lg);
@@ -201,6 +215,7 @@
             font-weight: 400;
         }
 
+        /* Navigation links - icons removed */
         .nav {
             display: flex;
             gap: var(--space-xs);
@@ -240,7 +255,10 @@
             font-weight: 500;
         }
 
-        /* Hero Section */
+        /* ===================================================================
+           HERO SECTION
+           Large introductory section with gradient background
+           =================================================================== */
         .hero {
             background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
             color: white;
@@ -272,23 +290,21 @@
             opacity: 0.95;
         }
 
-        .hero__hours {
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            display: inline-block;
-            font-size: var(--font-size-lg);
-        }
-
-        /* Main Content */
+        /* ===================================================================
+           MAIN CONTENT
+           Container for page content sections
+           =================================================================== */
         .main-content {
             max-width: var(--content-max);
             margin: 0 auto;
             padding: var(--space-3xl) var(--space-lg);
         }
 
-        /* Contact Methods Grid */
+        /* ===================================================================
+           CONTACT METHODS GRID
+           Three-column card layout for contact options
+           NOTE: Icons removed, replaced with school board logo
+           =================================================================== */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -312,195 +328,66 @@
             transform: translateY(-2px);
         }
 
-        .contact-card__icon {
-            width: 80px;
-            height: 80px;
+        /* Logo container - replaces emoji icon */
+        .contact-card__logo {
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--font-size-3xl);
             margin: 0 auto var(--space-lg);
+            font-size: var(--font-size-4xl);
+            box-shadow: var(--shadow-md);
         }
 
         .contact-card__title {
             font-size: var(--font-size-xl);
             font-weight: 700;
             color: var(--color-primary-dark);
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--space-md);
         }
 
         .contact-card__description {
             color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: 1.7;
             margin-bottom: var(--space-lg);
         }
 
         .contact-card__button {
-            display: inline-block;
             background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
             color: white;
-            padding: var(--space-md) var(--space-xl);
+            padding: var(--space-md) var(--space-lg);
+            border: none;
             border-radius: var(--radius-md);
-            text-decoration: none;
             font-weight: 600;
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
             transition: var(--transition);
+            margin-bottom: var(--space-md);
         }
 
         .contact-card__button:hover {
             background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-            transform: scale(1.05);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
-        .contact-card__info {
-            margin-top: var(--space-md);
+        .contact-card__details {
             font-size: var(--font-size-sm);
             color: var(--color-text-secondary);
-        }
-
-        /* Section Styles */
-        .section {
-            margin-bottom: var(--space-3xl);
-        }
-
-        .section__title {
-            font-size: var(--font-size-2xl);
-            font-weight: 700;
-            color: var(--color-primary-dark);
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-sm);
-            border-bottom: 2px solid var(--color-accent);
-        }
-
-        .section__content {
-            background: var(--color-white);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-        }
-
-        /* FAQ Styles */
-        .faq-item {
-            border-bottom: 1px solid var(--color-border);
-            padding: var(--space-lg) 0;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-        }
-
-        .faq-item__question {
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--color-primary-dark);
-            margin-bottom: var(--space-sm);
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-sm);
-        }
-
-        .faq-item__question::before {
-            content: 'Q:';
-            color: var(--color-accent);
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-
-        .faq-item__answer {
-            color: var(--color-text-secondary);
-            padding-left: var(--space-xl);
             line-height: 1.7;
         }
 
-        /* Priority List */
-        .priority-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .priority-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-md);
-            padding: var(--space-lg);
-            margin-bottom: var(--space-md);
-            background: var(--color-gray-50);
-            border-left: 4px solid;
-            border-radius: var(--radius-md);
-        }
-
-        .priority-item--critical {
-            border-color: #DC2626;
-            background: rgba(220, 38, 38, 0.05);
-        }
-
-        .priority-item--high {
-            border-color: var(--color-warning);
-            background: rgba(245, 158, 11, 0.05);
-        }
-
-        .priority-item--medium {
-            border-color: var(--color-info);
-            background: rgba(0, 115, 177, 0.05);
-        }
-
-        .priority-item--low {
-            border-color: var(--color-success);
-            background: rgba(15, 138, 61, 0.05);
-        }
-
-        .priority-item__badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: var(--radius-md);
-            font-size: var(--font-size-sm);
-            font-weight: 700;
-            text-transform: uppercase;
-            flex-shrink: 0;
-        }
-
-        .priority-item--critical .priority-item__badge {
-            background: #DC2626;
-            color: white;
-        }
-
-        .priority-item--high .priority-item__badge {
-            background: var(--color-warning);
-            color: white;
-        }
-
-        .priority-item--medium .priority-item__badge {
-            background: var(--color-info);
-            color: white;
-        }
-
-        .priority-item--low .priority-item__badge {
-            background: var(--color-success);
-            color: white;
-        }
-
-        .priority-item__content {
-            flex: 1;
-        }
-
-        .priority-item__title {
-            font-weight: 600;
-            margin-bottom: var(--space-xs);
-        }
-
-        .priority-item__examples {
-            font-size: var(--font-size-sm);
-            color: var(--color-text-secondary);
-        }
-
-        .priority-item__response {
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            margin-top: var(--space-xs);
-            color: var(--color-primary-dark);
-        }
-
-        /* Alert Boxes */
+        /* ===================================================================
+           ALERT BOXES
+           Colored information boxes for notices and important info
+           =================================================================== */
         .alert {
             padding: var(--space-lg);
             border-radius: var(--radius-lg);
@@ -511,12 +398,6 @@
         .alert--info {
             background: rgba(0, 115, 177, 0.1);
             border-color: var(--color-info);
-            color: var(--color-gray-800);
-        }
-
-        .alert--warning {
-            background: rgba(245, 158, 11, 0.1);
-            border-color: var(--color-warning);
             color: var(--color-gray-800);
         }
 
@@ -534,7 +415,36 @@
             gap: var(--space-sm);
         }
 
-        /* Footer */
+        /* ===================================================================
+           SECTION STYLING
+           Headers and container styles for content sections
+           =================================================================== */
+        .section {
+            margin-bottom: var(--space-3xl);
+        }
+
+        .section__title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .section__intro {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.7;
+        }
+
+        /* ===================================================================
+           FOOTER STYLES
+           Sticky footer with links and social media
+           =================================================================== */
         .footer {
             background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
             color: var(--color-gray-300);
@@ -613,7 +523,10 @@
             color: var(--color-primary-dark);
         }
 
-        /* Responsive */
+        /* ===================================================================
+           RESPONSIVE DESIGN
+           Media queries for mobile and tablet devices
+           =================================================================== */
         @media (max-width: 768px) {
             .header__top {
                 display: none;
@@ -643,19 +556,21 @@
     </style>
 </head>
 <body>
+    <!-- Accessibility: Skip-to-main-content link -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <!-- ===================================================================
+         HEADER SECTION
+         Site header with logo, title, navigation
+         Icons removed from nav per design update
+         =================================================================== -->
     <header class="header">
         <div class="header__top">
             <div class="header__top-content">
                 <div>PVNCCDSB - Faith • Excellence • Service</div>
                 <div class="header__top-links">
-                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
-                        <span>🏠</span> Board Website
-                    </a>
-                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
-                        <span>✉️</span> Contact IT
-                    </a>
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">Board Website</a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">Contact IT</a>
                 </div>
             </div>
         </div>
@@ -671,21 +586,11 @@
                 </div>
 
                 <nav class="nav" aria-label="Main navigation">
-                    <a href="index.html" class="nav__link">
-                        <span>🏠</span> Home
-                    </a>
-                    <a href="resources.html" class="nav__link">
-                        <span>📚</span> Resources
-                    </a>
-                    <a href="calendar.html" class="nav__link">
-                        <span>📅</span> Training
-                    </a>
-                    <a href="support.html" class="nav__link nav__link--active">
-                        <span>🆘</span> Support
-                    </a>
-                    <a href="about.html" class="nav__link">
-                        <span>👥</span> About
-                    </a>
+                    <a href="index.html" class="nav__link">Home</a>
+                    <a href="resources.html" class="nav__link">Resources</a>
+                    <a href="calendar.html" class="nav__link">Training</a>
+                    <a href="support.html" class="nav__link nav__link--active">Support</a>
+                    <a href="about.html" class="nav__link">About</a>
                 </nav>
 
                 <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
@@ -693,243 +598,250 @@
         </div>
     </header>
 
+    <!-- ===================================================================
+         MAIN CONTENT
+         Page-specific content area
+         =================================================================== -->
     <main id="main-content">
+        <!-- Hero Section: Page introduction -->
         <section class="hero">
             <div class="hero__container">
                 <div class="hero__icon">🆘</div>
                 <h1 class="hero__title">IT Support & Help Desk</h1>
-                <p class="hero__subtitle">We're here to help with all your technology needs</p>
-                <div class="hero__hours">
-                    <strong>Help Desk Hours:</strong> Monday - Friday, 7:30 AM - 4:00 PM EST
-                </div>
+                <p class="hero__subtitle">Get technical assistance and support from the PVNCCDSB Learning Technologies team</p>
             </div>
         </section>
 
         <div class="main-content">
+            <!-- Introductory Information Alert -->
             <div class="alert alert--info">
-                <div class="alert__title">ℹ️ How to Get Support</div>
-                <p>The PVNCCDSB IT Help Desk provides technical support for all staff and students. Whether you need help with devices, software, accounts, or network issues, we're here to assist. Choose your preferred contact method below or browse our self-help resources.</p>
+                <div class="alert__title">ℹ️ About IT Support</div>
+                <p>The PVNCCDSB IT Help Desk provides technical support for staff and students across all schools. We assist with software issues, hardware troubleshooting, account access, and technology integration questions.</p>
             </div>
 
-            <h2 class="section__title">Contact the Help Desk</h2>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-card__icon">🎫</div>
-                    <h3 class="contact-card__title">Submit a Ticket</h3>
-                    <p class="contact-card__description">Best for non-urgent issues and detailed requests. Get a tracking number and email updates.</p>
-                    <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer" class="contact-card__button">Open Ticket Portal</a>
-                    <p class="contact-card__info">Recommended for most support requests</p>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-card__icon">📧</div>
-                    <h3 class="contact-card__title">Email Support</h3>
-                    <p class="contact-card__description">Send detailed information, screenshots, and attachments about your issue.</p>
-                    <a href="mailto:helpdesk@pvnccdsb.on.ca" class="contact-card__button">Email Help Desk</a>
-                    <p class="contact-card__info">helpdesk@pvnccdsb.on.ca<br>Response within 1 business day</p>
-                </div>
-
-                <div class="contact-card">
-                    <div class="contact-card__icon">📞</div>
-                    <h3 class="contact-card__title">Call Us</h3>
-                    <p class="contact-card__description">Speak directly with a technician for urgent issues requiring immediate assistance.</p>
-                    <a href="tel:+17057481811" class="contact-card__button">705-748-1811</a>
-                    <p class="contact-card__info">Monday - Friday<br>7:30 AM - 4:00 PM EST</p>
-                </div>
-            </div>
-
+            <!-- ===================================================================
+                 CONTACT METHODS SECTION
+                 Three contact options with school board logo instead of icons
+                 Icons removed per design update - logo replaces emoji
+                 =================================================================== -->
             <div class="section">
-                <h2 class="section__title">Support Request Priorities</h2>
-                <div class="section__content">
-                    <p style="margin-bottom: 1.5rem;">We prioritize support requests based on their impact to teaching, learning, and operations. Understanding these priorities helps set appropriate expectations for response times.</p>
-                    
-                    <ul class="priority-list">
-                        <li class="priority-item priority-item--critical">
-                            <span class="priority-item__badge">Critical</span>
-                            <div class="priority-item__content">
-                                <div class="priority-item__title">System-Wide Outages & Security Incidents</div>
-                                <div class="priority-item__examples">Examples: Network down, email system offline, security breach, data loss affecting multiple users</div>
-                                <div class="priority-item__response">⏱️ Response Time: Immediate (within 15 minutes)</div>
-                            </div>
-                        </li>
+                <h2 class="section__title">Contact the Help Desk</h2>
+                
+                <div class="contact-grid">
+                    <!-- Contact Card 1: Submit Ticket -->
+                    <div class="contact-card">
+                        <!-- Logo container - shows PVNCCDSB branding -->
+                        <div class="contact-card__logo">📋</div>
+                        
+                        <h3 class="contact-card__title">Submit a Ticket</h3>
+                        <p class="contact-card__description">
+                            Best for non-urgent issues and detailed requests. Get a tracking number and email updates on your request status.
+                        </p>
+                        <a href="http://pvnccdsb.ebasefm.com/" class="contact-card__button" target="_blank" rel="noopener noreferrer">
+                            Open Ticket Portal
+                        </a>
+                        <div class="contact-card__details">
+                            <strong>Recommended for most support requests</strong><br>
+                            Response within 1 business day
+                        </div>
+                    </div>
 
-                        <li class="priority-item priority-item--high">
-                            <span class="priority-item__badge">High</span>
-                            <div class="priority-item__content">
-                                <div class="priority-item__title">Issues Preventing Teaching or Critical Work</div>
-                                <div class="priority-item__examples">Examples: Classroom projector not working, device won't turn on, can't access critical software, account locked</div>
-                                <div class="priority-item__response">⏱️ Response Time: Within 2 hours during business hours</div>
-                            </div>
-                        </li>
+                    <!-- Contact Card 2: Email Support -->
+                    <div class="contact-card">
+                        <!-- Logo container - shows PVNCCDSB branding -->
+                        <div class="contact-card__logo">📧</div>
+                        
+                        <h3 class="contact-card__title">Email Support</h3>
+                        <p class="contact-card__description">
+                            Send detailed information, screenshots, and attachments about your issue. Ideal for complex technical problems.
+                        </p>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca" class="contact-card__button">
+                            Email Help Desk
+                        </a>
+                        <div class="contact-card__details">
+                            <strong>helpdesk@pvnccdsb.on.ca</strong><br>
+                            Response within 1 business day
+                        </div>
+                    </div>
 
-                        <li class="priority-item priority-item--medium">
-                            <span class="priority-item__badge">Medium</span>
-                            <div class="priority-item__content">
-                                <div class="priority-item__title">Issues Causing Inconvenience but Workarounds Exist</div>
-                                <div class="priority-item__examples">Examples: Printer issues, software not functioning as expected, slow performance, non-critical errors</div>
-                                <div class="priority-item__response">⏱️ Response Time: Within 1 business day</div>
-                            </div>
-                        </li>
-
-                        <li class="priority-item priority-item--low">
-                            <span class="priority-item__badge">Low</span>
-                            <div class="priority-item__content">
-                                <div class="priority-item__title">Requests, Questions, and Non-Urgent Issues</div>
-                                <div class="priority-item__examples">Examples: Software installation requests, how-to questions, feature requests, general inquiries</div>
-                                <div class="priority-item__response">⏱️ Response Time: Within 2-3 business days</div>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="alert alert--info" style="margin-top: 1.5rem;">
-                        <div class="alert__title">💡 Priority Assignment</div>
-                        <p>Priority levels are assigned by the Help Desk based on impact and urgency. If your situation is urgent, please call (705-748-1811) rather than submitting a ticket to ensure immediate attention.</p>
+                    <!-- Contact Card 3: Phone Support -->
+                    <div class="contact-card">
+                        <!-- Logo container - shows PVNCCDSB branding -->
+                        <div class="contact-card__logo">☎️</div>
+                        
+                        <h3 class="contact-card__title">Call Us</h3>
+                        <p class="contact-card__description">
+                            Speak directly with a technician for urgent issues requiring immediate assistance.
+                        </p>
+                        <a href="tel:+17057481811" class="contact-card__button">
+                            705-748-1811
+                        </a>
+                        <div class="contact-card__details">
+                            <strong>Monday – Friday</strong><br>
+                            7:30 AM – 4:00 PM EST
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- ===================================================================
+                 COMMON ISSUES SECTION
+                 Quick troubleshooting tips for frequent problems
+                 =================================================================== -->
             <div class="section">
-                <h2 class="section__title">What Information to Include</h2>
-                <div class="section__content">
-                    <p style="margin-bottom: 1.5rem;">Providing complete information helps us resolve your issue faster. When contacting the Help Desk, please include:</p>
+                <h2 class="section__title">Quick Troubleshooting</h2>
+                <div class="section__intro">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-primary-dark);">Before Contacting Support, Try These Steps</h3>
                     
-                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 0.75rem;">Required Information</h3>
-                    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
-                        <li><strong>Your name and contact information</strong> (email and phone number)</li>
-                        <li><strong>Your role</strong> (teacher, student, staff, administrator)</li>
-                        <li><strong>Your school or location</strong></li>
-                        <li><strong>Device information</strong> if applicable (asset tag, serial number, or device name)</li>
-                        <li><strong>Clear description of the problem</strong> - what's not working?</li>
-                        <li><strong>When the problem started</strong> - was it sudden or gradual?</li>
-                        <li><strong>What you've already tried</strong> - any troubleshooting steps taken?</li>
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-primary-dark);">1. Internet Connection Issues</h4>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Restart your device (wait 30 seconds before turning back on)</li>
+                        <li>Check if other devices can connect to the network</li>
+                        <li>Reconnect to WiFi or wired connection</li>
+                        <li>Clear your browser cache and cookies (Ctrl+Shift+Delete)</li>
                     </ul>
 
-                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 0.75rem;">Helpful Additional Information</h3>
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-primary-dark);">2. Cannot Access Google Classroom</h4>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Verify you're logged in with your PVNCCDSB account (@pvnccdsb.on.ca)</li>
+                        <li>Try accessing from a different browser</li>
+                        <li>Clear browser cache and refresh the page</li>
+                        <li>Check that classroom code is entered correctly</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-primary-dark);">3. Password Reset</h4>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Visit <a href="https://password.pvnccdsb.on.ca" target="_blank" style="color: var(--color-primary); font-weight: 500;">password.pvnccdsb.on.ca</a></li>
+                        <li>Click "I forgot my password"</li>
+                        <li>Enter your PVNCCDSB email address</li>
+                        <li>Follow instructions sent to your recovery email</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.5rem; font-weight: 600; color: var(--color-primary-dark);">4. Chromebook Issues</h4>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Sign out and sign back in</li>
+                        <li>Restart your Chromebook (Power + R)</li>
+                        <li>Check <a href="guides/devices/getting-started-with-chromebooks.html" style="color: var(--color-primary); font-weight: 500;">Getting Started with Chromebooks</a> guide</li>
+                        <li>If still not working, contact IT with specific error messages</li>
+                    </ul>
+
+                    <p style="margin-top: 1.5rem; color: var(--color-text-secondary);">
+                        <strong>Still having issues?</strong> Contact IT using one of the methods above and provide:
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Description of the problem</li>
+                            <li>Steps you've already tried</li>
+                            <li>Any error messages (screenshots helpful)</li>
+                            <li>Device type and browser name</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <!-- ===================================================================
+                 HELPFUL RESOURCES SECTION
+                 Links to knowledge base and self-help guides
+                 =================================================================== -->
+            <div class="section">
+                <h2 class="section__title">Helpful Resources</h2>
+                <div class="section__intro">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-primary-dark);">Self-Service Guides</h3>
+                    <p style="margin-bottom: 1rem;">Before contacting support, check these comprehensive guides:</p>
+                    
+                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="guides/accounts/password-reset-guide.html" style="color: var(--color-primary); text-decoration: none;">Password Reset Guide</a></strong> - 
+                            Reset your PVNCCDSB account password or reset student passwords
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="guides/accounts/mfa-setup-guide.html" style="color: var(--color-primary); text-decoration: none;">Multi-Factor Authentication (MFA) Setup</a></strong> - 
+                            Secure your account with two-factor authentication
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="guides/devices/getting-started-with-chromebooks.html" style="color: var(--color-primary); text-decoration: none;">Getting Started with Chromebooks</a></strong> - 
+                            Complete guide for new Chromebook users
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="guides/devices/windows-update-guide.html" style="color: var(--color-primary); text-decoration: none;">Windows Update Guide</a></strong> - 
+                            Keep your Windows device secure and up-to-date
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="guides/accounts/remote-access-troubleshooting.html" style="color: var(--color-primary); text-decoration: none;">Remote Access Troubleshooting</a></strong> - 
+                            Fix VPN and remote connection issues
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="guides/teaching/google-classroom-overview.html" style="color: var(--color-primary); text-decoration: none;">Google Classroom Overview</a></strong> - 
+                            Complete guide to using Google Classroom for teaching
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="guides/teaching/accessibility-tools.html" style="color: var(--color-primary); text-decoration: none;">Accessibility Tools</a></strong> - 
+                            Learn about accessibility features for students with diverse needs
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="resources.html" style="color: var(--color-primary); text-decoration: none;">Full Resources Library</a></strong> - 
+                            Browse all technology guides and tutorials
+                        </li>
+                    </ul>
+
+                    <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--color-primary-dark);">External Resources</h3>
                     <ul style="padding-left: 1.5rem;">
-                        <li><strong>Error messages</strong> - exact wording or screenshots</li>
-                        <li><strong>Screenshots or photos</strong> of the issue</li>
-                        <li><strong>Steps to reproduce</strong> - what actions lead to the problem?</li>
-                        <li><strong>Frequency</strong> - does it happen every time or intermittently?</li>
-                        <li><strong>Impact</strong> - how is this affecting your work?</li>
-                        <li><strong>Urgency</strong> - do you need this resolved by a specific date/time?</li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="https://support.google.com/classroom" target="_blank" style="color: var(--color-primary); text-decoration: none;">Google Classroom Help Center</a></strong> - 
+                            Official Google support for Google Classroom
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <strong><a href="https://support.google.com/a" target="_blank" style="color: var(--color-primary); text-decoration: none;">Google Workspace Admin Help</a></strong> - 
+                            Technical support for Google Workspace features
+                        </li>
+                        <li>
+                            <strong><a href="https://support.google.com/chromebook" target="_blank" style="color: var(--color-primary); text-decoration: none;">Chromebook Help</a></strong> - 
+                            Official Chromebook troubleshooting and setup guides
+                        </li>
                     </ul>
                 </div>
             </div>
 
+            <!-- ===================================================================
+                 SUPPORT HOURS & AVAILABILITY
+                 Business hours and response time information
+                 =================================================================== -->
             <div class="section">
-                <h2 class="section__title">Common Issues & Quick Solutions</h2>
-                <div class="section__content">
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">I forgot my password. How do I reset it?</h3>
-                        <p class="faq-item__answer">Visit <a href="https://account.activedirectory.windowsazure.com/ChangePassword.aspx" target="_blank" rel="noopener noreferrer">Microsoft's password reset page</a> and follow the prompts. If you're unable to reset it yourself, contact the Help Desk at 705-748-1811 or email helpdesk@pvnccdsb.on.ca with your name and account details.</p>
-                    </div>
+                <h2 class="section__title">Support Availability</h2>
+                <div class="section__intro">
+                    <h3 style="margin-bottom: 1rem; color: var(--color-primary-dark);">Business Hours</h3>
+                    <p style="margin-bottom: 1rem;">
+                        <strong>Monday to Friday:</strong> 7:30 AM – 4:00 PM EST<br>
+                        <strong>Holidays:</strong> Closed (see PVNCCDSB school calendar)
+                    </p>
 
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">My device won't turn on. What should I do?</h3>
-                        <p class="faq-item__answer">First, ensure it's charged - plug it in for at least 30 minutes. Try holding the power button for 10-15 seconds. If still unresponsive, contact the Help Desk immediately, especially if you need the device for teaching or urgent work.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">I can't connect to Wi-Fi. How do I fix this?</h3>
-                        <p class="faq-item__answer">Try turning Wi-Fi off and on, or restart your device. Make sure you're connecting to the correct network (PVNCCDSB-Staff or PVNCCDSB-Student). If issues persist, check with colleagues to see if it's a widespread problem, then contact the Help Desk.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">The projector/smartboard isn't working in my classroom.</h3>
-                        <p class="faq-item__answer">Check that it's powered on and the correct input source is selected. Ensure cables are securely connected. Try restarting the projector and your computer. If unresolved, call the Help Desk (705-748-1811) immediately as this is a high-priority issue affecting instruction.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">I need software installed. How do I request it?</h3>
-                        <p class="faq-item__answer">Submit a ticket through the Help Desk portal or email helpdesk@pvnccdsb.on.ca with: software name and version, educational purpose, number of users who need it, and any licensing information. Allow 5-10 business days for evaluation and installation.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">My email isn't working / I'm not receiving emails.</h3>
-                        <p class="faq-item__answer">Check your internet connection first. Try accessing email from a different device or browser. Check your mailbox isn't full (Storage settings in Gmail). Verify the email address is correct. If issues continue, contact the Help Desk with specific error messages.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">How do I report a damaged or lost device?</h3>
-                        <p class="faq-item__answer">Report immediately to your school office or contact the Help Desk. Provide your name, device asset tag (if known), description of damage or circumstances of loss, and date/time of incident. For stolen devices, also file a police report.</p>
-                    </div>
-
-                    <div class="faq-item">
-                        <h3 class="faq-item__question">I'm experiencing slow computer performance.</h3>
-                        <p class="faq-item__answer">Close unused programs and browser tabs. Restart your computer (this often helps!). Check for pending Windows updates. Ensure you have at least 10GB free disk space. If problems persist after these steps, submit a Help Desk ticket.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section__title">Self-Help Resources</h2>
-                <div class="section__content">
-                    <p style="margin-bottom: 1.5rem;">Before contacting the Help Desk, you may find answers in our self-help resources:</p>
-                    
-                    <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-                        <li style="margin-bottom: 0.75rem;"><strong><a href="resources.html">Knowledge Base & Guides</a></strong> - Step-by-step instructions for common tasks</li>
-                        <li style="margin-bottom: 0.75rem;"><strong><a href="resources.html#troubleshooting">Troubleshooting Articles</a></strong> - Solutions to frequent technical issues</li>
-                        <li style="margin-bottom: 0.75rem;"><strong><a href="calendar.html">Training Videos</a></strong> - Video tutorials for various applications and tools</li>
-                        <li style="margin-bottom: 0.75rem;"><strong><a href="index.html#announcements">System Status</a></strong> - Check for known outages or maintenance</li>
+                    <h3 style="margin-bottom: 1rem; color: var(--color-primary-dark);">Response Time Guidelines</h3>
+                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Phone:</strong> Immediate during business hours</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Ticket Portal:</strong> Within 1 business day</li>
+                        <li><strong>Email:</strong> Within 1 business day</li>
                     </ul>
 
-                    <div class="alert alert--success">
-                        <div class="alert__title">✅ Try Before You Ticket</div>
-                        <p>Many issues can be resolved quickly using our self-help resources. Check the Knowledge Base first - you might find your solution in minutes rather than waiting for a response!</p>
-                    </div>
+                    <p style="color: var(--color-text-secondary);">
+                        <em>Note: Response times are goals, not guarantees. Complex issues may require additional time for diagnosis and resolution.</em>
+                    </p>
                 </div>
             </div>
 
-            <div class="section">
-                <h2 class="section__title">Service Level Agreement (SLA)</h2>
-                <div class="section__content">
-                    <p style="margin-bottom: 1.5rem;">Our commitment to you:</p>
-                    
-                    <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-                        <li style="margin-bottom: 0.75rem;"><strong>Acknowledgment:</strong> All tickets acknowledged within 4 business hours</li>
-                        <li style="margin-bottom: 0.75rem;"><strong>Communication:</strong> Regular updates provided for ongoing issues</li>
-                        <li style="margin-bottom: 0.75rem;"><strong>Resolution targets:</strong> Based on priority level (see above)</li>
-                        <li style="margin-bottom: 0.75rem;"><strong>Follow-up:</strong> Confirmation that your issue is resolved</li>
-                        <li style="margin-bottom: 0.75rem;"><strong>Escalation:</strong> Complex issues escalated to senior technicians or vendors as needed</li>
-                    </ul>
-
-                    <div class="alert alert--info">
-                        <div class="alert__title">💡 Setting Expectations</div>
-                        <p>Response times are goals, not guarantees. Complex issues may require additional time for research, testing, or coordination with vendors. We'll keep you informed throughout the process.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2 class="section__title">After Hours & Emergency Support</h2>
-                <div class="section__content">
-                    <p style="margin-bottom: 1.5rem;"><strong>Regular Help Desk hours:</strong> Monday-Friday, 7:30 AM - 4:00 PM EST</p>
-                    
-                    <h3 style="font-size: 1.125rem; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 0.75rem;">After Hours Support</h3>
-                    <p style="margin-bottom: 1.5rem;">Limited support is available for <strong>critical issues only</strong> outside regular hours:</p>
-                    <ul style="padding-left: 1.5rem; margin-bottom: 1.5rem;">
-                        <li style="margin-bottom: 0.5rem;">System-wide outages affecting operations</li>
-                        <li style="margin-bottom: 0.5rem;">Security incidents requiring immediate response</li>
-                        <li style="margin-bottom: 0.5rem;">Critical infrastructure failures</li>
-                    </ul>
-
-                    <div class="alert alert--warning">
-                        <div class="alert__title">⚠️ Emergency Contact</div>
-                        <p>For genuine emergencies outside business hours, contact your school principal or facility administrator. They have access to emergency IT contact information. Non-urgent issues should be submitted via ticket or email and will be addressed the next business day.</p>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Success Alert: Encourage using available resources -->
             <div class="alert alert--success">
                 <div class="alert__title">✅ We're Here to Help</div>
-                <p>The PVNCCDSB IT Help Desk is committed to providing excellent technical support to enable teaching, learning, and operations. Don't hesitate to reach out - no question is too small, and we're here to ensure technology supports your success.</p>
+                <p>The IT Help Desk is committed to providing quick, professional support. Whether you submit a ticket, send an email, or call during business hours, we'll work to resolve your issue as quickly as possible.</p>
             </div>
         </div>
     </main>
 
+    <!-- ===================================================================
+         FOOTER SECTION
+         Footer with links, contact info, and copyright
+         =================================================================== -->
     <footer class="footer">
         <div class="footer__container">
             <div class="footer__grid">
+                <!-- Footer Column 1: About -->
                 <div class="footer__column">
                     <h3>About Learning Technologies</h3>
                     <p>
@@ -942,6 +854,7 @@
                     </p>
                 </div>
 
+                <!-- Footer Column 2: Quick Links -->
                 <div class="footer__column">
                     <h3>Quick Links</h3>
                     <p><a href="index.html">Home</a></p>
@@ -951,6 +864,7 @@
                     <p><a href="about.html">About Our Team</a></p>
                 </div>
 
+                <!-- Footer Column 3: Support Contact -->
                 <div class="footer__column">
                     <h3>Support & Contact</h3>
                     <p>
@@ -967,6 +881,7 @@
                     </p>
                 </div>
 
+                <!-- Footer Column 4: Board Resources -->
                 <div class="footer__column">
                     <h3>Board Resources</h3>
                     <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
@@ -976,6 +891,7 @@
                 </div>
             </div>
 
+            <!-- Footer Bottom: Copyright and Social Links -->
             <div class="footer__bottom">
                 <div>
                     &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
@@ -989,7 +905,12 @@
         </div>
     </footer>
 
+    <!-- ===================================================================
+         JAVASCRIPT
+         Minimal JS for dynamic functionality
+         =================================================================== -->
     <script>
+        /* Dynamically set current year in footer */
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
