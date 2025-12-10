@@ -80,14 +80,17 @@
         <!-- Search Section -->
         <section class="toolbar-section">
             <div class="toolbar-container">
-                <form class="search-bar" action="resources.html" method="get">
-                    <input 
-                        type="search" 
-                        name="q"
-                        class="search-input" 
-                        placeholder="Search guides, tools, or topics (e.g., Chromebook, Google Classroom)"
-                        aria-label="Search resources"
-                    >
+                <form class="search-bar" id="searchForm">
+                    <div style="position: relative; flex: 1;">
+                        <input 
+                            type="search" 
+                            id="searchInput"
+                            class="search-input" 
+                            placeholder="Search guides, tools, or topics (e.g., Chromebook, Google Classroom)"
+                            aria-label="Search resources"
+                        >
+                        <button type="reset" style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--color-text-light); cursor: pointer; font-size: 18px; padding: 4px 8px;" aria-label="Clear search">✕</button>
+                    </div>
                     <button type="submit" class="search-button">Search</button>
                 </form>
             </div>
@@ -326,6 +329,20 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Search Functionality
+        const searchForm = document.getElementById('searchForm');
+        const searchInput = document.getElementById('searchInput');
+
+        searchForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            
+            if (query) {
+                // Redirect to resources page with search query
+                window.location.href = `resources.html?search=${encodeURIComponent(query)}`;
+            }
+        });
     </script>
 </body>
 </html>
