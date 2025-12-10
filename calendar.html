@@ -9,25 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- External Stylesheets: MUST be in this order -->
-    <!-- Design tokens, variables, and base styles -->
+    <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/global.css">
-    <!-- Component-specific styles (buttons, cards, alerts, etc.) -->
     <link rel="stylesheet" href="css/components.css">
-    <!-- Responsive design and media query overrides -->
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <!-- ACCESSIBILITY: Skip to main content link for keyboard navigation -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <!-- ============================================================
-         HEADER SECTION: Navigation and branding
-         Uses standard header, header__top, header__main components
-         Includes mobile menu button (hidden on desktop, shows on mobile)
-         ============================================================ -->
     <header class="header">
-        <!-- Header Top Bar: Organization info and quick links -->
         <div class="header__top">
             <div class="header__top-content">
                 <div>PVNCCDSB - Faith • Excellence • Service</div>
@@ -42,10 +32,8 @@
             </div>
         </div>
         
-        <!-- Header Main: Logo, title, and primary navigation -->
         <div class="header__main">
             <div class="header__content">
-                <!-- Branding: Logo and site title -->
                 <div class="header__branding">
                     <div class="header__logo">LT</div>
                     <div class="header__title-group">
@@ -54,7 +42,6 @@
                     </div>
                 </div>
 
-                <!-- Primary Navigation Menu (hidden on mobile, visible on desktop) -->
                 <nav class="nav" aria-label="Main navigation">
                     <a href="index.html" class="nav__link">
                         <span>🏠</span> Home
@@ -62,7 +49,6 @@
                     <a href="resources.html" class="nav__link">
                         <span>📚</span> Resources
                     </a>
-                    <!-- Current page indicator -->
                     <a href="calendar.html" class="nav__link nav__link--active">
                         <span>📅</span> Training
                     </a>
@@ -74,46 +60,31 @@
                     </a>
                 </nav>
 
-                <!-- Mobile Menu Button (shown only on screens < 768px) -->
                 <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
             </div>
         </div>
     </header>
 
-    <!-- ============================================================
-         MAIN CONTENT AREA
-         Page-specific content goes here (hero, filters, events, etc.)
-         ============================================================ -->
     <main id="main-content">
-        <!-- HERO SECTION: Page title and introduction
-             Styles: .hero, .hero__container, .hero__icon, .hero__title, .hero__subtitle -->
-        <section class="hero">
-            <div class="hero__container">
-                <div class="hero__icon">📅</div>
-                <h1 class="hero__title">Professional Development Calendar</h1>
-                <p class="hero__subtitle">Explore upcoming training sessions, workshops, and learning opportunities</p>
+        <!-- PAGE HEADER: Replaces hero section for page title and description -->
+        <section class="page-header">
+            <div class="page-header__container">
+                <h2 class="page-header__title">Professional Development Calendar</h2>
+                <p class="page-header__description">Explore upcoming training sessions, workshops, and learning opportunities</p>
             </div>
         </section>
 
-        <!-- MAIN CONTENT WRAPPER: Contains filters, events grid, and alerts
-             Styles: .main-content (sets max-width and padding) -->
         <div class="main-content">
-            <!-- ALERT COMPONENT: Info box with icon and message
-                 Styles: .alert, .alert--info, .alert__title
-                 Purpose: Contextual information about training programs -->
+            <!-- Alert: Training Overview -->
             <div class="alert alert--info">
                 <div class="alert__title">ℹ️ About Our Training</div>
                 <p>The Learning Technologies team offers a variety of professional development opportunities throughout the year. Sessions range from introductory workshops to advanced training, covering tools, strategies, and best practices for technology integration in Catholic education.</p>
             </div>
 
-            <!-- FILTERS SECTION: Event filtering controls
-                 Styles: .filters, .filters__title, .filters__grid, .filter-group, .filter-group__label, .filter-group__select
-                 Purpose: Allow users to filter events by month, audience, format, and topic
-                 NOTE: Filter functionality requires JavaScript in separate js/ file -->
+            <!-- Filters Section -->
             <div class="filters">
                 <h2 class="filters__title">Filter Events</h2>
                 <div class="filters__grid">
-                    <!-- Each filter uses BEM naming convention for CSS specificity -->
                     <div class="filter-group">
                         <label class="filter-group__label" for="month-filter">Month</label>
                         <select id="month-filter" class="filter-group__select">
@@ -161,42 +132,17 @@
                 </div>
             </div>
 
-            <!-- SECTION TITLE: Visually separates upcoming events from filters
-                 Styles: .section__title (includes bottom border accent) -->
             <h2 class="section__title">Upcoming Events</h2>
-
-            <!-- EVENTS GRID: Responsive grid layout for event cards
-                 Styles: .events-grid (uses CSS Grid, gaps adjust on mobile)
-                 Layout: Single column on mobile, responsive on desktop
-                 Note: See responsive.css for media query overrides -->
+            
+            <!-- Events Grid -->
             <div class="events-grid">
-                <!-- ====================================================
-                     EVENT CARD COMPONENT (Repeated for each event)
-                     ====================================================
-                     Styles: .event-card, .event-card__header, .event-card__body,
-                             .event-card__footer, .event-card__button, .event-card__status
-                     
-                     CARD STRUCTURE:
-                     1. Header: Date box + title + meta (time, format, audience)
-                     2. Body: Description, details, tags, status badges
-                     3. Footer: Register and More Details buttons
-                     
-                     RESPONSIVE BEHAVIOR:
-                     - Desktop: Header flex row (date left, info right)
-                     - Mobile: Header flex column (date top, info bottom) - see responsive.css
-                     
-                     STATUS BADGES:
-                     - event-card__status--spots: Limited spots available (warning)
-                     - event-card__status--full: Session full / Waitlist available (error)
-                     ==================================================== -->
+                <!-- EVENT CARD 1 -->
                 <div class="event-card">
                     <div class="event-card__header">
-                        <!-- Date Display Box (left side on desktop, top on mobile) -->
                         <div class="event-card__date">
                             <div class="event-card__month">Dec</div>
                             <div class="event-card__day">10</div>
                         </div>
-                        <!-- Header Info (title and meta details) -->
                         <div class="event-card__header-info">
                             <h3 class="event-card__title">Introduction to Google Classroom</h3>
                             <div class="event-card__meta">
@@ -206,13 +152,11 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Card Body: Main content including description, details, tags -->
                     <div class="event-card__body">
                         <p class="event-card__description">
                             Learn the fundamentals of Google Classroom including creating classes, posting assignments, providing feedback, and using the grading features. Perfect for teachers new to Google Classroom or those wanting to strengthen their foundational skills.
                         </p>
 
-                        <!-- Event Details: Presenter, location, prerequisites -->
                         <div class="event-card__details">
                             <div class="event-card__detail">
                                 <span class="event-card__detail-label">Presenter:</span>
@@ -228,14 +172,12 @@
                             </div>
                         </div>
 
-                        <!-- Tag/Badge List: Topic, difficulty level, duration -->
                         <div class="event-card__tags">
                             <span class="event-card__tag">Google Workspace</span>
                             <span class="event-card__tag">Beginner</span>
                             <span class="event-card__tag">1.5 Hours</span>
                         </div>
 
-                        <!-- Card Footer: Action buttons -->
                         <div class="event-card__footer">
                             <a href="#" class="event-card__button event-card__button--primary">Register Now</a>
                             <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
@@ -260,7 +202,6 @@
                         </div>
                     </div>
                     <div class="event-card__body">
-                        <!-- STATUS BADGE: Limited spots remaining (warning state) -->
                         <span class="event-card__status event-card__status--spots">⚠️ Only 5 spots remaining</span>
                         
                         <p class="event-card__description" style="margin-top: 1rem;">
@@ -462,7 +403,6 @@
                         </div>
                     </div>
                     <div class="event-card__body">
-                        <!-- STATUS BADGE: Session full with waitlist available (error state) -->
                         <span class="event-card__status event-card__status--full">🔴 Full - Waitlist Available</span>
                         
                         <p class="event-card__description" style="margin-top: 1rem;">
@@ -499,9 +439,7 @@
                 </div>
             </div>
 
-            <!-- SUCCESS ALERT: Newsletter signup prompt
-                 Styles: .alert, .alert--success, .alert__title
-                 Purpose: Encourage users to stay updated on training opportunities -->
+            <!-- Success Alert -->
             <div class="alert alert--success" style="margin-top: 3rem;">
                 <div class="alert__title">📧 Stay Updated</div>
                 <p>Want to receive notifications about new training sessions? Subscribe to the Learning Technologies newsletter or contact your school's assigned specialist to be added to the professional development mailing list.</p>
@@ -509,16 +447,9 @@
         </div>
     </main>
 
-    <!-- ============================================================
-         FOOTER SECTION: Site-wide footer
-         Contains: Quick links, support contact, social links
-         Styles: .footer, .footer__container, .footer__grid, etc.
-         ============================================================ -->
     <footer class="footer">
         <div class="footer__container">
-            <!-- Footer Grid: 4-column layout (auto-fits on smaller screens) -->
             <div class="footer__grid">
-                <!-- Footer Column 1: Department info -->
                 <div class="footer__column">
                     <h3>About Learning Technologies</h3>
                     <p>
@@ -531,7 +462,6 @@
                     </p>
                 </div>
 
-                <!-- Footer Column 2: Site navigation links -->
                 <div class="footer__column">
                     <h3>Quick Links</h3>
                     <p><a href="index.html">Home</a></p>
@@ -541,7 +471,6 @@
                     <p><a href="about.html">About Our Team</a></p>
                 </div>
 
-                <!-- Footer Column 3: Support contact information -->
                 <div class="footer__column">
                     <h3>Support & Contact</h3>
                     <p>
@@ -558,7 +487,6 @@
                     </p>
                 </div>
 
-                <!-- Footer Column 4: External board resources -->
                 <div class="footer__column">
                     <h3>Board Resources</h3>
                     <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
@@ -568,13 +496,10 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom: Copyright and social links -->
             <div class="footer__bottom">
-                <!-- Copyright notice with dynamic year -->
                 <div>
                     &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
                 </div>
-                <!-- Social media links -->
                 <div class="footer__social">
                     <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
                     <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
@@ -584,13 +509,7 @@
         </div>
     </footer>
 
-    <!-- ============================================================
-         JAVASCRIPT: Minimal inline script for dynamic functionality
-         Only includes: Year in footer (no filtering logic here)
-         NOTE: Additional filtering logic should be in separate js/ file
-         ============================================================ -->
     <script>
-        // Set current year in footer copyright notice
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
