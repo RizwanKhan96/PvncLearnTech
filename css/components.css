@@ -1,6 +1,7 @@
 /* PVNCCDSB Learning Technologies - Component Styles
  * Reusable component styles extracted from resources.html
  * Header, Navigation, Cards, Alerts, Buttons, Footer
+ * Last Updated: 2025-12-10
  */
 
 /* ===== HEADER ===== */
@@ -173,6 +174,65 @@
     padding: var(--space-3xl) var(--space-lg);
 }
 
+/* ===== SEARCH & FILTER TOOLBAR ===== */
+
+.toolbar {
+    background: rgba(0, 61, 122, 0.06);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-2xl);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 61, 122, 0.25);
+}
+
+.search-bar {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+}
+
+.search-input {
+    flex: 1;
+    min-width: 250px;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-family: var(--font-sans);
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+.filter-group {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid rgba(0, 61, 122, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-primary-dark);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
 /* ===== ALERTS ===== */
 
 .alert {
@@ -250,7 +310,7 @@
     font-size: var(--font-size-lg);
 }
 
-/* ===== CARDS ===== */
+/* ===== CARDS (HOME PAGE) ===== */
 
 .card-grid {
     display: grid;
@@ -306,7 +366,7 @@
     color: var(--color-primary-light);
 }
 
-/* ===== FEATURE CARDS ===== */
+/* ===== FEATURE CARDS (HOME PAGE) ===== */
 
 .feature-grid {
     display: grid;
@@ -360,6 +420,106 @@
     border-radius: var(--radius-sm);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-medium);
+}
+
+/* ===== RESOURCE CARDS (RESOURCES PAGE) ===== */
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-xl);
+}
+
+.resource-card {
+    background: rgba(0, 61, 122, 0.06);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(0, 61, 122, 0.25);
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light);
+}
+
+.resource-card__image {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.resource-card__content {
+    padding: var(--space-lg);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card__category {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-primary-dark);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-md);
+    width: fit-content;
+}
+
+.resource-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.resource-card__description {
+    color: var(--color-gray-700);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    flex-grow: 1;
+}
+
+.resource-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(0, 61, 122, 0.15);
+}
+
+.resource-card__type {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}
+
+.resource-card__link {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    transition: var(--transition);
+}
+
+.resource-card__link:hover {
+    color: var(--color-primary-light);
+    gap: var(--space-sm);
 }
 
 /* ===== BUTTONS ===== */
