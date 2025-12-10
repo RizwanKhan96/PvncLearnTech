@@ -167,7 +167,7 @@
 /* ===== TOOLBAR/SEARCH SECTION ===== */
 
 .toolbar-section {
-  background: white;
+  background: #FFFFFF;
   padding: var(--space-xl) var(--space-lg);
 }
 
@@ -186,11 +186,11 @@
 .search-input {
   flex: 1;
   padding: var(--space-md);
-  border: 1px solid var(--color-gray-300);
+  border: 2px solid var(--color-accent);
   border-radius: var(--radius-md);
   font-size: var(--font-size-base);
   font-family: inherit;
-  background: white;
+  background: #FFFFFF;
   color: var(--color-text-primary);
   transition: var(--transition);
 }
@@ -202,6 +202,7 @@
 .search-input:focus {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+  border-color: var(--color-accent);
 }
 
 .search-button {
@@ -646,5 +647,5 @@
   max-width: var(--container-max);
   margin: 0 auto;
   padding: var(--space-3xl) var(--space-lg);
-  background: white;
+  background: #FFFFFF;
 }
