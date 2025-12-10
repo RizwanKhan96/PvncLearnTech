@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Tools on Chromebooks | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="Comprehensive guide to accessibility features on Chromebooks including screen readers, magnification, high contrast, and more.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 900px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(0, 61, 122, 0.06);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .breadcrumb__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .breadcrumb__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .breadcrumb__item:not(:last-child)::after {
+            content: '›';
+            color: var(--color-gray-400);
+        }
+
+        .breadcrumb__link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb__link:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+        }
+
+        .article-header__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .article-header__category {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--color-accent);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .article-header__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .article-header__meta {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-100);
+        }
+
+        .article-header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Article Content */
+        .article {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .article__sidebar {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .article__sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article__sidebar-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .article__sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article__sidebar-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+        }
+
+        .article__sidebar-list a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .article__content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .article__content li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
+        }
+
+        .article__content strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .article__content a {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article__content a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .step-card__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content p {
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content ul {
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .step-card__image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            margin-top: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Feature Cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .feature-card {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .feature-card__icon {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .feature-card__title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-sm);
+        }
+
+        .feature-card__description {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .article-header__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .article__content h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link nav__link--active">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="resources.html" class="breadcrumb__link">Resources</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span>Accessibility Tools</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="article-header">
+            <div class="article-header__container">
+                <span class="article-header__category">♿ Accessibility</span>
+                <h1 class="article-header__title">Accessibility Tools on Chromebooks</h1>
+                <div class="article-header__meta">
+                    <span class="article-header__meta-item">
+                        <span>📄</span> Guide
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>👥</span> For Students &amp; Staff
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>⏱️</span> 12 min read
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <aside class="article__sidebar">
+                <h2 class="article__sidebar-title">Quick Links</h2>
+                <ul class="article__sidebar-list">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#accessing">Accessing Settings</a></li>
+                    <li><a href="#vision">Vision Features</a></li>
+                    <li><a href="#hearing">Hearing Features</a></li>
+                    <li><a href="#motor">Motor Features</a></li>
+                    <li><a href="#cognitive">Cognitive Features</a></li>
+                    <li><a href="#support">Need Help?</a></li>
+                </ul>
+            </aside>
+
+            <div class="article__content">
+                <div class="alert alert--info">
+                    <div class="alert__title">ℹ️ About This Guide</div>
+                    <p>This comprehensive guide covers the accessibility features available on Chrome OS to support students and staff with diverse learning needs. All features are built-in and free to use.</p>
+                </div>
+
+                <h2 id="overview">Accessibility on Chromebooks</h2>
+                <p>Chrome OS includes robust accessibility features designed to make technology accessible to everyone. These tools support users with:</p>
+                <ul>
+                    <li><strong>Vision needs</strong> - Screen readers, magnification, high contrast, and more</li>
+                    <li><strong>Hearing needs</strong> - Captions, visual notifications, and mono audio</li>
+                    <li><strong>Motor needs</strong> - Voice control, switch access, and on-screen keyboard</li>
+                    <li><strong>Cognitive needs</strong> - Text-to-speech, dictation, and focus tools</li>
+                </ul>
+
+                <h2 id="accessing">Accessing Accessibility Settings</h2>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Open Quick Settings</h3>
+                    <div class="step-card__content">
+                        <p>Click the <strong>time</strong> in the bottom-right corner of your screen to open Quick Settings.</p>
+                        <img src="placeholder-quick-settings.png" alt="Quick Settings menu" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Access Accessibility Menu</h3>
+                    <div class="step-card__content">
+                        <p>Click the <strong>Settings gear icon</strong>, then click <strong>Accessibility</strong> in the left sidebar.</p>
+                        <p><strong>Shortcut:</strong> Press <strong>Ctrl + Alt + Z</strong> to toggle the accessibility menu quickly.</p>
+                        <img src="placeholder-accessibility-menu.png" alt="Accessibility settings menu" class="step-card__image">
+                    </div>
+                </div>
+
+                <h2 id="vision">Vision Accessibility Features</h2>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">📖</div>
+                        <h3 class="feature-card__title">ChromeVox Screen Reader</h3>
+                        <p class="feature-card__description">Built-in screen reader that speaks text aloud, describes images, and provides audio feedback for navigation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🔍</div>
+                        <h3 class="feature-card__title">Screen Magnifier</h3>
+                        <p class="feature-card__description">Zoom in on any part of the screen with full-screen or docked magnification modes.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🎨</div>
+                        <h3 class="feature-card__title">High Contrast Mode</h3>
+                        <p class="feature-card__description">Increase contrast between text and background for improved readability.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🌓</div>
+                        <h3 class="feature-card__title">Color Inversion</h3>
+                        <p class="feature-card__description">Invert screen colors to reduce eye strain and improve visibility in different lighting.</p>
+                    </div>
+                </div>
+
+                <h3>ChromeVox Screen Reader</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Enable ChromeVox</h3>
+                    <div class="step-card__content">
+                        <p>To turn on ChromeVox:</p>
+                        <ul>
+                            <li>Go to <strong>Settings &gt; Accessibility &gt; Text-to-Speech</strong></li>
+                            <li>Toggle <strong>ChromeVox</strong> on</li>
+                            <li><strong>Keyboard shortcut:</strong> Press <strong>Ctrl + Alt + Z</strong></li>
+                        </ul>
+                        <p>ChromeVox will speak all text, buttons, and navigation elements aloud.</p>
+                        <img src="placeholder-chromevox.png" alt="ChromeVox settings" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">ChromeVox Basic Commands</h3>
+                    <div class="step-card__content">
+                        <p>Common keyboard shortcuts when ChromeVox is enabled:</p>
+                        <ul>
+                            <li><strong>Search + Space:</strong> Click/activate element</li>
+                            <li><strong>Search + Left/Right Arrow:</strong> Navigate by character</li>
+                            <li><strong>Search + Ctrl + Left/Right Arrow:</strong> Navigate by word</li>
+                            <li><strong>Search + H:</strong> Navigate by heading</li>
+                            <li><strong>Search + L:</strong> Navigate by link</li>
+                            <li><strong>Search + T:</strong> Navigate by table</li>
+                        </ul>
+                        <p><strong>Note:</strong> The "Search" key is the magnifying glass key on your Chromebook keyboard.</p>
+                    </div>
+                </div>
+
+                <h3>Screen Magnifier</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Enable Magnifier</h3>
+                    <div class="step-card__content">
+                        <p>To turn on screen magnification:</p>
+                        <ul>
+                            <li>Go to <strong>Settings &gt; Accessibility &gt; Display and magnification</strong></li>
+                            <li>Toggle <strong>Full-screen magnifier</strong> or <strong>Docked magnifier</strong></li>
+                            <li><strong>Keyboard shortcut:</strong> Press <strong>Ctrl + Search + M</strong></li>
+                        </ul>
+                        <img src="placeholder-magnifier.png" alt="Screen magnifier settings" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Using the Magnifier</h3>
+                    <div class="step-card__content">
+                        <p>Control magnification:</p>
+                        <ul>
+                            <li><strong>Ctrl + Alt + Brightness Up/Down:</strong> Increase/decrease zoom level</li>
+                            <li><strong>Move mouse:</strong> Pan around magnified area</li>
+                            <li><strong>Full-screen mode:</strong> Entire screen zooms in</li>
+                            <li><strong>Docked mode:</strong> Top portion of screen shows magnified view</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>High Contrast Mode</h3>
+                <p>Improve text visibility with high contrast:</p>
+                <ul>
+                    <li>Go to <strong>Settings &gt; Accessibility &gt; Display and magnification</strong></li>
+                    <li>Toggle <strong>High contrast mode</strong></li>
+                    <li>Text becomes black on white (or white on black in dark mode)</li>
+                    <li>Removes background images and reduces visual complexity</li>
+                </ul>
+
+                <h3>Additional Vision Features</h3>
+                <ul>
+                    <li><strong>Large cursor:</strong> Increase cursor size in Display settings</li>
+                    <li><strong>Cursor highlighting:</strong> Add a colored ring around cursor</li>
+                    <li><strong>Color filters:</strong> Adjust colors for color blindness</li>
+                    <li><strong>Dark theme:</strong> Reduce brightness and eye strain</li>
+                </ul>
+
+                <h2 id="hearing">Hearing Accessibility Features</h2>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">💬</div>
+                        <h3 class="feature-card__title">Live Captions</h3>
+                        <p class="feature-card__description">Automatic captions for all audio played on your Chromebook, including videos and meetings.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🔔</div>
+                        <h3 class="feature-card__title">Visual Notifications</h3>
+                        <p class="feature-card__description">Flash screen or show visual alerts for system sounds and notifications.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🔊</div>
+                        <h3 class="feature-card__title">Mono Audio</h3>
+                        <p class="feature-card__description">Combine left and right audio channels into one for users with single-sided hearing.</p>
+                    </div>
+                </div>
+
+                <h3>Live Captions</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Enable Live Captions</h3>
+                    <div class="step-card__content">
+                        <p>Turn on automatic captions:</p>
+                        <ul>
+                            <li>Go to <strong>Settings &gt; Accessibility &gt; Audio and captions</strong></li>
+                            <li>Toggle <strong>Live Caption</strong></li>
+                            <li><strong>Keyboard shortcut:</strong> Press <strong>Search + C</strong></li>
+                        </ul>
+                        <p>Captions will appear at the bottom of your screen for all audio.</p>
+                        <img src="placeholder-live-captions.png" alt="Live captions feature" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Customize Caption Appearance</h3>
+                    <div class="step-card__content">
+                        <p>Adjust caption display:</p>
+                        <ul>
+                            <li>Click caption box to move it around screen</li>
+                            <li>Adjust text size in caption settings</li>
+                            <li>Change caption background color and opacity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Visual Notifications</h3>
+                <p>Get visual alerts instead of audio notifications:</p>
+                <ul>
+                    <li>Go to <strong>Settings &gt; Accessibility &gt; Audio and captions</strong></li>
+                    <li>Toggle <strong>Flash screen for notifications</strong></li>
+                    <li>Screen will flash briefly when alerts occur</li>
+                </ul>
+
+                <h3>Mono Audio</h3>
+                <p>Combine stereo channels for single-ear listening:</p>
+                <ul>
+                    <li>Go to <strong>Settings &gt; Accessibility &gt; Audio and captions</strong></li>
+                    <li>Toggle <strong>Mono audio</strong></li>
+                    <li>Left and right channels play the same audio</li>
+                </ul>
+
+                <h2 id="motor">Motor Accessibility Features</h2>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🎤</div>
+                        <h3 class="feature-card__title">Voice Control</h3>
+                        <p class="feature-card__description">Control your Chromebook entirely with voice commands for hands-free operation.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">⌨️</div>
+                        <h3 class="feature-card__title">On-Screen Keyboard</h3>
+                        <p class="feature-card__description">Virtual keyboard for input without physical keyboard access.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🕹️</div>
+                        <h3 class="feature-card__title">Switch Access</h3>
+                        <p class="feature-card__description">Navigate using external switches or keyboard keys with scanning.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🖱️</div>
+                        <h3 class="feature-card__title">Dwell Click</h3>
+                        <p class="feature-card__description">Click automatically by hovering cursor over elements.</p>
+                    </div>
+                </div>
+
+                <h3>Voice Control (Dictation)</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Enable Dictation</h3>
+                    <div class="step-card__content">
+                        <p>Use voice to type text:</p>
+                        <ul>
+                            <li>Go to <strong>Settings &gt; Accessibility &gt; Keyboard and text input</strong></li>
+                            <li>Toggle <strong>Dictation</strong></li>
+                            <li><strong>Keyboard shortcut:</strong> Press <strong>Search + D</strong></li>
+                        </ul>
+                        <p>A microphone icon appears when dictation is active in text fields.</p>
+                        <img src="placeholder-dictation.png" alt="Dictation feature" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Using Voice Commands</h3>
+                    <div class="step-card__content">
+                        <p>Speak naturally to type. Voice commands include:</p>
+                        <ul>
+                            <li><strong>"Period"</strong> - Insert period</li>
+                            <li><strong>"Comma"</strong> - Insert comma</li>
+                            <li><strong>"New line"</strong> - Start new line</li>
+                            <li><strong>"Delete"</strong> - Remove last word</li>
+                            <li><strong>"Select all"</strong> - Highlight all text</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>On-Screen Keyboard</h3>
+                <p>Display virtual keyboard on screen:</p>
+                <ul>
+                    <li>Go to <strong>Settings &gt; Accessibility &gt; Keyboard and text input</strong></li>
+                    <li>Toggle <strong>On-screen keyboard</strong></li>
+                    <li>Keyboard appears at bottom of screen when text field is active</li>
+                    <li>Click keys with mouse or touchpad to type</li>
+                </ul>
+
+                <h3>Switch Access</h3>
+                <p>Navigate using external switches or designated keys:</p>
+                <ul>
+                    <li>Go to <strong>Settings &gt; Accessibility &gt; Keyboard and text input</strong></li>
+                    <li>Toggle <strong>Switch access</strong></li>
+                    <li>Configure switches (keyboard keys or USB switches)</li>
+                    <li>Set scanning speed and method (automatic or manual)</li>
+                    <li>Items on screen highlight in sequence; activate with switch</li>
+                </ul>
+
+                <h3>Additional Motor Features</h3>
+                <ul>
+                    <li><strong>Sticky keys:</strong> Press modifier keys one at a time instead of simultaneously</li>
+                    <li><strong>Slow keys:</strong> Add delay before key press registers</li>
+                    <li><strong>Bounce keys:</strong> Ignore repeated key presses</li>
+                    <li><strong>Auto-click:</strong> Automatically click when cursor stops moving</li>
+                </ul>
+
+                <h2 id="cognitive">Cognitive &amp; Learning Features</h2>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">📚</div>
+                        <h3 class="feature-card__title">Select-to-Speak</h3>
+                        <p class="feature-card__description">Select any text on screen to have it read aloud without full screen reader.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">🎯</div>
+                        <h3 class="feature-card__title">Focus Mode</h3>
+                        <p class="feature-card__description">Reduce distractions by highlighting current active window and dimming others.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">✍️</div>
+                        <h3 class="feature-card__title">Handwriting Input</h3>
+                        <p class="feature-card__description">Draw letters with touchscreen or mouse instead of typing.</p>
+                    </div>
+                </div>
+
+                <h3>Select-to-Speak</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Enable Select-to-Speak</h3>
+                    <div class="step-card__content">
+                        <p>Read selected text aloud:</p>
+                        <ul>
+                            <li>Go to <strong>Settings &gt; Accessibility &gt; Text-to-Speech</strong></li>
+                            <li>Toggle <strong>Select-to-speak</strong></li>
+                            <li>A speaker icon appears in the status area</li>
+                        </ul>
+                        <img src="placeholder-select-to-speak.png" alt="Select-to-speak feature" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Using Select-to-Speak</h3>
+                    <div class="step-card__content">
+                        <p>To have text read aloud:</p>
+                        <ul>
+                            <li>Click the speaker icon in status area</li>
+                            <li>Click and drag to select text, or click individual items</li>
+                            <li>Selected text will be read aloud</li>
+                            <li>Control playback speed and voice in settings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Additional Cognitive Support</h3>
+                <ul>
+                    <li><strong>Reading mode:</strong> Simplify web pages for easier reading (available in Chrome)</li>
+                    <li><strong>Reduced animations:</strong> Minimize motion and transitions</li>
+                    <li><strong>Text highlighting:</strong> Available with Select-to-Speak to follow along visually</li>
+                    <li><strong>Word prediction:</strong> Suggest completions while typing</li>
+                </ul>
+
+                <h2>Quick Accessibility Shortcuts</h2>
+                <p>Memorize these keyboard shortcuts for fast access:</p>
+                <ul>
+                    <li><strong>Ctrl + Alt + Z:</strong> Toggle accessibility menu</li>
+                    <li><strong>Search + C:</strong> Toggle Live Captions</li>
+                    <li><strong>Search + D:</strong> Toggle Dictation</li>
+                    <li><strong>Ctrl + Search + M:</strong> Toggle Screen Magnifier</li>
+                    <li><strong>Ctrl + Search + H:</strong> Toggle High Contrast</li>
+                    <li><strong>Search + Shift + S:</strong> Activate Select-to-Speak</li>
+                </ul>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">💡 Customization Tip</div>
+                    <p>All accessibility features can be customized extensively in Settings. Experiment with different settings to find what works best for your specific needs.</p>
+                </div>
+
+                <h2 id="support">Need Help?</h2>
+                <p>For assistance with accessibility features:</p>
+
+                <ul>
+                    <li><strong>Students:</strong> Contact your teacher or school resource support</li>
+                    <li><strong>Staff:</strong> Reach out to your Learning Technologies consultant</li>
+                    <li><strong>Technical issues:</strong> Submit an IT support ticket</li>
+                    <li><strong>Additional training:</strong> Request accessibility training session</li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">📞 Contact Support</div>
+                    <p>For technical support with accessibility features, contact the IT Help Desk:</p>
+                    <ul>
+                        <li><strong>Submit a Ticket:</strong> <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">pvnccdsb.ebasefm.com</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+17057481811">705-748-1811</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support &amp; Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

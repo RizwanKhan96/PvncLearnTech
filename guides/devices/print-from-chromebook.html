@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Print from a Chromebook | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="Step-by-step guide for printing documents from your Chromebook, including setup, troubleshooting, and best practices.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 900px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(0, 61, 122, 0.06);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .breadcrumb__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .breadcrumb__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .breadcrumb__item:not(:last-child)::after {
+            content: '›';
+            color: var(--color-gray-400);
+        }
+
+        .breadcrumb__link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb__link:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+        }
+
+        .article-header__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .article-header__category {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--color-accent);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .article-header__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .article-header__meta {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-100);
+        }
+
+        .article-header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Article Content */
+        .article {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .article__sidebar {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .article__sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article__sidebar-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .article__sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article__sidebar-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+        }
+
+        .article__sidebar-list a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .article__content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .article__content li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
+        }
+
+        .article__content strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .article__content a {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article__content a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .step-card__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content p {
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content ul {
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .step-card__image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            margin-top: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code/URL boxes */
+        .code-box {
+            background: var(--color-gray-100);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: var(--font-size-sm);
+            margin: var(--space-md) 0;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .article-header__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .article__content h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link nav__link--active">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="resources.html" class="breadcrumb__link">Resources</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span>How to Print from a Chromebook</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="article-header">
+            <div class="article-header__container">
+                <span class="article-header__category">🖨️ Printing Guide</span>
+                <h1 class="article-header__title">How to Print from a Chromebook</h1>
+                <div class="article-header__meta">
+                    <span class="article-header__meta-item">
+                        <span>📄</span> Guide
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>👥</span> For Students &amp; Staff
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>⏱️</span> 8 min read
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <aside class="article__sidebar">
+                <h2 class="article__sidebar-title">Quick Links</h2>
+                <ul class="article__sidebar-list">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#setup">Printer Setup</a></li>
+                    <li><a href="#printing">How to Print</a></li>
+                    <li><a href="#print-options">Print Options</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#support">Need Help?</a></li>
+                </ul>
+            </aside>
+
+            <div class="article__content">
+                <div class="alert alert--info">
+                    <div class="alert__title">ℹ️ About This Guide</div>
+                    <p>This comprehensive guide will help you print documents from your PVNCCDSB Chromebook to school printers or your home printer.</p>
+                </div>
+
+                <h2 id="overview">Printing from Chromebooks</h2>
+                <p>Chromebooks use Google Cloud Print and direct network printing to send documents to printers. At PVNCCDSB schools, printers are pre-configured for easy access. You can also print to your home printer when working remotely.</p>
+
+                <h3>What You Can Print From</h3>
+                <ul>
+                    <li><strong>Google Docs, Sheets, &amp; Slides</strong> - Direct printing from Google Workspace apps</li>
+                    <li><strong>Web Pages</strong> - Print from any website using Chrome</li>
+                    <li><strong>PDFs</strong> - Open and print PDF files</li>
+                    <li><strong>Images</strong> - Print photos and graphics</li>
+                    <li><strong>Email</strong> - Print messages and attachments from Gmail</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Print Responsibly</div>
+                    <p>Be mindful of paper usage. Preview your document before printing, print only what you need, and consider using duplex (double-sided) printing when available to conserve resources.</p>
+                </div>
+
+                <h2 id="setup">Setting Up Your Printer</h2>
+
+                <h3>At School (PVNCCDSB Network)</h3>
+                <p>School printers are automatically configured on managed Chromebooks. No setup required!</p>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Connect to School Wi-Fi</h3>
+                    <div class="step-card__content">
+                        <p>Ensure your Chromebook is connected to the school network:</p>
+                        <ul>
+                            <li>Students: Connect to <strong>PVNC-Student</strong></li>
+                            <li>Staff: Connect to <strong>PVNC-Staff</strong></li>
+                        </ul>
+                        <p>School printers will automatically appear in your print menu when connected to the school network.</p>
+                        <img src="placeholder-wifi-connection.png" alt="School Wi-Fi connection" class="step-card__image">
+                    </div>
+                </div>
+
+                <h3>At Home (Personal Printer)</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Check Printer Compatibility</h3>
+                    <div class="step-card__content">
+                        <p>Most modern printers work with Chromebooks. Your printer should:</p>
+                        <ul>
+                            <li>Support Wi-Fi or network printing, OR</li>
+                            <li>Support USB connection (some Chromebooks), OR</li>
+                            <li>Be a Cloud Print-ready printer</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Add Your Printer</h3>
+                    <div class="step-card__content">
+                        <p>To add a home printer:</p>
+                        <ol>
+                            <li>Click the <strong>time</strong> in the bottom-right corner</li>
+                            <li>Click the <strong>Settings gear icon</strong></li>
+                            <li>Scroll down and click <strong>Advanced</strong></li>
+                            <li>Under "Printing," click <strong>Printers</strong></li>
+                            <li>Click <strong>Add Printer</strong></li>
+                            <li>Select your printer from the list or enter its IP address</li>
+                            <li>Click <strong>Add</strong></li>
+                        </ol>
+                        <img src="placeholder-add-printer.png" alt="Add printer settings" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">💡 Finding Your Printer's IP Address</div>
+                    <p>Most printers display their IP address on a small LCD screen, in the network settings menu, or on a printed configuration page. Consult your printer's manual for specific instructions.</p>
+                </div>
+
+                <h2 id="printing">How to Print Documents</h2>
+
+                <h3>Method 1: Printing from Google Docs, Sheets, or Slides</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Open the Print Dialog</h3>
+                    <div class="step-card__content">
+                        <p>With your document open:</p>
+                        <ul>
+                            <li>Click <strong>File</strong> → <strong>Print</strong>, OR</li>
+                            <li>Press <strong>Ctrl + P</strong> on your keyboard</li>
+                        </ul>
+                        <img src="placeholder-print-dialog-docs.png" alt="Print dialog in Google Docs" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Select Your Printer</h3>
+                    <div class="step-card__content">
+                        <p>In the print dialog:</p>
+                        <ul>
+                            <li>Click the <strong>Destination</strong> dropdown</li>
+                            <li>Select your printer from the list</li>
+                            <li>School printers will be listed by location (e.g., "Library-Printer", "Office-Printer")</li>
+                        </ul>
+                        <img src="placeholder-select-printer.png" alt="Printer selection dropdown" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">3</div>
+                    <h3 class="step-card__title">Configure Print Settings</h3>
+                    <div class="step-card__content">
+                        <p>Adjust your print options as needed:</p>
+                        <ul>
+                            <li><strong>Copies:</strong> Number of copies to print</li>
+                            <li><strong>Pages:</strong> All pages or specific page range</li>
+                            <li><strong>Layout:</strong> Portrait or Landscape orientation</li>
+                            <li><strong>Color:</strong> Color or Black &amp; White</li>
+                            <li><strong>Paper size:</strong> Usually Letter (8.5" x 11")</li>
+                        </ul>
+                        <img src="placeholder-print-settings.png" alt="Print settings configuration" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">4</div>
+                    <h3 class="step-card__title">Preview and Print</h3>
+                    <div class="step-card__content">
+                        <p>Before printing:</p>
+                        <ul>
+                            <li>Review the print preview on the right side</li>
+                            <li>Check that everything looks correct</li>
+                            <li>Click the <strong>Print</strong> button</li>
+                        </ul>
+                        <p>Your document will be sent to the printer.</p>
+                    </div>
+                </div>
+
+                <h3>Method 2: Printing from Chrome Browser</h3>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Open Print Menu</h3>
+                    <div class="step-card__content">
+                        <p>While viewing a web page or PDF:</p>
+                        <ul>
+                            <li>Press <strong>Ctrl + P</strong>, OR</li>
+                            <li>Click the <strong>three-dot menu</strong> → <strong>Print</strong></li>
+                        </ul>
+                        <img src="placeholder-chrome-print.png" alt="Chrome print menu" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Select Printer and Options</h3>
+                    <div class="step-card__content">
+                        <p>Choose your printer and configure settings just like printing from Google Docs.</p>
+                        <p><strong>Tip:</strong> For web pages, click <strong>"More settings"</strong> to adjust margins and remove headers/footers.</p>
+                        <img src="placeholder-chrome-print-settings.png" alt="Chrome print settings" class="step-card__image">
+                    </div>
+                </div>
+
+                <h2 id="print-options">Common Print Options Explained</h2>
+
+                <h3>Pages</h3>
+                <ul>
+                    <li><strong>All:</strong> Prints entire document</li>
+                    <li><strong>Custom:</strong> Enter specific pages (e.g., "1-3, 5, 8-10")</li>
+                </ul>
+
+                <h3>Layout</h3>
+                <ul>
+                    <li><strong>Portrait:</strong> Vertical orientation (standard for letters)</li>
+                    <li><strong>Landscape:</strong> Horizontal orientation (good for wide tables)</li>
+                </ul>
+
+                <h3>Color</h3>
+                <ul>
+                    <li><strong>Color:</strong> Full color printing (uses more ink)</li>
+                    <li><strong>Black &amp; White:</strong> Grayscale printing (economical)</li>
+                </ul>
+
+                <h3>Pages per Sheet</h3>
+                <ul>
+                    <li><strong>1:</strong> One page per sheet (normal)</li>
+                    <li><strong>2:</strong> Two pages per sheet (saves paper)</li>
+                    <li><strong>4:</strong> Four pages per sheet (for handouts)</li>
+                </ul>
+
+                <h3>Two-Sided (Duplex)</h3>
+                <ul>
+                    <li><strong>One-sided:</strong> Prints on one side only</li>
+                    <li><strong>Two-sided:</strong> Prints on both sides (saves paper)</li>
+                </ul>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ Print Preview</div>
+                    <p>Always use the print preview to check your document before printing. This helps you catch formatting issues and avoid wasting paper.</p>
+                </div>
+
+                <h2 id="troubleshooting">Troubleshooting Common Issues</h2>
+
+                <h3>Printer Not Appearing</h3>
+                <ul>
+                    <li><strong>At school:</strong> Verify you're connected to PVNC-Student or PVNC-Staff Wi-Fi</li>
+                    <li><strong>At home:</strong> Ensure printer is powered on and connected to same Wi-Fi network</li>
+                    <li>Try refreshing the printer list in print dialog</li>
+                    <li>Restart your Chromebook and try again</li>
+                </ul>
+
+                <h3>Print Job Stuck or Not Printing</h3>
+                <ul>
+                    <li>Check printer for paper jams or low paper</li>
+                    <li>Verify printer has ink/toner</li>
+                    <li>Cancel the print job and try printing again</li>
+                    <li>At school: Ask office staff if printer needs attention</li>
+                </ul>
+
+                <h3>Document Formatting Issues</h3>
+                <ul>
+                    <li>Check page orientation (Portrait vs. Landscape)</li>
+                    <li>Adjust margins in "More settings"</li>
+                    <li>Try "Save as PDF" first, then print the PDF</li>
+                    <li>Ensure correct paper size is selected</li>
+                </ul>
+
+                <h3>Can't Add Home Printer</h3>
+                <ul>
+                    <li>Verify printer supports network printing</li>
+                    <li>Check that Chromebook and printer are on same Wi-Fi network</li>
+                    <li>Try using printer's IP address instead of auto-detect</li>
+                    <li>Consult printer manufacturer's Chromebook setup guide</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Save as PDF Option</div>
+                    <p>If you're having trouble printing, you can always save the document as a PDF to Google Drive and print it later. In the print dialog, select "Save to Google Drive" as the destination.</p>
+                </div>
+
+                <h2>Best Practices for Printing</h2>
+
+                <ul>
+                    <li><strong>Preview before printing:</strong> Always check print preview to avoid wasted paper</li>
+                    <li><strong>Print only what you need:</strong> Use page range option to print specific pages</li>
+                    <li><strong>Use duplex printing:</strong> Print double-sided when possible to save paper</li>
+                    <li><strong>Choose black &amp; white:</strong> Unless color is necessary, grayscale is more economical</li>
+                    <li><strong>Adjust pages per sheet:</strong> For reference materials, consider 2 pages per sheet</li>
+                    <li><strong>Check printer location:</strong> At school, make sure you're printing to the nearest printer</li>
+                </ul>
+
+                <h2 id="support">Need Help?</h2>
+                <p>If you continue to experience printing issues:</p>
+
+                <ul>
+                    <li><strong>At school:</strong> Ask your teacher or visit the school office</li>
+                    <li><strong>Network printers:</strong> Contact IT for printer setup assistance</li>
+                    <li><strong>Home printer:</strong> Consult your printer's manual or manufacturer support</li>
+                    <li><strong>Chromebook issues:</strong> Submit a help desk ticket</li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">📞 Contact IT Support</div>
+                    <p>For technical support with Chromebook printing issues, contact the IT Help Desk:</p>
+                    <ul>
+                        <li><strong>Submit a Ticket:</strong> <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">pvnccdsb.ebasefm.com</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+17057481811">705-748-1811</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support &amp; Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

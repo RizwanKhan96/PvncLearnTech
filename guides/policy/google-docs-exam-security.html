@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Google Docs Securely for Exams and Tests | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="Best practices and security guidelines for using Google Docs to create, store, and administer exams and tests at PVNCCDSB.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            --color-danger: #DC2626;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 900px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(0, 61, 122, 0.06);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .breadcrumb__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .breadcrumb__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .breadcrumb__item:not(:last-child)::after {
+            content: '›';
+            color: var(--color-gray-400);
+        }
+
+        .breadcrumb__link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb__link:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+        }
+
+        .article-header__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .article-header__category {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--color-accent);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .article-header__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .article-header__meta {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-100);
+        }
+
+        .article-header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Article Content */
+        .article {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .article__sidebar {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .article__sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article__sidebar-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .article__sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article__sidebar-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+        }
+
+        .article__sidebar-list a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .article__content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .article__content li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
+        }
+
+        .article__content strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .article__content a {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article__content a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert--danger {
+            background: rgba(220, 38, 38, 0.1);
+            border-color: var(--color-danger);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Best Practice Cards */
+        .practice-card {
+            background: var(--color-white);
+            border: 2px solid rgba(15, 138, 61, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .practice-card__header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .practice-card__icon {
+            font-size: var(--font-size-3xl);
+            flex-shrink: 0;
+        }
+
+        .practice-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-success);
+            margin-bottom: var(--space-xs);
+        }
+
+        .practice-card__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        /* Risk Cards */
+        .risk-card {
+            background: var(--color-white);
+            border: 2px solid rgba(220, 38, 38, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .risk-card__header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .risk-card__icon {
+            font-size: var(--font-size-3xl);
+            flex-shrink: 0;
+        }
+
+        .risk-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-danger);
+            margin-bottom: var(--space-xs);
+        }
+
+        .risk-card__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        /* Checklist */
+        .checklist {
+            background: rgba(15, 138, 61, 0.06);
+            border: 1px solid rgba(15, 138, 61, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .checklist__title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-success);
+            margin-bottom: var(--space-md);
+        }
+
+        .checklist__items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist__item {
+            padding: var(--space-sm) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+        }
+
+        .checklist__item::before {
+            content: '☑';
+            color: var(--color-success);
+            font-size: var(--font-size-xl);
+            flex-shrink: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .article-header__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .article__content h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link nav__link--active">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="resources.html" class="breadcrumb__link">Resources</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span>Google Docs Security - Exams</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="article-header">
+            <div class="article-header__container">
+                <span class="article-header__category">🔒 Security Best Practices</span>
+                <h1 class="article-header__title">Using Google Docs Securely for Exams &amp; Tests</h1>
+                <div class="article-header__meta">
+                    <span class="article-header__meta-item">
+                        <span>📝</span> Assessment Security
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>👨‍🏫</span> For Teachers
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>⏱️</span> 12 min read
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <aside class="article__sidebar">
+                <h2 class="article__sidebar-title">Quick Links</h2>
+                <ul class="article__sidebar-list">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#risks">Security Risks</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#sharing">Proper Sharing Settings</a></li>
+                    <li><a href="#storage">Secure Storage</a></li>
+                    <li><a href="#distribution">Distributing Exams</a></li>
+                    <li><a href="#after-exam">After the Exam</a></li>
+                    <li><a href="#checklist">Security Checklist</a></li>
+                </ul>
+            </aside>
+
+            <div class="article__content">
+                <div class="alert alert--danger">
+                    <div class="alert__title">🚨 Critical Security Notice</div>
+                    <p>Improper handling of exam materials in Google Docs can lead to academic integrity violations, unauthorized access to assessments, and compromised student evaluations. This guide outlines essential security practices to protect your exams and tests.</p>
+                </div>
+
+                <h2 id="overview">Why Exam Security Matters</h2>
+                <p>Google Docs is a powerful tool for creating and managing educational content, but exams and tests require special security considerations:</p>
+                <ul>
+                    <li><strong>Academic Integrity:</strong> Prevents students from accessing exams before test day</li>
+                    <li><strong>Fairness:</strong> Ensures all students have equal conditions for assessment</li>
+                    <li><strong>Privacy:</strong> Protects confidential educational materials</li>
+                    <li><strong>Professional Responsibility:</strong> Maintains trust in assessment processes</li>
+                    <li><strong>Legal Compliance:</strong> Meets privacy legislation requirements (MFIPPA)</li>
+                </ul>
+
+                <h2 id="risks">Common Security Risks with Google Docs</h2>
+
+                <div class="risk-card">
+                    <div class="risk-card__header">
+                        <div class="risk-card__icon">⚠️</div>
+                        <div>
+                            <h3 class="risk-card__title">Risk #1: Accidental Public Sharing</h3>
+                            <p class="risk-card__subtitle">Most common security breach</p>
+                        </div>
+                    </div>
+                    <p><strong>The Problem:</strong> A single click can make your exam accessible to "anyone with the link" or even publicly searchable on the internet.</p>
+                    <p><strong>Real Scenario:</strong> Teacher shares exam link with colleague via email. Email is forwarded to department list. Student on list accesses exam before test day.</p>
+                    <p><strong>Impact:</strong> Entire class assessment compromised, requiring new exam creation.</p>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-card__header">
+                        <div class="risk-card__icon">⚠️</div>
+                        <div>
+                            <h3 class="risk-card__title">Risk #2: Version History Exposure</h3>
+                            <p class="risk-card__subtitle">Hidden content may still be accessible</p>
+                        </div>
+                    </div>
+                    <p><strong>The Problem:</strong> Google Docs keeps complete version history. Even if you delete answer keys or solutions, they remain accessible through "Version history".</p>
+                    <p><strong>Real Scenario:</strong> Teacher creates exam with answer key in same document, then deletes answers. Student with edit access views version history to see deleted answers.</p>
+                    <p><strong>Impact:</strong> Students can access solutions even after they've been "removed".</p>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-card__header">
+                        <div class="risk-card__icon">⚠️</div>
+                        <div>
+                            <h3 class="risk-card__title">Risk #3: Shared Drive Misconfiguration</h3>
+                            <p class="risk-card__subtitle">Department-wide access to sensitive materials</p>
+                        </div>
+                    </div>
+                    <p><strong>The Problem:</strong> Placing exams in Shared Drives with broad permissions gives many users access to confidential materials.</p>
+                    <p><strong>Real Scenario:</strong> Exam stored in "Grade 10 Math" shared drive accessible to all math teachers, student teachers, and educational assistants.</p>
+                    <p><strong>Impact:</strong> Expanded access increases risk of accidental or intentional leak.</p>
+                </div>
+
+                <div class="risk-card">
+                    <div class="risk-card__header">
+                        <div class="risk-card__icon">⚠️</div>
+                        <div>
+                            <h3 class="risk-card__title">Risk #4: Notification Leaks</h3>
+                            <p class="risk-card__subtitle">Email notifications reveal document existence</p>
+                        </div>
+                    </div>
+                    <p><strong>The Problem:</strong> When you share documents or add comments, Google sends email notifications that can alert unintended recipients.</p>
+                    <p><strong>Real Scenario:</strong> Teacher adds student name in comment to note question difficulty. Student receives email notification with link to exam document.</p>
+                    <p><strong>Impact:</strong> Students become aware of exam location and may attempt access.</p>
+                </div>
+
+                <h2 id="best-practices">Security Best Practices</h2>
+
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <div class="practice-card__icon">✅</div>
+                        <div>
+                            <h3 class="practice-card__title">Best Practice #1: Keep Exams Private to Your Drive</h3>
+                            <p class="practice-card__subtitle">Default security posture</p>
+                        </div>
+                    </div>
+                    <p><strong>What to Do:</strong></p>
+                    <ul>
+                        <li>Store ALL exam materials in <strong>My Drive</strong>, not Shared Drives</li>
+                        <li>Create a dedicated folder: "Assessments - CONFIDENTIAL"</li>
+                        <li>Never share this folder with students</li>
+                        <li>Limit sharing to specific trusted colleagues only when necessary</li>
+                    </ul>
+                    <p><strong>Why It Works:</strong> Documents in My Drive are private by default. Only you can access them unless you explicitly grant permission.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <div class="practice-card__icon">✅</div>
+                        <div>
+                            <h3 class="practice-card__title">Best Practice #2: Separate Answer Keys Completely</h3>
+                            <p class="practice-card__subtitle">Physical separation of sensitive materials</p>
+                        </div>
+                    </div>
+                    <p><strong>What to Do:</strong></p>
+                    <ul>
+                        <li>Create answer keys in <strong>separate documents</strong></li>
+                        <li>Never include answers in the same document as the exam (even temporarily)</li>
+                        <li>Name answer key documents clearly: "[Exam Name] - ANSWER KEY - CONFIDENTIAL"</li>
+                        <li>Store answer keys in separate folder from student-facing exams</li>
+                    </ul>
+                    <p><strong>Why It Works:</strong> Complete separation prevents version history exploits and accidental sharing of solutions.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <div class="practice-card__icon">✅</div>
+                        <div>
+                            <h3 class="practice-card__title">Best Practice #3: Use Explicit Sharing Only</h3>
+                            <p class="practice-card__subtitle">Control exactly who has access</p>
+                        </div>
+                    </div>
+                    <p><strong>What to Do:</strong></p>
+                    <ul>
+                        <li><strong>NEVER</strong> use "Anyone with the link" for exam materials</li>
+                        <li><strong>NEVER</strong> make exams publicly accessible</li>
+                        <li>Share only with specific email addresses when needed</li>
+                        <li>Use "Viewer" permission (not "Editor") for colleagues reviewing exams</li>
+                        <li>Remove access immediately after review is complete</li>
+                    </ul>
+                    <p><strong>Why It Works:</strong> Explicit sharing creates audit trail and prevents link-based access.</p>
+                </div>
+
+                <div class="practice-card">
+                    <div class="practice-card__header">
+                        <div class="practice-card__icon">✅</div>
+                        <div>
+                            <h3 class="practice-card__title">Best Practice #4: Disable Link Sharing and Downloading</h3>
+                            <p class="practice-card__subtitle">Additional protection layer</p>
+                        </div>
+                    </div>
+                    <p><strong>What to Do:</strong></p>
+                    <ul>
+                        <li>Open sharing settings for exam document</li>
+                        <li>Click gear icon (⚙️) in sharing dialog</li>
+                        <li>Uncheck "Viewers and commenters can see the option to download, print, and copy"</li>
+                        <li>This prevents colleagues from downloading local copies that may be less secure</li>
+                    </ul>
+                    <p><strong>Why It Works:</strong> Limits distribution of exam materials beyond your Google Drive control.</p>
+                </div>
+
+                <h2 id="sharing">Proper Sharing Settings: Step by Step</h2>
+
+                <h3>Checking Current Sharing Status</h3>
+                <ol>
+                    <li>Open your exam document in Google Docs</li>
+                    <li>Click the <strong>Share</strong> button (top-right corner)</li>
+                    <li>Review the "General access" section</li>
+                    <li>Verify it shows <strong>"Restricted - Only people added can open with this link"</strong></li>
+                    <li>If it says anything else (Anyone with link, Anyone at PVNCCDSB, Public), <strong>change it immediately</strong></li>
+                </ol>
+
+                <h3>Secure Sharing with Colleagues</h3>
+                <p>When you need to share an exam with another teacher for review:</p>
+                <ol>
+                    <li>Click <strong>Share</strong> button</li>
+                    <li>In "Add people and groups" field, enter colleague's PVNCCDSB email address</li>
+                    <li>Change permission to <strong>"Viewer"</strong> (not Editor unless they need to edit)</li>
+                    <li><strong>Uncheck</strong> "Notify people" if you don't want email sent</li>
+                    <li>Click <strong>Send</strong> or <strong>Done</strong></li>
+                    <li>After review, remove their access:
+                        <ul>
+                            <li>Click <strong>Share</strong> again</li>
+                            <li>Find colleague's name in list</li>
+                            <li>Click their permission level → Select <strong>Remove access</strong></li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Email Notification Risk</div>
+                    <p>When you share a document, Google sends an email notification by default. This email contains a direct link to the document. If the recipient forwards this email or it's intercepted, unauthorized people could potentially access the link. For highly sensitive exams, consider:</p>
+                    <ul>
+                        <li>Unchecking "Notify people" when sharing</li>
+                        <li>Sharing link verbally or via secure channel instead</li>
+                        <li>Using temporary access that you remove after viewing</li>
+                    </ul>
+                </div>
+
+                <h2 id="storage">Secure Storage Organization</h2>
+
+                <h3>Recommended Folder Structure</h3>
+                <p>Organize your assessment materials with clear security boundaries:</p>
+
+                <div style="background: var(--color-gray-100); padding: var(--space-lg); border-radius: var(--radius-md); margin: var(--space-lg) 0; font-family: monospace; font-size: var(--font-size-sm);">
+                    📁 My Drive<br>
+                    &nbsp;&nbsp;📁 Teaching Materials - [Year]<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;📁 Grade 10 Math<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 Lesson Plans (can be shared)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 Student Resources (can be shared)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 <strong>🔒 ASSESSMENTS - CONFIDENTIAL</strong> (NEVER share folder)<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 Unit 1 Tests<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 Unit 2 Tests<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 Midterm Exams<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 Final Exams<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;📁 <strong>🔐 ANSWER KEYS</strong> (separate from tests)<br>
+                </div>
+
+                <h3>Folder Naming Best Practices</h3>
+                <ul>
+                    <li>Use clear labels: "CONFIDENTIAL", "RESTRICTED", "TEACHER ONLY"</li>
+                    <li>Include year/semester to distinguish old from current materials</li>
+                    <li>Use emoji locks (🔒 🔐) as visual security indicators</li>
+                    <li>Keep structure consistent across courses</li>
+                </ul>
+
+                <h2 id="distribution">Distributing Exams to Students</h2>
+
+                <h3>Option 1: Google Classroom Assignment (Recommended)</h3>
+                <p>The most secure method for distributing exams digitally:</p>
+                <ol>
+                    <li>In Google Classroom, create new <strong>Assignment</strong></li>
+                    <li>Click <strong>Add</strong> → <strong>Google Drive</strong></li>
+                    <li>Select your exam document</li>
+                    <li><strong>CRITICAL:</strong> Choose <strong>"Students can view file"</strong> or <strong>"Make a copy for each student"</strong></li>
+                    <li><strong>NEVER</strong> choose "Students can edit file" - this gives access to original</li>
+                    <li>Set assignment to <strong>Scheduled</strong> and select exam start time</li>
+                    <li>Only publish assignment when exam begins</li>
+                </ol>
+
+                <p><strong>Why This Works:</strong></p>
+                <ul>
+                    <li>Students don't get access until you publish</li>
+                    <li>Each student gets individual copy (can't see others' work)</li>
+                    <li>Original exam document remains secure in your Drive</li>
+                    <li>Classroom tracks submission timestamps</li>
+                </ul>
+
+                <h3>Option 2: Paper-Based Distribution</h3>
+                <p>For high-stakes exams, consider printing from Google Docs:</p>
+                <ol>
+                    <li>Print exam directly from Google Docs</li>
+                    <li>Distribute paper copies in supervised environment</li>
+                    <li>Collect all copies after exam (count them)</li>
+                    <li>Secure physical storage of completed exams</li>
+                </ol>
+
+                <p><strong>Benefits:</strong> No digital access risks, full control of materials</p>
+
+                <h3>Option 3: Google Forms for Objective Assessments</h3>
+                <p>For multiple-choice, short-answer, or fill-in-the-blank assessments:</p>
+                <ol>
+                    <li>Create exam in <strong>Google Forms</strong> instead of Docs</li>
+                    <li>Enable <strong>"Restrict to PVNCCDSB users"</strong></li>
+                    <li>Turn on <strong>"Limit to 1 response"</strong></li>
+                    <li>Set Forms to <strong>accept responses only during exam time</strong></li>
+                    <li>Share Form link only when exam begins</li>
+                </ol>
+
+                <p><strong>Security Features:</strong></p>
+                <ul>
+                    <li>Auto-grades objective questions</li>
+                    <li>Timestamps all submissions</li>
+                    <li>Can shuffle question order for each student</li>
+                    <li>No access to form content until you share link</li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">💡 Pro Tip: Lockdown Browser</div>
+                    <p>For high-stakes exams, consider using Google Forms with lockdown browser extensions or proctoring tools available through PVNCCDSB. Contact IT Help Desk for options.</p>
+                </div>
+
+                <h2 id="after-exam">After Exam Administration</h2>
+
+                <h3>Immediate Actions</h3>
+                <ol>
+                    <li><strong>Unpublish Classroom assignment</strong> (if used) to prevent late access</li>
+                    <li><strong>Close Google Form</strong> (if used) to stop accepting responses</li>
+                    <li><strong>Revoke any temporary sharing</strong> granted to colleagues</li>
+                    <li><strong>Move used exams</strong> to archived folder (not deleted)</li>
+                </ol>
+
+                <h3>Long-Term Storage</h3>
+                <p>After exam marking is complete:</p>
+                <ul>
+                    <li>Move exam document to "Previous Exams" folder in your private Drive</li>
+                    <li>Keep for reference but ensure it remains restricted</li>
+                    <li>Update document title to include date/semester: "Math Midterm - Fall 2024"</li>
+                    <li>Document any security incidents (unauthorized access attempts) and report to administration</li>
+                </ul>
+
+                <h3>Exam Reuse Considerations</h3>
+                <p>If planning to reuse exam questions:</p>
+                <ul>
+                    <li>Create new document with modified questions (don't just edit original)</li>
+                    <li>Assume students may have shared previous versions</li>
+                    <li>Change question order, values, and scenarios significantly</li>
+                    <li>Maintain previous versions for record-keeping</li>
+                </ul>
+
+                <h2 id="checklist">Pre-Exam Security Checklist</h2>
+
+                <div class="checklist">
+                    <h3 class="checklist__title">Complete Before Every Exam</h3>
+                    <ul class="checklist__items">
+                        <li class="checklist__item">Exam document is stored in My Drive, not Shared Drive</li>
+                        <li class="checklist__item">General access is set to "Restricted" (not "Anyone with link")</li>
+                        <li class="checklist__item">No students have been granted access to exam document</li>
+                        <li class="checklist__item">Answer key is in separate document from exam</li>
+                        <li class="checklist__item">Download/print/copy options are disabled for shared viewers</li>
+                        <li class="checklist__item">Exam folder is clearly labeled as CONFIDENTIAL</li>
+                        <li class="checklist__item">Any colleague access has been reviewed and is time-limited</li>
+                        <li class="checklist__item">No links to exam have been shared via email or chat</li>
+                        <li class="checklist__item">Google Classroom assignment is scheduled, not published yet</li>
+                        <li class="checklist__item">Backup copy exists in case of technical issues</li>
+                        <li class="checklist__item">Previous year's versions are archived and inaccessible to students</li>
+                        <li class="checklist__item">Physical printouts (if any) are secured in locked cabinet</li>
+                    </ul>
+                </div>
+
+                <h2>What to Do If Security Is Breached</h2>
+
+                <div class="alert alert--danger">
+                    <div class="alert__title">🚨 If Exam Is Compromised</div>
+                    <p>Take immediate action if you suspect students have accessed exam materials:</p>
+                    <ol>
+                        <li><strong>Document everything:</strong> Take screenshots of sharing settings, access logs, etc.</li>
+                        <li><strong>Revoke all access:</strong> Change sharing settings to maximum restriction</li>
+                        <li><strong>Notify administration:</strong> Report to department head and vice-principal immediately</li>
+                        <li><strong>Contact IT Help Desk:</strong> They can check access logs to determine who viewed document</li>
+                        <li><strong>Prepare alternate assessment:</strong> You may need replacement exam</li>
+                        <li><strong>Document academic integrity concern:</strong> If student involvement, follow board policy</li>
+                    </ol>
+                </div>
+
+                <h3>Checking Access History</h3>
+                <p>To see who has accessed your exam document:</p>
+                <ol>
+                    <li>Open the document</li>
+                    <li>Click <strong>File</strong> → <strong>Version history</strong> → <strong>See version history</strong></li>
+                    <li>Review names and timestamps of all viewers and editors</li>
+                    <li>Take screenshots for documentation</li>
+                    <li>Look for unexpected names or access outside normal hours</li>
+                </ol>
+
+                <h2>Additional Security Resources</h2>
+
+                <ul>
+                    <li><strong>Google Workspace Admin Help:</strong> <a href="https://support.google.com/a/answer/60781" target="_blank" rel="noopener noreferrer">Sharing Settings Best Practices</a></li>
+                    <li><strong>PVNCCDSB Assessment Policy:</strong> Contact administration for board-specific guidelines</li>
+                    <li><strong>Academic Integrity Resources:</strong> Review board policy on test security</li>
+                </ul>
+
+                <h2>Need Help?</h2>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">📞 Contact IT Support</div>
+                    <p>For technical assistance with Google Docs security or access issues:</p>
+                    <ul>
+                        <li><strong>Submit a Ticket:</strong> <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">pvnccdsb.ebasefm.com</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+17057481811">705-748-1811</a></li>
+                        <li><strong>Hours:</strong> Monday-Friday, 7:30 AM - 4:00 PM EST</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ Key Takeaways</div>
+                    <p>Remember these essential security practices:</p>
+                    <ul>
+                        <li>Keep exams in <strong>My Drive</strong>, never in Shared Drives</li>
+                        <li>Use <strong>"Restricted"</strong> access only - never "Anyone with link"</li>
+                        <li>Store <strong>answer keys separately</strong> from exam documents</li>
+                        <li>Distribute through <strong>Google Classroom</strong> with scheduled publishing</li>
+                        <li>Revoke access immediately after use</li>
+                        <li>Report any suspected breaches immediately</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support &amp; Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Update Your Windows Device | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="Step-by-step guide for updating Windows devices to ensure security, stability, and access to the latest features on PVNCCDSB computers.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 900px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(0, 61, 122, 0.06);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .breadcrumb__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .breadcrumb__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .breadcrumb__item:not(:last-child)::after {
+            content: '›';
+            color: var(--color-gray-400);
+        }
+
+        .breadcrumb__link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb__link:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+        }
+
+        .article-header__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .article-header__category {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--color-accent);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .article-header__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .article-header__meta {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-100);
+        }
+
+        .article-header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Article Content */
+        .article {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .article__sidebar {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .article__sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article__sidebar-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .article__sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article__sidebar-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+        }
+
+        .article__sidebar-list a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .article__content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .article__content li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
+        }
+
+        .article__content strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .article__content a {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article__content a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content code {
+            background: var(--color-gray-100);
+            padding: 0.125rem 0.375rem;
+            border-radius: var(--radius-sm);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--color-primary-dark);
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Method Cards */
+        .method-card {
+            background: var(--color-white);
+            border: 2px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .method-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .method-card__badge {
+            background: linear-gradient(135deg, var(--color-success), #0A6B30);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+        }
+
+        .method-card__content ol {
+            margin-left: var(--space-lg);
+        }
+
+        .method-card__screenshot {
+            background: var(--color-gray-100);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin: var(--space-lg) 0;
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .article-header__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .article__content h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link nav__link--active">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="resources.html" class="breadcrumb__link">Resources</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span>Windows Update Guide</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="article-header">
+            <div class="article-header__container">
+                <span class="article-header__category">💻 How-To Guide</span>
+                <h1 class="article-header__title">How to Update Your Windows Device</h1>
+                <div class="article-header__meta">
+                    <span class="article-header__meta-item">
+                        <span>📄</span> Complete Guide
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>👥</span> For All Users
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>⏱️</span> 8 min read
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <aside class="article__sidebar">
+                <h2 class="article__sidebar-title">Quick Links</h2>
+                <ul class="article__sidebar-list">
+                    <li><a href="#overview">Why Updates Matter</a></li>
+                    <li><a href="#automatic">Check Update Settings</a></li>
+                    <li><a href="#manual">Manual Update Method</a></li>
+                    <li><a href="#optional">Install Optional Updates</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                    <li><a href="#best-practices">Best Practices</a></li>
+                    <li><a href="#support">Need Help?</a></li>
+                </ul>
+            </aside>
+
+            <div class="article__content">
+                <div class="alert alert--info">
+                    <div class="alert__title">ℹ️ About This Guide</div>
+                    <p>This guide explains how to update Windows on your PVNCCDSB device. Regular updates keep your computer secure, fix bugs, and ensure compatibility with board systems. Both automatic and manual update methods are covered.</p>
+                </div>
+
+                <h2 id="overview">Why Windows Updates Are Important</h2>
+                <p>Windows updates provide critical improvements to your device:</p>
+
+                <h3>Security Protection</h3>
+                <ul>
+                    <li><strong>Patches vulnerabilities:</strong> Fixes security holes that hackers could exploit</li>
+                    <li><strong>Protects data:</strong> Prevents unauthorized access to student and staff information</li>
+                    <li><strong>Defends against malware:</strong> Updates Windows Defender with latest threat definitions</li>
+                    <li><strong>Prevents ransomware:</strong> Closes security gaps that ransomware uses to spread</li>
+                </ul>
+
+                <h3>System Stability</h3>
+                <ul>
+                    <li><strong>Fixes bugs:</strong> Resolves software issues that cause crashes or errors</li>
+                    <li><strong>Improves performance:</strong> Optimizes system operations for better speed</li>
+                    <li><strong>Hardware compatibility:</strong> Adds support for new devices and peripherals</li>
+                    <li><strong>Application support:</strong> Ensures software continues to work properly</li>
+                </ul>
+
+                <h3>New Features</h3>
+                <ul>
+                    <li><strong>Enhanced productivity:</strong> Adds tools and features that improve workflow</li>
+                    <li><strong>Better accessibility:</strong> Improves features for users with disabilities</li>
+                    <li><strong>Modern interface:</strong> Updates design and usability improvements</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Board Policy Requirement</div>
+                    <p>PVNCCDSB requires all devices to install Windows updates within <strong>7 days of release</strong> for security updates and <strong>30 days</strong> for feature updates. Outdated devices may be blocked from accessing board systems until updated.</p>
+                </div>
+
+                <h2 id="automatic">Method 1: Check Automatic Update Settings (Recommended)</h2>
+
+                <div class="method-card">
+                    <h3 class="method-card__title">
+                        <span>🔄</span> 
+                        Verify Updates Are Enabled
+                        <span class="method-card__badge">RECOMMENDED</span>
+                    </h3>
+                    <div class="method-card__content">
+                        <p>Windows should automatically download and install updates. Follow these steps to verify automatic updates are enabled:</p>
+                        
+                        <ol>
+                            <li><strong>Open Windows Settings:</strong>
+                                <ul>
+                                    <li>Press <code>Windows key + I</code> on your keyboard</li>
+                                    <li>Or click <strong>Start menu</strong> → <strong>Settings</strong> (gear icon)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Navigate to Windows Update:</strong>
+                                <ul>
+                                    <li><strong>Windows 11:</strong> Click <strong>Windows Update</strong> in the left sidebar</li>
+                                    <li><strong>Windows 10:</strong> Click <strong>Update &amp; Security</strong> → <strong>Windows Update</strong></li>
+                                </ul>
+                            </li>
+                            <li><strong>Check for updates:</strong>
+                                <ul>
+                                    <li>Click the <strong>Check for updates</strong> button</li>
+                                    <li>Windows will search for available updates</li>
+                                    <li>If updates are found, they will begin downloading automatically</li>
+                                </ul>
+                            </li>
+                            <li><strong>Review update status:</strong>
+                                <ul>
+                                    <li><strong>"You're up to date"</strong> means no updates are needed</li>
+                                    <li><strong>"Updates are available"</strong> means Windows is downloading or ready to install</li>
+                                    <li><strong>"Restart required"</strong> means updates are installed and need restart to complete</li>
+                                </ul>
+                            </li>
+                            <li><strong>Install updates:</strong>
+                                <ul>
+                                    <li>Updates download and install automatically in the background</li>
+                                    <li>Some updates require a restart - Windows will notify you</li>
+                                    <li>Click <strong>Restart now</strong> when convenient, or schedule restart for later</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <div class="method-card__screenshot">
+                            💻 Screenshot: Windows Update settings showing "Check for updates" button
+                        </div>
+
+                        <div class="alert alert--success">
+                            <div class="alert__title">✅ Best Practice</div>
+                            <p>Let Windows install updates automatically during non-working hours. Configure <strong>Active hours</strong> in Windows Update settings to prevent restarts during your work day.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="manual">Method 2: Manually Check for and Install Updates</h2>
+
+                <div class="method-card">
+                    <h3 class="method-card__title">
+                        <span>🔧</span> 
+                        Force Update Check
+                    </h3>
+                    <div class="method-card__content">
+                        <p>If you want to immediately check for and install updates instead of waiting for automatic updates:</p>
+                        
+                        <h4>Step 1: Access Windows Update</h4>
+                        <ol>
+                            <li>Press <code>Windows key + I</code> to open Settings</li>
+                            <li>Click <strong>Windows Update</strong> (Windows 11) or <strong>Update &amp; Security</strong> → <strong>Windows Update</strong> (Windows 10)</li>
+                        </ol>
+
+                        <h4>Step 2: Check for Updates</h4>
+                        <ol>
+                            <li>Click <strong>Check for updates</strong> button at the top</li>
+                            <li>Wait while Windows searches for updates (may take 1-5 minutes)</li>
+                            <li>If updates are found, they will appear in a list below</li>
+                        </ol>
+
+                        <h4>Step 3: Download Updates</h4>
+                        <ol>
+                            <li>Updates begin downloading automatically</li>
+                            <li>You'll see a progress bar showing download status</li>
+                            <li>Multiple updates may download simultaneously</li>
+                            <li>You can continue working while updates download</li>
+                        </ol>
+
+                        <h4>Step 4: Install Updates</h4>
+                        <ol>
+                            <li>After downloading, updates install automatically</li>
+                            <li>Some updates install without restart</li>
+                            <li>Critical updates require restart to complete</li>
+                            <li>You'll see "Restart required" when installation needs restart</li>
+                        </ol>
+
+                        <h4>Step 5: Restart Your Computer</h4>
+                        <ol>
+                            <li>Save all your work and close open programs</li>
+                            <li>Click <strong>Restart now</strong> to restart immediately</li>
+                            <li>Or click <strong>Schedule the restart</strong> to restart at a specific time</li>
+                            <li>Computer will restart, apply updates, and restart again if needed</li>
+                            <li>This may take 5-30 minutes depending on update size</li>
+                        </ol>
+
+                        <div class="alert alert--warning">
+                            <div class="alert__title">⚠️ Don't Power Off During Updates</div>
+                            <p>Never shut down or unplug your computer while updates are installing. You'll see a message like "Working on updates - don't turn off your PC." Interrupting updates can corrupt Windows and prevent your computer from starting.</p>
+                        </div>
+
+                        <div class="method-card__screenshot">
+                            💻 Screenshot: Windows Update progress screen showing "Installing updates X%"
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="optional">Installing Optional Updates</h2>
+                <p>In addition to required security and quality updates, Microsoft releases optional updates that you can choose to install:</p>
+
+                <h3>Types of Optional Updates</h3>
+                <ul>
+                    <li><strong>Driver updates:</strong> Updates for hardware like printers, graphics cards, network adapters</li>
+                    <li><strong>Feature updates:</strong> Major Windows version upgrades (e.g., Windows 10 to Windows 11)</li>
+                    <li><strong>Preview updates:</strong> Early access to upcoming features for testing</li>
+                </ul>
+
+                <h3>How to View and Install Optional Updates</h3>
+                <ol>
+                    <li>Open <strong>Settings</strong> → <strong>Windows Update</strong></li>
+                    <li>Click <strong>Advanced options</strong></li>
+                    <li>Click <strong>Optional updates</strong> (if available)</li>
+                    <li>Expand each category to see available updates:
+                        <ul>
+                            <li>Driver updates</li>
+                            <li>Feature updates</li>
+                            <li>Other updates</li>
+                        </ul>
+                    </li>
+                    <li>Check the box next to any update you want to install</li>
+                    <li>Click <strong>Download &amp; install</strong></li>
+                </ol>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">💡 Should I Install Optional Updates?</div>
+                    <p><strong>Driver updates:</strong> Only install if you're experiencing hardware issues. If the device works fine, skip driver updates.</p>
+                    <p><strong>Feature updates:</strong> On board devices, wait for IT to deploy feature updates. Don't manually upgrade Windows versions.</p>
+                    <p><strong>Preview updates:</strong> Not recommended for daily use devices - these are for testing only.</p>
+                </div>
+
+                <h2>Understanding Update Types</h2>
+
+                <h3>Quality Updates (Monthly)</h3>
+                <ul>
+                    <li><strong>Released:</strong> Second Tuesday of each month ("Patch Tuesday")</li>
+                    <li><strong>Contains:</strong> Security fixes, bug fixes, performance improvements</li>
+                    <li><strong>Install time:</strong> Usually quick (5-15 minutes)</li>
+                    <li><strong>Frequency:</strong> Monthly, sometimes more often for critical security issues</li>
+                    <li><strong>Action required:</strong> Install immediately when available</li>
+                </ul>
+
+                <h3>Feature Updates (Semi-Annual)</h3>
+                <ul>
+                    <li><strong>Released:</strong> Twice per year (typically April and October)</li>
+                    <li><strong>Contains:</strong> Major new features, interface changes, significant improvements</li>
+                    <li><strong>Install time:</strong> Longer (30-90 minutes)</li>
+                    <li><strong>Frequency:</strong> 2 times per year</li>
+                    <li><strong>Action required:</strong> On PVNCCDSB devices, IT manages feature update deployment</li>
+                </ul>
+
+                <h3>Definition Updates (Daily)</h3>
+                <ul>
+                    <li><strong>Released:</strong> Multiple times per day</li>
+                    <li><strong>Contains:</strong> Windows Defender antivirus definitions</li>
+                    <li><strong>Install time:</strong> Very quick (under 1 minute)</li>
+                    <li><strong>Frequency:</strong> Multiple times daily</li>
+                    <li><strong>Action required:</strong> Installs automatically, no action needed</li>
+                </ul>
+
+                <h2>Configuring Active Hours</h2>
+                <p>Active hours prevent Windows from restarting during times you're typically using your computer:</p>
+
+                <ol>
+                    <li>Open <strong>Settings</strong> → <strong>Windows Update</strong></li>
+                    <li>Click <strong>Advanced options</strong></li>
+                    <li>Find <strong>Active hours</strong> section</li>
+                    <li>Choose one of these options:
+                        <ul>
+                            <li><strong>Automatic (recommended):</strong> Windows learns your usage pattern</li>
+                            <li><strong>Manual:</strong> Set specific start and end times</li>
+                        </ul>
+                    </li>
+                    <li>If using manual:
+                        <ul>
+                            <li>Click <strong>Manually</strong></li>
+                            <li>Set start time (e.g., 7:00 AM)</li>
+                            <li>Set end time (e.g., 5:00 PM)</li>
+                            <li>Maximum range: 18 hours</li>
+                        </ul>
+                    </li>
+                    <li>Click <strong>Save</strong></li>
+                </ol>
+
+                <p>Windows will only restart for updates outside your active hours, preventing work interruption.</p>
+
+                <h2 id="troubleshooting">Troubleshooting Update Issues</h2>
+
+                <h3>Problem: Updates Won't Download</h3>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li><strong>Check internet connection:</strong> Ensure device is connected to network</li>
+                    <li><strong>Free up disk space:</strong> Delete unnecessary files (you need at least 10-20 GB free)</li>
+                    <li><strong>Pause and resume:</strong> Click <strong>Pause updates</strong>, wait 5 minutes, then <strong>Resume updates</strong></li>
+                    <li><strong>Run Windows Update Troubleshooter:</strong>
+                        <ul>
+                            <li>Settings → System → Troubleshoot → Other troubleshooters</li>
+                            <li>Click <strong>Run</strong> next to Windows Update</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Problem: Update Installation Failed</h3>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li><strong>Note the error code:</strong> Write down the error number (e.g., 0x80070002)</li>
+                    <li><strong>Retry installation:</strong> Click <strong>Retry</strong> button if shown</li>
+                    <li><strong>Run Update Troubleshooter:</strong> Automatically fixes common issues</li>
+                    <li><strong>Check disk errors:</strong>
+                        <ul>
+                            <li>Open Command Prompt as Administrator</li>
+                            <li>Type: <code>chkdsk C: /f /r</code></li>
+                            <li>Restart when prompted</li>
+                        </ul>
+                    </li>
+                    <li><strong>Contact IT with error code:</strong> Some errors require IT intervention</li>
+                </ul>
+
+                <h3>Problem: Computer Stuck on "Working on updates"</h3>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li><strong>Be patient:</strong> Large updates can take 30-90 minutes</li>
+                    <li><strong>Look for activity:</strong> Hard drive light should be blinking (computer is working)</li>
+                    <li><strong>Wait at least 2 hours</strong> before taking action</li>
+                    <li><strong>If truly frozen (no disk activity for 2+ hours):</strong>
+                        <ul>
+                            <li>Press and hold power button for 10 seconds to force shutdown</li>
+                            <li>Wait 30 seconds</li>
+                            <li>Turn computer back on</li>
+                            <li>Windows will automatically attempt to repair</li>
+                        </ul>
+                    </li>
+                    <li><strong>If problems persist:</strong> Contact IT Help Desk</li>
+                </ul>
+
+                <h3>Problem: "Not enough disk space" Error</h3>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li><strong>Run Disk Cleanup:</strong>
+                        <ul>
+                            <li>Search for <strong>Disk Cleanup</strong> in Start menu</li>
+                            <li>Select <strong>C: drive</strong></li>
+                            <li>Click <strong>Clean up system files</strong></li>
+                            <li>Check all boxes (especially "Previous Windows installations")</li>
+                            <li>Click <strong>OK</strong> → <strong>Delete Files</strong></li>
+                        </ul>
+                    </li>
+                    <li><strong>Move files to OneDrive:</strong> Free up local space by moving to cloud</li>
+                    <li><strong>Uninstall unused programs:</strong> Settings → Apps → Installed apps</li>
+                    <li><strong>Contact IT:</strong> If device persistently has low space, IT can increase storage</li>
+                </ul>
+
+                <h2 id="best-practices">Best Practices for Windows Updates</h2>
+
+                <ul>
+                    <li><strong>Check weekly:</strong> Manually check for updates at least once per week</li>
+                    <li><strong>Don't postpone:</strong> Install security updates as soon as available</li>
+                    <li><strong>Restart regularly:</strong> Restart your computer at least once per week to complete updates</li>
+                    <li><strong>Save your work:</strong> Always save and close files before restarting for updates</li>
+                    <li><strong>Stay plugged in:</strong> Keep laptop plugged into power during updates</li>
+                    <li><strong>Maintain free space:</strong> Keep at least 20 GB free on C: drive</li>
+                    <li><strong>Don't interrupt:</strong> Never force shutdown during update installation</li>
+                    <li><strong>Report issues promptly:</strong> Contact IT if updates fail repeatedly</li>
+                </ul>
+
+                <h2>What Happens During a Windows Update?</h2>
+                <p>Understanding the update process helps you know what to expect:</p>
+
+                <h3>1. Download Phase</h3>
+                <ul>
+                    <li>Updates download in background while you work</li>
+                    <li>You can continue using computer normally</li>
+                    <li>Progress shown in Windows Update settings</li>
+                    <li>Time varies based on update size and internet speed</li>
+                </ul>
+
+                <h3>2. Installation Phase</h3>
+                <ul>
+                    <li>Most updates install in background</li>
+                    <li>Some require exclusive access (no other programs running)</li>
+                    <li>Computer may slow down during installation</li>
+                    <li>You'll see percentage progress in Windows Update</li>
+                </ul>
+
+                <h3>3. Restart Phase</h3>
+                <ul>
+                    <li>Computer restarts automatically or when you choose</li>
+                    <li>Screen shows "Working on updates" with percentage</li>
+                    <li>May restart multiple times (normal behavior)</li>
+                    <li>Don't turn off computer during this phase</li>
+                </ul>
+
+                <h3>4. Finalization Phase</h3>
+                <ul>
+                    <li>Updates complete after restart</li>
+                    <li>You may see "Getting Windows ready" or "Hi" messages</li>
+                    <li>Computer returns to login screen when complete</li>
+                    <li>First login after update may take slightly longer</li>
+                </ul>
+
+                <h2 id="support">Need Help with Updates?</h2>
+                <p>If you experience problems with Windows updates or have questions:</p>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">📞 Contact IT Support</div>
+                    <p>The IT Help Desk can assist with update issues:</p>
+                    <ul>
+                        <li><strong>Submit a Ticket:</strong> <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">pvnccdsb.ebasefm.com</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+17057481811">705-748-1811</a></li>
+                        <li><strong>Hours:</strong> Monday-Friday, 7:30 AM - 4:00 PM EST</li>
+                    </ul>
+                    <p><strong>When contacting IT, provide:</strong></p>
+                    <ul>
+                        <li>Your device name or asset tag number</li>
+                        <li>Exact error message or code (screenshot if possible)</li>
+                        <li>What you were doing when the problem occurred</li>
+                        <li>Whether the problem is consistent or intermittent</li>
+                    </ul>
+                </div>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ Keep Your Device Updated</div>
+                    <p>Regular Windows updates are essential for security, stability, and compatibility. By following this guide and maintaining a routine update schedule, you help protect PVNCCDSB systems and data while ensuring your device runs smoothly.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support &amp; Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

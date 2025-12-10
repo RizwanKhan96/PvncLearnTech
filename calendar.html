@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Calendar | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="View upcoming professional development sessions, workshops, and training opportunities offered by the PVNCCDSB Learning Technologies team.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 1100px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .hero__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .hero__icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero__title {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .hero__subtitle {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-xl);
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Filter Section */
+        .filters {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .filters__title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            color: var(--color-primary-dark);
+        }
+
+        .filters__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .filter-group__label {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-text-secondary);
+        }
+
+        .filter-group__select {
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-family: var(--font-sans);
+            font-size: var(--font-size-base);
+            background: var(--color-white);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-group__select:hover {
+            border-color: var(--color-primary);
+        }
+
+        .filter-group__select:focus {
+            outline: 2px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* Section Title */
+        .section__title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        /* Event Cards */
+        .events-grid {
+            display: grid;
+            gap: var(--space-xl);
+        }
+
+        .event-card {
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .event-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-accent);
+        }
+
+        .event-card__header {
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+            padding: var(--space-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+        }
+
+        .event-card__date {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: var(--radius-md);
+            padding: var(--space-sm) var(--space-md);
+            text-align: center;
+            min-width: 80px;
+            flex-shrink: 0;
+        }
+
+        .event-card__month {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        .event-card__day {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .event-card__header-info {
+            flex: 1;
+        }
+
+        .event-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-sm);
+        }
+
+        .event-card__meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+            opacity: 0.95;
+        }
+
+        .event-card__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .event-card__body {
+            padding: var(--space-xl);
+        }
+
+        .event-card__description {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .event-card__details {
+            display: grid;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .event-card__detail {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-sm);
+        }
+
+        .event-card__detail-label {
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            min-width: 100px;
+        }
+
+        .event-card__detail-value {
+            color: var(--color-text-secondary);
+        }
+
+        .event-card__tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+        }
+
+        .event-card__tag {
+            background: var(--color-gray-100);
+            color: var(--color-text-secondary);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+        }
+
+        .event-card__footer {
+            display: flex;
+            gap: var(--space-md);
+            padding-top: var(--space-lg);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .event-card__button {
+            flex: 1;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-sans);
+            font-size: var(--font-size-base);
+        }
+
+        .event-card__button--primary {
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+        }
+
+        .event-card__button--primary:hover {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .event-card__button--secondary {
+            background: var(--color-white);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .event-card__button--secondary:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .event-card__status {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .event-card__status--full {
+            background: rgba(220, 38, 38, 0.1);
+            color: #DC2626;
+        }
+
+        .event-card__status--spots {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--color-warning);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: var(--space-3xl);
+            color: var(--color-text-secondary);
+        }
+
+        .empty-state__icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+            opacity: 0.5;
+        }
+
+        .empty-state__title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .filters__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-card__header {
+                flex-direction: column;
+            }
+
+            .event-card__footer {
+                flex-direction: column;
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link nav__link--active">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__icon">📅</div>
+                <h1 class="hero__title">Professional Development Calendar</h1>
+                <p class="hero__subtitle">Explore upcoming training sessions, workshops, and learning opportunities</p>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <div class="alert alert--info">
+                <div class="alert__title">ℹ️ About Our Training</div>
+                <p>The Learning Technologies team offers a variety of professional development opportunities throughout the year. Sessions range from introductory workshops to advanced training, covering tools, strategies, and best practices for technology integration in Catholic education.</p>
+            </div>
+
+            <div class="filters">
+                <h2 class="filters__title">Filter Events</h2>
+                <div class="filters__grid">
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="month-filter">Month</label>
+                        <select id="month-filter" class="filter-group__select">
+                            <option value="all">All Months</option>
+                            <option value="december">December 2025</option>
+                            <option value="january">January 2026</option>
+                            <option value="february">February 2026</option>
+                            <option value="march">March 2026</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="audience-filter">Audience</label>
+                        <select id="audience-filter" class="filter-group__select">
+                            <option value="all">All Staff</option>
+                            <option value="elementary">Elementary</option>
+                            <option value="secondary">Secondary</option>
+                            <option value="admin">Administrators</option>
+                            <option value="support">Support Staff</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="format-filter">Format</label>
+                        <select id="format-filter" class="filter-group__select">
+                            <option value="all">All Formats</option>
+                            <option value="virtual">Virtual</option>
+                            <option value="in-person">In-Person</option>
+                            <option value="hybrid">Hybrid</option>
+                            <option value="asynchronous">Self-Paced</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-group__label" for="topic-filter">Topic</label>
+                        <select id="topic-filter" class="filter-group__select">
+                            <option value="all">All Topics</option>
+                            <option value="google">Google Workspace</option>
+                            <option value="assessment">Assessment Tools</option>
+                            <option value="accessibility">Accessibility</option>
+                            <option value="ai">AI in Education</option>
+                            <option value="multimedia">Multimedia Creation</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section__title">Upcoming Events</h2>
+
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-card__header">
+                        <div class="event-card__date">
+                            <div class="event-card__month">Dec</div>
+                            <div class="event-card__day">10</div>
+                        </div>
+                        <div class="event-card__header-info">
+                            <h3 class="event-card__title">Introduction to Google Classroom</h3>
+                            <div class="event-card__meta">
+                                <span class="event-card__meta-item">🕐 2:00 PM - 3:30 PM</span>
+                                <span class="event-card__meta-item">💻 Virtual</span>
+                                <span class="event-card__meta-item">👥 Elementary Teachers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__description">
+                            Learn the fundamentals of Google Classroom including creating classes, posting assignments, providing feedback, and using the grading features. Perfect for teachers new to Google Classroom or those wanting to strengthen their foundational skills.
+                        </p>
+
+                        <div class="event-card__details">
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Presenter:</span>
+                                <span class="event-card__detail-value">Michael Smith</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Location:</span>
+                                <span class="event-card__detail-value">Google Meet (link provided upon registration)</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Prerequisites:</span>
+                                <span class="event-card__detail-value">None - Beginner friendly</span>
+                            </div>
+                        </div>
+
+                        <div class="event-card__tags">
+                            <span class="event-card__tag">Google Workspace</span>
+                            <span class="event-card__tag">Beginner</span>
+                            <span class="event-card__tag">1.5 Hours</span>
+                        </div>
+
+                        <div class="event-card__footer">
+                            <a href="#" class="event-card__button event-card__button--primary">Register Now</a>
+                            <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-card__header">
+                        <div class="event-card__date">
+                            <div class="event-card__month">Dec</div>
+                            <div class="event-card__day">15</div>
+                        </div>
+                        <div class="event-card__header-info">
+                            <h3 class="event-card__title">AI Tools for Educators: ChatGPT and Beyond</h3>
+                            <div class="event-card__meta">
+                                <span class="event-card__meta-item">🕐 3:30 PM - 5:00 PM</span>
+                                <span class="event-card__meta-item">💻 Virtual</span>
+                                <span class="event-card__meta-item">👥 All Staff</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <span class="event-card__status event-card__status--spots">⚠️ Only 5 spots remaining</span>
+                        
+                        <p class="event-card__description" style="margin-top: 1rem;">
+                            Explore practical applications of AI tools in education. Learn ethical considerations, effective prompting strategies, and how to integrate AI assistants into lesson planning, content creation, and student support while maintaining academic integrity.
+                        </p>
+
+                        <div class="event-card__details">
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Presenter:</span>
+                                <span class="event-card__detail-value">Sarah Kim</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Location:</span>
+                                <span class="event-card__detail-value">Zoom (link sent 24 hours before session)</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Prerequisites:</span>
+                                <span class="event-card__detail-value">Basic technology skills</span>
+                            </div>
+                        </div>
+
+                        <div class="event-card__tags">
+                            <span class="event-card__tag">AI & Innovation</span>
+                            <span class="event-card__tag">Intermediate</span>
+                            <span class="event-card__tag">1.5 Hours</span>
+                        </div>
+
+                        <div class="event-card__footer">
+                            <a href="#" class="event-card__button event-card__button--primary">Register Now</a>
+                            <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-card__header">
+                        <div class="event-card__date">
+                            <div class="event-card__month">Jan</div>
+                            <div class="event-card__day">08</div>
+                        </div>
+                        <div class="event-card__header-info">
+                            <h3 class="event-card__title">Creating Accessible Learning Materials</h3>
+                            <div class="event-card__meta">
+                                <span class="event-card__meta-item">🕐 9:00 AM - 11:30 AM</span>
+                                <span class="event-card__meta-item">🏫 In-Person</span>
+                                <span class="event-card__meta-item">👥 All Teachers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__description">
+                            Learn to create digital learning materials that are accessible to all students, including those with disabilities. Covers document accessibility, captioning videos, alt text for images, screen reader compatibility, and Universal Design for Learning (UDL) principles.
+                        </p>
+
+                        <div class="event-card__details">
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Presenter:</span>
+                                <span class="event-card__detail-value">Robert Patel</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Location:</span>
+                                <span class="event-card__detail-value">Catholic Education Centre, Board Room A</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Prerequisites:</span>
+                                <span class="event-card__detail-value">Familiarity with Google Docs/Slides or Microsoft Office</span>
+                            </div>
+                        </div>
+
+                        <div class="event-card__tags">
+                            <span class="event-card__tag">Accessibility</span>
+                            <span class="event-card__tag">UDL</span>
+                            <span class="event-card__tag">Intermediate</span>
+                            <span class="event-card__tag">2.5 Hours</span>
+                        </div>
+
+                        <div class="event-card__footer">
+                            <a href="#" class="event-card__button event-card__button--primary">Register Now</a>
+                            <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="event-card">
+                    <div class="event-card__header">
+                        <div class="event-card__date">
+                            <div class="event-card__month">Jan</div>
+                            <div class="event-card__day">17</div>
+                        </div>
+                        <div class="event-card__header-info">
+                            <h3 class="event-card__title">Advanced Google Forms: Quizzes & Branching</h3>
+                            <div class="event-card__meta">
+                                <span class="event-card__meta-item">🕐 3:45 PM - 5:00 PM</span>
+                                <span class="event-card__meta-item">💻 Virtual</span>
+                                <span class="event-card__meta-item">👥 Secondary Teachers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__description">
+                            Master advanced Google Forms features including quiz mode with auto-grading, conditional branching logic, response validation, and data analysis using Google Sheets. Learn to create sophisticated forms for formative and summative assessment.
+                        </p>
+
+                        <div class="event-card__details">
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Presenter:</span>
+                                <span class="event-card__detail-value">Jennifer Davis</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Location:</span>
+                                <span class="event-card__detail-value">Google Meet</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Prerequisites:</span>
+                                <span class="event-card__detail-value">Basic Google Forms experience required</span>
+                            </div>
+                        </div>
+
+                        <div class="event-card__tags">
+                            <span class="event-card__tag">Google Workspace</span>
+                            <span class="event-card__tag">Assessment</span>
+                            <span class="event-card__tag">Advanced</span>
+                            <span class="event-card__tag">1.25 Hours</span>
+                        </div>
+
+                        <div class="event-card__footer">
+                            <a href="#" class="event-card__button event-card__button--primary">Register Now</a>
+                            <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="event-card">
+                    <div class="event-card__header">
+                        <div class="event-card__date">
+                            <div class="event-card__month">Jan</div>
+                            <div class="event-card__day">24</div>
+                        </div>
+                        <div class="event-card__header-info">
+                            <h3 class="event-card__title">Video Creation for Student Engagement</h3>
+                            <div class="event-card__meta">
+                                <span class="event-card__meta-item">🕐 1:00 PM - 3:30 PM</span>
+                                <span class="event-card__meta-item">🏫 Hybrid</span>
+                                <span class="event-card__meta-item">👥 All Teachers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <p class="event-card__description">
+                            Create engaging educational videos using simple tools and techniques. Learn recording and editing basics, screen capture for tutorials, adding captions, and designing videos that enhance student learning. Includes hands-on practice with WeVideo and other tools.
+                        </p>
+
+                        <div class="event-card__details">
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Presenter:</span>
+                                <span class="event-card__detail-value">Amanda Lee</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Location:</span>
+                                <span class="event-card__detail-value">St. Peter CSS Media Lab + Virtual Option</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Prerequisites:</span>
+                                <span class="event-card__detail-value">None - All skill levels welcome</span>
+                            </div>
+                        </div>
+
+                        <div class="event-card__tags">
+                            <span class="event-card__tag">Multimedia</span>
+                            <span class="event-card__tag">Content Creation</span>
+                            <span class="event-card__tag">Beginner/Intermediate</span>
+                            <span class="event-card__tag">2.5 Hours</span>
+                        </div>
+
+                        <div class="event-card__footer">
+                            <a href="#" class="event-card__button event-card__button--primary">Register Now</a>
+                            <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="event-card">
+                    <div class="event-card__header">
+                        <div class="event-card__date">
+                            <div class="event-card__month">Feb</div>
+                            <div class="event-card__day">05</div>
+                        </div>
+                        <div class="event-card__header-info">
+                            <h3 class="event-card__title">Digital Citizenship & Online Safety</h3>
+                            <div class="event-card__meta">
+                                <span class="event-card__meta-item">🕐 10:00 AM - 12:00 PM</span>
+                                <span class="event-card__meta-item">💻 Virtual</span>
+                                <span class="event-card__meta-item">👥 Elementary Teachers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card__body">
+                        <span class="event-card__status event-card__status--full">🔴 Full - Waitlist Available</span>
+                        
+                        <p class="event-card__description" style="margin-top: 1rem;">
+                            Explore age-appropriate strategies for teaching digital citizenship, online safety, and responsible technology use. Includes lesson resources, discussion prompts, and activities aligned with curriculum expectations for K-8 classrooms.
+                        </p>
+
+                        <div class="event-card__details">
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Presenter:</span>
+                                <span class="event-card__detail-value">Michael Smith</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Location:</span>
+                                <span class="event-card__detail-value">Zoom Webinar</span>
+                            </div>
+                            <div class="event-card__detail">
+                                <span class="event-card__detail-label">Prerequisites:</span>
+                                <span class="event-card__detail-value">None</span>
+                            </div>
+                        </div>
+
+                        <div class="event-card__tags">
+                            <span class="event-card__tag">Digital Citizenship</span>
+                            <span class="event-card__tag">Student Safety</span>
+                            <span class="event-card__tag">All Levels</span>
+                            <span class="event-card__tag">2 Hours</span>
+                        </div>
+
+                        <div class="event-card__footer">
+                            <a href="#" class="event-card__button event-card__button--primary">Join Waitlist</a>
+                            <a href="#" class="event-card__button event-card__button--secondary">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert--success" style="margin-top: 3rem;">
+                <div class="alert__title">📧 Stay Updated</div>
+                <p>Want to receive notifications about new training sessions? Subscribe to the Learning Technologies newsletter or contact your school's assigned specialist to be added to the professional development mailing list.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support & Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Acceptable Use of Technology | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="Guidelines and expectations for students using PVNCCDSB technology, including devices, internet, email, and online learning tools responsibly and safely.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            --color-danger: #DC2626;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 900px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(0, 61, 122, 0.06);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .breadcrumb__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .breadcrumb__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .breadcrumb__item:not(:last-child)::after {
+            content: '›';
+            color: var(--color-gray-400);
+        }
+
+        .breadcrumb__link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb__link:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+        }
+
+        .article-header__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .article-header__category {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--color-accent);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .article-header__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .article-header__meta {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-100);
+        }
+
+        .article-header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Article Content */
+        .article {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .article__sidebar {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .article__sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article__sidebar-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .article__sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article__sidebar-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+        }
+
+        .article__sidebar-list a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .article__content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .article__content li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
+        }
+
+        .article__content strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .article__content a {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article__content a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert--danger {
+            background: rgba(220, 38, 38, 0.1);
+            border-color: var(--color-danger);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Do/Don't Cards */
+        .behavior-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .behavior-card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .behavior-card--do {
+            border: 2px solid var(--color-success);
+        }
+
+        .behavior-card--dont {
+            border: 2px solid var(--color-danger);
+        }
+
+        .behavior-card__header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-md);
+        }
+
+        .behavior-card__icon {
+            font-size: var(--font-size-2xl);
+        }
+
+        .behavior-card__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+        }
+
+        .behavior-card--do .behavior-card__title {
+            color: var(--color-success);
+        }
+
+        .behavior-card--dont .behavior-card__title {
+            color: var(--color-danger);
+        }
+
+        .behavior-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .behavior-card li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+        }
+
+        .behavior-card li::before {
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .behavior-card--do li::before {
+            content: '✓';
+            color: var(--color-success);
+        }
+
+        .behavior-card--dont li::before {
+            content: '✗';
+            color: var(--color-danger);
+        }
+
+        /* Consequence Box */
+        .consequence-box {
+            background: rgba(220, 38, 38, 0.06);
+            border: 2px solid rgba(220, 38, 38, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .consequence-box__title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-danger);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .article-header__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .article__content h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            .behavior-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link nav__link--active">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="resources.html" class="breadcrumb__link">Resources</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span>Student Acceptable Use</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="article-header">
+            <div class="article-header__container">
+                <span class="article-header__category">📋 Policy Guidelines</span>
+                <h1 class="article-header__title">Student Acceptable Use of Technology</h1>
+                <div class="article-header__meta">
+                    <span class="article-header__meta-item">
+                        <span>📄</span> Policy Document
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>👨‍🎓</span> For Students
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>⏱️</span> 12 min read
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <aside class="article__sidebar">
+                <h2 class="article__sidebar-title">Quick Links</h2>
+                <ul class="article__sidebar-list">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#rights">Your Rights</a></li>
+                    <li><a href="#responsibilities">Your Responsibilities</a></li>
+                    <li><a href="#devices">Using Devices</a></li>
+                    <li><a href="#internet">Internet Use</a></li>
+                    <li><a href="#email">Email Guidelines</a></li>
+                    <li><a href="#social-media">Social Media</a></li>
+                    <li><a href="#prohibited">Prohibited Activities</a></li>
+                    <li><a href="#consequences">Consequences</a></li>
+                    <li><a href="#reporting">Report Problems</a></li>
+                </ul>
+            </aside>
+
+            <div class="article__content">
+                <div class="alert alert--info">
+                    <div class="alert__title">ℹ️ About This Policy</div>
+                    <p>This document outlines the expectations and guidelines for students using technology at PVNCCDSB. These rules help keep everyone safe, protect privacy, and ensure technology is used for learning. All students must follow these guidelines when using school devices, networks, and online resources.</p>
+                </div>
+
+                <h2 id="overview">Welcome to PVNCCDSB Technology</h2>
+                <p>Technology is an important part of learning at PVNCCDSB. You'll use computers, tablets, the internet, email, and online tools to support your education. With access to these resources comes responsibility to use them properly, safely, and respectfully.</p>
+
+                <p><strong>This policy applies when you:</strong></p>
+                <ul>
+                    <li>Use school-owned devices (Chromebooks, laptops, tablets, computers)</li>
+                    <li>Connect to school Wi-Fi networks</li>
+                    <li>Access your PVNCCDSB email account</li>
+                    <li>Use Google Workspace (Classroom, Docs, Drive, etc.)</li>
+                    <li>Visit websites for schoolwork</li>
+                    <li>Participate in online learning platforms</li>
+                    <li>Use personal devices on school property or for school activities</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Important</div>
+                    <p>By using PVNCCDSB technology, you agree to follow these guidelines. Violations may result in loss of technology privileges, disciplinary action, and in serious cases, involvement of law enforcement.</p>
+                </div>
+
+                <h2 id="rights">Your Rights as a Technology User</h2>
+                <p>As a PVNCCDSB student, you have the right to:</p>
+                <ul>
+                    <li><strong>Access technology:</strong> Use school devices and internet for educational purposes</li>
+                    <li><strong>Digital learning tools:</strong> Access online resources, software, and platforms needed for your classes</li>
+                    <li><strong>Email communication:</strong> A PVNCCDSB email account for school-related communication</li>
+                    <li><strong>Safe environment:</strong> Use technology in an environment free from cyberbullying and harassment</li>
+                    <li><strong>Privacy protection:</strong> Have your personal information protected according to privacy laws</li>
+                    <li><strong>Technical support:</strong> Receive help when experiencing technology issues</li>
+                    <li><strong>Fair treatment:</strong> Be treated equitably and have concerns addressed respectfully</li>
+                </ul>
+
+                <h2 id="responsibilities">Your Responsibilities as a Technology User</h2>
+                <p>With these rights come important responsibilities:</p>
+
+                <h3>General Responsibilities</h3>
+                <ul>
+                    <li><strong>Follow all rules:</strong> Adhere to this policy and all school rules when using technology</li>
+                    <li><strong>Use for learning:</strong> Technology is provided for educational purposes - keep use focused on schoolwork</li>
+                    <li><strong>Respect others:</strong> Treat all users with dignity and respect in online interactions</li>
+                    <li><strong>Protect devices:</strong> Handle all devices carefully and report damage immediately</li>
+                    <li><strong>Report problems:</strong> Tell a teacher or staff member if you encounter inappropriate content or cyberbullying</li>
+                    <li><strong>Keep it clean:</strong> Don't eat or drink near devices; keep your workspace tidy</li>
+                    <li><strong>Be honest:</strong> Take responsibility for your actions online and offline</li>
+                </ul>
+
+                <h3>Account Security Responsibilities</h3>
+                <ul>
+                    <li><strong>Protect your password:</strong> Never share your password with anyone, even friends</li>
+                    <li><strong>Log out:</strong> Always log out when finished, especially on shared devices</li>
+                    <li><strong>Lock your screen:</strong> Lock your screen when stepping away from your device</li>
+                    <li><strong>Report suspicious activity:</strong> Tell a teacher if someone accessed your account without permission</li>
+                    <li><strong>Use only your account:</strong> Never use someone else's login credentials</li>
+                </ul>
+
+                <h2 id="devices">Using School Devices Properly</h2>
+
+                <h3>Device Care and Handling</h3>
+                <ul>
+                    <li><strong>Carry carefully:</strong> Always use two hands; never carry by the screen</li>
+                    <li><strong>Use protective cases:</strong> Keep cases on devices at all times</li>
+                    <li><strong>Avoid extreme conditions:</strong> Don't leave devices in hot cars, cold temperatures, or wet areas</li>
+                    <li><strong>Clean properly:</strong> Use only approved cleaning methods (ask your teacher)</li>
+                    <li><strong>Charge responsibly:</strong> Charge devices overnight; bring charged devices to school</li>
+                    <li><strong>Store safely:</strong> Put devices in designated storage areas when not in use</li>
+                    <li><strong>Report damage immediately:</strong> Tell your teacher right away if a device is damaged</li>
+                </ul>
+
+                <h3>What NOT to Do with Devices</h3>
+                <ul>
+                    <li>❌ Don't place anything on top of a closed device</li>
+                    <li>❌ Don't remove or damage identification labels, stickers, or asset tags</li>
+                    <li>❌ Don't attempt to repair devices yourself</li>
+                    <li>❌ Don't loan your device to others</li>
+                    <li>❌ Don't alter device settings without permission</li>
+                    <li>❌ Don't add unauthorized stickers or decorations</li>
+                    <li>❌ Don't expose devices to magnets</li>
+                    <li>❌ Don't force connections or cables</li>
+                </ul>
+
+                <h2 id="internet">Appropriate Internet Use</h2>
+
+                <div class="behavior-grid">
+                    <div class="behavior-card behavior-card--do">
+                        <div class="behavior-card__header">
+                            <span class="behavior-card__icon">✅</span>
+                            <h3 class="behavior-card__title">DO: Acceptable Activities</h3>
+                        </div>
+                        <ul>
+                            <li>Access websites assigned by teachers</li>
+                            <li>Research topics for school projects</li>
+                            <li>Use educational videos and tutorials</li>
+                            <li>Access Google Classroom and learning platforms</li>
+                            <li>Use appropriate reference websites</li>
+                            <li>Download files assigned by teachers</li>
+                            <li>Collaborate on shared documents</li>
+                            <li>Use school-approved educational apps</li>
+                        </ul>
+                    </div>
+
+                    <div class="behavior-card behavior-card--dont">
+                        <div class="behavior-card__header">
+                            <span class="behavior-card__icon">🚫</span>
+                            <h3 class="behavior-card__title">DON'T: Prohibited Activities</h3>
+                        </div>
+                        <ul>
+                            <li>Access inappropriate or offensive content</li>
+                            <li>Visit gaming websites (unless educational)</li>
+                            <li>Stream entertainment videos during class</li>
+                            <li>Shop online or browse e-commerce sites</li>
+                            <li>Use social media during instructional time</li>
+                            <li>Download unauthorized software or apps</li>
+                            <li>Access proxy or VPN services</li>
+                            <li>Attempt to bypass internet filters</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Internet Safety Guidelines</h3>
+                <ul>
+                    <li><strong>Protect personal information:</strong> Never share your full name, address, phone number, or school name on public websites</li>
+                    <li><strong>Be skeptical:</strong> Not everything online is true - verify information with multiple sources</li>
+                    <li><strong>Think before clicking:</strong> Don't click on suspicious links or pop-ups</li>
+                    <li><strong>Report inappropriate content:</strong> Tell a teacher immediately if you see something concerning</li>
+                    <li><strong>Respect copyrights:</strong> Only use images, music, and content you have permission to use</li>
+                    <li><strong>Cite your sources:</strong> Give credit when using information from websites</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Content Filtering</div>
+                    <p>All internet activity on school networks is monitored and filtered. Websites are automatically blocked if they contain inappropriate material. Attempting to bypass filters is a serious violation and will result in consequences.</p>
+                </div>
+
+                <h2 id="email">Email and Communication Guidelines</h2>
+
+                <h3>Appropriate Email Use</h3>
+                <p>Your PVNCCDSB email account is for <strong>school-related communication only</strong>.</p>
+
+                <h4>Use Your Email To:</h4>
+                <ul>
+                    <li>Communicate with teachers and school staff</li>
+                    <li>Collaborate with classmates on group projects</li>
+                    <li>Submit assignments when instructed</li>
+                    <li>Receive notifications from Google Classroom</li>
+                    <li>Access educational accounts that require school email</li>
+                    <li>Communicate about school activities and events</li>
+                </ul>
+
+                <h4>Do NOT Use Email For:</h4>
+                <ul>
+                    <li>Personal conversations with friends (use personal email for that)</li>
+                    <li>Forwarding chain letters or spam</li>
+                    <li>Signing up for non-educational websites or services</li>
+                    <li>Harassing, threatening, or bullying others</li>
+                    <li>Sharing inappropriate content</li>
+                    <li>Pretending to be someone else</li>
+                </ul>
+
+                <h3>Email Etiquette and Best Practices</h3>
+                <ul>
+                    <li><strong>Use appropriate language:</strong> Write professionally and respectfully</li>
+                    <li><strong>Use proper grammar:</strong> Avoid text-speak; write in complete sentences</li>
+                    <li><strong>Include a subject line:</strong> Make it clear what your email is about</li>
+                    <li><strong>Be respectful:</strong> Use polite greetings and closings</li>
+                    <li><strong>Think before sending:</strong> Re-read emails before hitting send</li>
+                    <li><strong>Respond promptly:</strong> Reply to teacher emails within 24 hours</li>
+                    <li><strong>Don't SHOUT:</strong> Using ALL CAPS is considered rude</li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">💡 Privacy Notice</div>
+                    <p>School email is not private. Administrators can view email contents if there's a concern about safety or policy violations. Never write anything in school email you wouldn't want teachers or administrators to see.</p>
+                </div>
+
+                <h2 id="social-media">Social Media and Online Conduct</h2>
+
+                <h3>Social Media During School Hours</h3>
+                <ul>
+                    <li>Social media access is <strong>blocked during instructional time</strong></li>
+                    <li>You may access social media before/after school or during lunch (if age-appropriate)</li>
+                    <li>Never access social media during class unless specifically assigned by teacher</li>
+                    <li>Personal devices used for social media must follow all school rules</li>
+                </ul>
+
+                <h3>Representing PVNCCDSB Online</h3>
+                <p>Remember that your online actions reflect on you and your school:</p>
+                <ul>
+                    <li><strong>Be positive:</strong> Represent your school community respectfully</li>
+                    <li><strong>Think before posting:</strong> Online posts are permanent, even if deleted</li>
+                    <li><strong>Protect privacy:</strong> Don't post photos or information about classmates without permission</li>
+                    <li><strong>Avoid conflicts:</strong> Don't engage in online arguments or drama</li>
+                    <li><strong>Report cyberbullying:</strong> Tell a trusted adult if you or someone else is being bullied online</li>
+                </ul>
+
+                <h3>Cyberbullying is NOT Tolerated</h3>
+                <p>Cyberbullying includes:</p>
+                <ul>
+                    <li>Sending mean, threatening, or hurtful messages</li>
+                    <li>Posting embarrassing photos or videos of others</li>
+                    <li>Spreading rumors online</li>
+                    <li>Creating fake accounts to impersonate someone</li>
+                    <li>Excluding someone from online groups to hurt them</li>
+                    <li>Sharing private information to embarrass someone</li>
+                </ul>
+
+                <div class="alert alert--danger">
+                    <div class="alert__title">🚨 Zero Tolerance for Cyberbullying</div>
+                    <p>PVNCCDSB has zero tolerance for cyberbullying. Any student who cyberbullies others faces serious consequences, including suspension. If you're being cyberbullied or witness it, report it immediately to a teacher, counselor, or administrator.</p>
+                </div>
+
+                <h2 id="prohibited">Prohibited Activities - Never Do These</h2>
+
+                <h3>Illegal Activities</h3>
+                <ul>
+                    <li>❌ Accessing, downloading, or sharing illegal content</li>
+                    <li>❌ Pirating software, music, movies, or games</li>
+                    <li>❌ Hacking or attempting to hack any system</li>
+                    <li>❌ Creating or spreading computer viruses</li>
+                    <li>❌ Cyberstalking or threatening others</li>
+                    <li>❌ Accessing others' accounts without permission</li>
+                    <li>❌ Stealing intellectual property or copyrighted materials</li>
+                </ul>
+
+                <h3>Inappropriate Content</h3>
+                <ul>
+                    <li>❌ Accessing pornographic or sexually explicit material</li>
+                    <li>❌ Viewing or sharing violent or graphic content</li>
+                    <li>❌ Accessing content promoting hate, discrimination, or extremism</li>
+                    <li>❌ Sharing or creating content that promotes drug or alcohol use</li>
+                    <li>❌ Accessing gambling or betting websites</li>
+                </ul>
+
+                <h3>Disruptive Activities</h3>
+                <ul>
+                    <li>❌ Playing games during instructional time (unless educational)</li>
+                    <li>❌ Watching videos unrelated to assignments</li>
+                    <li>❌ Listening to music during class (unless permitted)</li>
+                    <li>❌ Using devices to distract others</li>
+                    <li>❌ Excessive printing of non-school materials</li>
+                    <li>❌ Using school technology for personal business or profit</li>
+                </ul>
+
+                <h3>Security Violations</h3>
+                <ul>
+                    <li>❌ Attempting to bypass network security or filters</li>
+                    <li>❌ Using proxy websites or VPN services</li>
+                    <li>❌ Sharing your password with others</li>
+                    <li>❌ Accessing areas of the network you're not authorized to use</li>
+                    <li>❌ Installing unauthorized software or browser extensions</li>
+                    <li>❌ Connecting unauthorized devices to the network</li>
+                    <li>❌ Attempting to view or change other students' files</li>
+                </ul>
+
+                <h2 id="consequences">Consequences for Policy Violations</h2>
+
+                <div class="consequence-box">
+                    <h3 class="consequence-box__title">⚖️ Progressive Discipline</h3>
+                    <p>PVNCCDSB uses progressive discipline for technology violations. Consequences increase with repeated violations or severity of the offense.</p>
+                </div>
+
+                <h3>Level 1: Minor Violations</h3>
+                <p><strong>Examples:</strong> Off-task internet use, playing games during class, not logging out</p>
+                <p><strong>Consequences may include:</strong></p>
+                <ul>
+                    <li>Verbal warning from teacher</li>
+                    <li>Loss of device privileges for remainder of class</li>
+                    <li>Parent/guardian notification</li>
+                    <li>Written reflection on appropriate technology use</li>
+                </ul>
+
+                <h3>Level 2: Moderate Violations</h3>
+                <p><strong>Examples:</strong> Repeated off-task use, attempting to bypass filters, using someone else's account, sharing inappropriate content</p>
+                <p><strong>Consequences may include:</strong></p>
+                <ul>
+                    <li>Loss of technology privileges for extended period (days or weeks)</li>
+                    <li>Parent/guardian meeting</li>
+                    <li>After-school detention</li>
+                    <li>Technology use contract</li>
+                    <li>Administrative involvement</li>
+                </ul>
+
+                <h3>Level 3: Serious Violations</h3>
+                <p><strong>Examples:</strong> Cyberbullying, accessing inappropriate content, hacking attempts, theft of information, threats</p>
+                <p><strong>Consequences may include:</strong></p>
+                <ul>
+                    <li>Loss of all technology privileges for semester or year</li>
+                    <li>In-school or out-of-school suspension</li>
+                    <li>Police involvement (for illegal activities)</li>
+                    <li>Expulsion (in extreme cases)</li>
+                    <li>Financial responsibility for damages</li>
+                    <li>Loss of participation in extracurricular activities</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Damage and Loss</div>
+                    <p>Students and parents/guardians are financially responsible for damage to or loss of school devices due to negligence or misuse. Intentional damage may also result in additional disciplinary consequences.</p>
+                </div>
+
+                <h2>Device Damage and Loss Procedures</h2>
+
+                <h3>If Your Device is Damaged</h3>
+                <ol>
+                    <li><strong>Stop using it immediately</strong> to prevent further damage</li>
+                    <li><strong>Tell your teacher</strong> as soon as possible</li>
+                    <li><strong>Complete an incident report</strong> describing what happened</li>
+                    <li><strong>Do not attempt repairs</strong> - only IT staff can repair devices</li>
+                    <li><strong>A loaner device</strong> may be provided while yours is repaired</li>
+                </ol>
+
+                <h3>If Your Device is Lost or Stolen</h3>
+                <ol>
+                    <li><strong>Report immediately</strong> to your teacher or school office</li>
+                    <li><strong>File a police report</strong> if device was stolen (required)</li>
+                    <li><strong>Complete school forms</strong> documenting the loss</li>
+                    <li><strong>Parents may be responsible</strong> for replacement costs</li>
+                </ol>
+
+                <h2>Getting Technology Help</h2>
+
+                <h3>For Technical Issues</h3>
+                <ul>
+                    <li><strong>Ask your teacher first</strong> - they can often resolve simple issues</li>
+                    <li><strong>Visit the school library/tech office</strong> for assistance</li>
+                    <li><strong>Submit a help desk ticket</strong> for complex problems</li>
+                    <li><strong>Be patient</strong> - IT staff support all schools and prioritize issues</li>
+                </ul>
+
+                <h3>For Policy Questions</h3>
+                <ul>
+                    <li>Ask your teacher or school administrator</li>
+                    <li>Review this policy document</li>
+                    <li>Contact the school office for clarification</li>
+                </ul>
+
+                <h2 id="reporting">Reporting Problems and Concerns</h2>
+
+                <h3>If You See or Experience:</h3>
+                <ul>
+                    <li><strong>Inappropriate content:</strong> Tell your teacher immediately; don't try to close it yourself</li>
+                    <li><strong>Cyberbullying:</strong> Report to a teacher, counselor, or administrator right away</li>
+                    <li><strong>Someone accessing your account:</strong> Change your password and report to a teacher</li>
+                    <li><strong>Another student violating policies:</strong> Don't confront them; report to a staff member</li>
+                    <li><strong>Suspicious emails or messages:</strong> Don't respond; show a teacher</li>
+                    <li><strong>Technical problems:</strong> Report to your teacher or IT support</li>
+                </ul>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ Reporting is Important</div>
+                    <p>You will <strong>never</strong> get in trouble for reporting a problem or concern, even if you accidentally accessed inappropriate content. We want to keep everyone safe, and that requires students to speak up when they see issues.</p>
+                </div>
+
+                <h2>Your Commitment to Responsible Technology Use</h2>
+                <p>By using PVNCCDSB technology, you agree to:</p>
+                <ul>
+                    <li>✓ Follow all guidelines in this acceptable use policy</li>
+                    <li>✓ Use technology responsibly and for educational purposes</li>
+                    <li>✓ Treat devices with care and report damage immediately</li>
+                    <li>✓ Respect others in all online interactions</li>
+                    <li>✓ Protect your account security and privacy</li>
+                    <li>✓ Report problems and inappropriate content</li>
+                    <li>✓ Accept consequences if you violate these policies</li>
+                    <li>✓ Help create a positive digital learning environment</li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">📞 Questions or Concerns?</div>
+                    <p>If you have questions about this policy or need help with technology:</p>
+                    <ul>
+                        <li><strong>Talk to your teacher</strong> - they're your first resource</li>
+                        <li><strong>Visit the school office</strong> for policy clarification</li>
+                        <li><strong>Contact IT Help Desk:</strong> <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a> or <a href="tel:+17057481811">705-748-1811</a></li>
+                    </ul>
+                </div>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ Thank You for Being a Responsible Technology User</div>
+                    <p>Technology is a powerful tool for learning. By following these guidelines, you help ensure that PVNCCDSB technology remains safe, accessible, and beneficial for all students. Together, we can create a positive digital learning community that reflects our Catholic values of respect, responsibility, and excellence.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support &amp; Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

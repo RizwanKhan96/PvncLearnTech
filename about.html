@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Our Team | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="Meet the Learning Technologies team at PVNCCDSB. Our specialists support schools across the board with technology integration, training, and technical assistance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 1100px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .hero__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .hero__icon {
+            font-size: 4rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero__title {
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .hero__subtitle {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-xl);
+            opacity: 0.95;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: var(--space-3xl);
+        }
+
+        .section__title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .section__intro {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.7;
+        }
+
+        /* Team Member Cards */
+        .team-grid {
+            display: grid;
+            gap: var(--space-xl);
+        }
+
+        .team-member {
+            background: var(--color-white);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-member__header {
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+            padding: var(--space-xl);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .team-member__header:hover {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+        }
+
+        .team-member__header-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+            flex: 1;
+        }
+
+        .team-member__avatar {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 3px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .team-member__info {
+            flex: 1;
+        }
+
+        .team-member__name {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+        }
+
+        .team-member__title {
+            font-size: var(--font-size-lg);
+            opacity: 0.95;
+            margin-bottom: var(--space-xs);
+        }
+
+        .team-member__contact {
+            font-size: var(--font-size-sm);
+            opacity: 0.9;
+        }
+
+        .team-member__contact a {
+            color: white;
+            text-decoration: underline;
+            transition: var(--transition);
+        }
+
+        .team-member__contact a:hover {
+            color: var(--color-accent);
+        }
+
+        .team-member__toggle {
+            font-size: var(--font-size-2xl);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member__toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .team-member__body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .team-member__body.active {
+            max-height: 2000px;
+        }
+
+        .team-member__content {
+            padding: var(--space-xl);
+        }
+
+        .team-member__section {
+            margin-bottom: var(--space-xl);
+        }
+
+        .team-member__section:last-child {
+            margin-bottom: 0;
+        }
+
+        .team-member__section-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .team-member__section-content {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .team-member__schools {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-sm);
+        }
+
+        .team-member__school {
+            background: var(--color-gray-50);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
+            border-left: 3px solid var(--color-accent);
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .team-member__header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .team-member__name {
+                font-size: var(--font-size-xl);
+            }
+
+            .team-member__schools {
+                grid-template-columns: 1fr;
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link nav__link--active">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__icon">👥</div>
+                <h1 class="hero__title">About Our Team</h1>
+                <p class="hero__subtitle">Meet the dedicated professionals supporting technology integration across PVNCCDSB</p>
+            </div>
+        </section>
+
+        <div class="main-content">
+            <div class="alert alert--info">
+                <div class="alert__title">ℹ️ About Learning Technologies</div>
+                <p>The Learning Technologies department is committed to supporting effective technology integration in teaching and learning across all PVNCCDSB schools. Our team of specialists provides training, resources, and support to help staff and students use technology to enhance Catholic education.</p>
+            </div>
+
+            <div class="section">
+                <h2 class="section__title">Our Mission</h2>
+                <div class="section__intro">
+                    <p style="margin-bottom: 1rem;">The Learning Technologies team empowers educators and students to leverage technology effectively in support of learning, teaching, and Catholic values. We provide:</p>
+                    <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Professional Development:</strong> Training and workshops on educational technology tools and best practices</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Curriculum Support:</strong> Assistance with integrating technology into curriculum planning and delivery</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Technical Guidance:</strong> Help with troubleshooting and effective use of educational technology</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Innovation & Research:</strong> Exploration of emerging technologies and innovative teaching practices</li>
+                        <li style="margin-bottom: 0.5rem;"><strong>Resources & Documentation:</strong> Guides, tutorials, and support materials for staff and students</li>
+                    </ul>
+                    <p>Each Learning Technologies Specialist is assigned to specific schools and works closely with administrators, teachers, and students to ensure technology enhances learning outcomes.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section__title">Meet Our Team</h2>
+                <p style="margin-bottom: 2rem; color: var(--color-text-secondary);">Click on each team member to learn more about their role and the schools they support.</p>
+                
+                <div class="team-grid">
+                    <!-- Supervisor -->
+                    <div class="team-member">
+                        <div class="team-member__header" onclick="toggleMember(this)">
+                            <div class="team-member__header-content">
+                                <div class="team-member__avatar">DM</div>
+                                <div class="team-member__info">
+                                    <h3 class="team-member__name">David Martinez</h3>
+                                    <p class="team-member__title">Supervisor of Learning Technologies</p>
+                                    <p class="team-member__contact">📧 <a href="mailto:david.martinez@pvnccdsb.on.ca">david.martinez@pvnccdsb.on.ca</a></p>
+                                </div>
+                            </div>
+                            <span class="team-member__toggle">▼</span>
+                        </div>
+                        <div class="team-member__body">
+                            <div class="team-member__content">
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">👨‍💼 About David</h4>
+                                    <div class="team-member__section-content">
+                                        <p>David leads the Learning Technologies department and oversees all technology integration initiatives across PVNCCDSB. With extensive experience in both education and technology leadership, he ensures alignment between board goals, curriculum needs, and technological capabilities while supporting the professional growth of the Learning Technologies team.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🎯 Responsibilities</h4>
+                                    <div class="team-member__section-content">
+                                        <ul style="padding-left: 1.5rem;">
+                                            <li>Strategic planning for technology integration across the board</li>
+                                            <li>Leadership and supervision of Learning Technologies team</li>
+                                            <li>Coordination with senior administration and curriculum departments</li>
+                                            <li>Budget management and resource allocation</li>
+                                            <li>Professional development program development and oversight</li>
+                                            <li>Evaluation of new technologies and educational tools</li>
+                                            <li>Policy development for technology use in education</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">📅 Contact</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>Email:</strong> <a href="mailto:david.martinez@pvnccdsb.on.ca">david.martinez@pvnccdsb.on.ca</a><br>
+                                        <strong>Availability:</strong> By appointment<br>
+                                        Contact for system-wide initiatives, partnerships, or strategic technology planning.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 1 -->
+                    <div class="team-member">
+                        <div class="team-member__header" onclick="toggleMember(this)">
+                            <div class="team-member__header-content">
+                                <div class="team-member__avatar">MS</div>
+                                <div class="team-member__info">
+                                    <h3 class="team-member__name">Michael Smith</h3>
+                                    <p class="team-member__title">Learning Technologies Specialist - Elementary</p>
+                                    <p class="team-member__contact">📧 <a href="mailto:michael.smith@pvnccdsb.on.ca">michael.smith@pvnccdsb.on.ca</a></p>
+                                </div>
+                            </div>
+                            <span class="team-member__toggle">▼</span>
+                        </div>
+                        <div class="team-member__body">
+                            <div class="team-member__content">
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">👨‍🏫 About Michael</h4>
+                                    <div class="team-member__section-content">
+                                        <p>Michael brings over 12 years of teaching experience to his role as a Learning Technologies Specialist. With a passion for innovative pedagogy and educational technology, he helps elementary teachers integrate digital tools meaningfully into their instruction.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🏫 Schools Supported</h4>
+                                    <div class="team-member__schools">
+                                        <div class="team-member__school">St. Anne Catholic ES</div>
+                                        <div class="team-member__school">St. Alphonsus Catholic ES</div>
+                                        <div class="team-member__school">St. Catherine Catholic ES</div>
+                                        <div class="team-member__school">St. John Catholic ES</div>
+                                        <div class="team-member__school">St. Mary Catholic ES</div>
+                                        <div class="team-member__school">St. Paul Catholic ES</div>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">📅 Office Hours</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>In-person school visits:</strong> Monday, Wednesday, Friday<br>
+                                        <strong>Virtual support available:</strong> Tuesday, Thursday<br>
+                                        <strong>Book an appointment:</strong> Email or use the booking link in weekly newsletter</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="team-member">
+                        <div class="team-member__header" onclick="toggleMember(this)">
+                            <div class="team-member__header-content">
+                                <div class="team-member__avatar">JD</div>
+                                <div class="team-member__info">
+                                    <h3 class="team-member__name">Jennifer Davis</h3>
+                                    <p class="team-member__title">Learning Technologies Specialist - Secondary</p>
+                                    <p class="team-member__contact">📧 <a href="mailto:jennifer.davis@pvnccdsb.on.ca">jennifer.davis@pvnccdsb.on.ca</a></p>
+                                </div>
+                            </div>
+                            <span class="team-member__toggle">▼</span>
+                        </div>
+                        <div class="team-member__body">
+                            <div class="team-member__content">
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">👩‍🏫 About Jennifer</h4>
+                                    <div class="team-member__section-content">
+                                        <p>Jennifer is a former high school science and technology teacher with expertise in STEM education and project-based learning. She supports secondary teachers in leveraging technology for inquiry-based instruction, collaborative projects, and assessment.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🏫 Schools Supported</h4>
+                                    <div class="team-member__schools">
+                                        <div class="team-member__school">St. Peter CSS</div>
+                                        <div class="team-member__school">Holy Trinity CSS</div>
+                                        <div class="team-member__school">St. Thomas Aquinas CSS</div>
+                                        <div class="team-member__school">St. Mary CSS</div>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">📅 Office Hours</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>In-person school visits:</strong> Tuesday, Thursday<br>
+                                        <strong>Virtual support available:</strong> Monday, Wednesday, Friday<br>
+                                        <strong>Book an appointment:</strong> <a href="mailto:jennifer.davis@pvnccdsb.on.ca">jennifer.davis@pvnccdsb.on.ca</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="team-member">
+                        <div class="team-member__header" onclick="toggleMember(this)">
+                            <div class="team-member__header-content">
+                                <div class="team-member__avatar">RP</div>
+                                <div class="team-member__info">
+                                    <h3 class="team-member__name">Robert Patel</h3>
+                                    <p class="team-member__title">Learning Technologies Specialist - Elementary/Secondary</p>
+                                    <p class="team-member__contact">📧 <a href="mailto:robert.patel@pvnccdsb.on.ca">robert.patel@pvnccdsb.on.ca</a></p>
+                                </div>
+                            </div>
+                            <span class="team-member__toggle">▼</span>
+                        </div>
+                        <div class="team-member__body">
+                            <div class="team-member__content">
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">👨‍🏫 About Robert</h4>
+                                    <div class="team-member__section-content">
+                                        <p>Robert has a unique background spanning both elementary and secondary education, with additional expertise in special education technology. He specializes in assistive technology, accessibility, and differentiated instruction using digital tools.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🏫 Schools Supported</h4>
+                                    <div class="team-member__schools">
+                                        <div class="team-member__school">St. Joseph Catholic ES</div>
+                                        <div class="team-member__school">Holy Cross CSS</div>
+                                        <div class="team-member__school">St. Stephen CSS</div>
+                                        <div class="team-member__school">Our Lady of Mercy Catholic ES</div>
+                                        <div class="team-member__school">St. Martin Catholic ES</div>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">📅 Office Hours</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>In-person school visits:</strong> Monday through Friday (rotating schedule)<br>
+                                        <strong>Virtual consultations:</strong> By appointment<br>
+                                        <strong>Accessibility support:</strong> Priority scheduling available<br>
+                                        <strong>Book an appointment:</strong> <a href="mailto:robert.patel@pvnccdsb.on.ca">robert.patel@pvnccdsb.on.ca</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="team-member">
+                        <div class="team-member__header" onclick="toggleMember(this)">
+                            <div class="team-member__header-content">
+                                <div class="team-member__avatar">SK</div>
+                                <div class="team-member__info">
+                                    <h3 class="team-member__name">Sarah Kim</h3>
+                                    <p class="team-member__title">Learning Technologies Specialist - Elementary</p>
+                                    <p class="team-member__contact">📧 <a href="mailto:sarah.kim@pvnccdsb.on.ca">sarah.kim@pvnccdsb.on.ca</a></p>
+                                </div>
+                            </div>
+                            <span class="team-member__toggle">▼</span>
+                        </div>
+                        <div class="team-member__body">
+                            <div class="team-member__content">
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">👩‍🏫 About Sarah</h4>
+                                    <div class="team-member__section-content">
+                                        <p>Sarah specializes in early literacy and numeracy technology integration. She helps elementary teachers use digital tools to support foundational skills development, student engagement, and formative assessment practices.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🏫 Schools Supported</h4>
+                                    <div class="team-member__schools">
+                                        <div class="team-member__school">St. Francis Catholic ES</div>
+                                        <div class="team-member__school">St. Patrick Catholic ES</div>
+                                        <div class="team-member__school">St. Luke Catholic ES</div>
+                                        <div class="team-member__school">Holy Family Catholic ES</div>
+                                        <div class="team-member__school">St. Michael Catholic ES</div>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">📅 Office Hours</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>In-person school visits:</strong> Monday, Tuesday, Friday<br>
+                                        <strong>Virtual support available:</strong> Wednesday, Thursday<br>
+                                        <strong>Contact:</strong> <a href="mailto:sarah.kim@pvnccdsb.on.ca">sarah.kim@pvnccdsb.on.ca</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Member 5 -->
+                    <div class="team-member">
+                        <div class="team-member__header" onclick="toggleMember(this)">
+                            <div class="team-member__header-content">
+                                <div class="team-member__avatar">AL</div>
+                                <div class="team-member__info">
+                                    <h3 class="team-member__name">Amanda Lee</h3>
+                                    <p class="team-member__title">Learning Technologies Specialist - Secondary</p>
+                                    <p class="team-member__contact">📧 <a href="mailto:amanda.lee@pvnccdsb.on.ca">amanda.lee@pvnccdsb.on.ca</a></p>
+                                </div>
+                            </div>
+                            <span class="team-member__toggle">▼</span>
+                        </div>
+                        <div class="team-member__body">
+                            <div class="team-member__content">
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">👩‍🏫 About Amanda</h4>
+                                    <div class="team-member__section-content">
+                                        <p>Amanda brings expertise in digital media, arts integration, and student-centered learning. She supports secondary teachers in using technology for creative expression, multimedia projects, and authentic assessment in various subject areas.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🏫 Schools Supported</h4>
+                                    <div class="team-member__schools">
+                                        <div class="team-member__school">St. Paul CSS</div>
+                                        <div class="team-member__school">Monsignor O'Donoghue CSS</div>
+                                        <div class="team-member__school">St. James CSS</div>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">📅 Office Hours</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>In-person school visits:</strong> Monday, Wednesday, Thursday<br>
+                                        <strong>Virtual support available:</strong> Tuesday, Friday<br>
+                                        <strong>Book an appointment:</strong> <a href="mailto:amanda.lee@pvnccdsb.on.ca">amanda.lee@pvnccdsb.on.ca</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Software Support Specialist -->
+                    <div class="team-member">
+                        <div class="team-member__header" onclick="toggleMember(this)">
+                            <div class="team-member__header-content">
+                                <div class="team-member__avatar">TC</div>
+                                <div class="team-member__info">
+                                    <h3 class="team-member__name">Thomas Chen</h3>
+                                    <p class="team-member__title">Software Support Specialist</p>
+                                    <p class="team-member__contact">📧 <a href="mailto:thomas.chen@pvnccdsb.on.ca">thomas.chen@pvnccdsb.on.ca</a></p>
+                                </div>
+                            </div>
+                            <span class="team-member__toggle">▼</span>
+                        </div>
+                        <div class="team-member__body">
+                            <div class="team-member__content">
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">👨‍💻 About Thomas</h4>
+                                    <div class="team-member__section-content">
+                                        <p>Thomas provides technical support for educational software, applications, and systems used across PVNCCDSB. He troubleshoots software issues, manages software deployments, coordinates with vendors, and ensures teachers and students can effectively access and use digital learning tools.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🎯 Responsibilities</h4>
+                                    <div class="team-member__section-content">
+                                        <ul style="padding-left: 1.5rem;">
+                                            <li>Technical support for educational software and applications</li>
+                                            <li>Software installation, updates, and troubleshooting</li>
+                                            <li>Google Workspace administration and support</li>
+                                            <li>Learning Management System (LMS) support</li>
+                                            <li>Software licensing and account management</li>
+                                            <li>Vendor coordination and technical liaison</li>
+                                            <li>Documentation and user guides for software systems</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">🏫 Support Coverage</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>Board-wide support</strong> - All PVNCCDSB schools</p>
+                                        <p>Thomas provides software technical support for all staff across the board, working closely with the IT Help Desk and Learning Technologies Specialists.</p>
+                                    </div>
+                                </div>
+
+                                <div class="team-member__section">
+                                    <h4 class="team-member__section-title">📅 Contact</h4>
+                                    <div class="team-member__section-content">
+                                        <p><strong>Email:</strong> <a href="mailto:thomas.chen@pvnccdsb.on.ca">thomas.chen@pvnccdsb.on.ca</a><br>
+                                        <strong>For software issues:</strong> Submit ticket through Help Desk portal<br>
+                                        <strong>For software requests:</strong> Email or contact your Learning Technologies Specialist</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section__title">How to Work With Us</h2>
+                <div class="section__intro">
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">Individual Support</h3>
+                    <p style="margin-bottom: 1rem;">Contact your assigned Learning Technologies Specialist directly via email to book one-on-one consultations, classroom visits, or tech support for instructional technology.</p>
+
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">School-Based Professional Development</h3>
+                    <p style="margin-bottom: 1rem;">Work with your administrator to schedule school-based PD sessions. Specialists can deliver workshops on specific tools, strategies, or curriculum-integrated technology use.</p>
+
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">Board-Wide Training</h3>
+                    <p style="margin-bottom: 1rem;">Attend board-wide training sessions and workshops - check our <a href="calendar.html">Training Calendar</a> for upcoming opportunities.</p>
+
+                    <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;">Online Resources</h3>
+                    <p>Access our <a href="resources.html">Resources Library</a> for self-paced guides, video tutorials, and documentation on various educational technology tools and strategies.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support & Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function toggleMember(header) {
+            const member = header.parentElement;
+            const body = member.querySelector('.team-member__body');
+            const toggle = header.querySelector('.team-member__toggle');
+            
+            // Close all other open members
+            document.querySelectorAll('.team-member__body.active').forEach(openBody => {
+                if (openBody !== body) {
+                    openBody.classList.remove('active');
+                    openBody.parentElement.querySelector('.team-member__toggle').classList.remove('active');
+                }
+            });
+            
+            // Toggle current member
+            body.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

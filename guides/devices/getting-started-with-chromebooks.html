@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Chromebooks | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="A comprehensive introduction to Chromebooks covering sign-in procedures, network connection, and essential navigation for new users.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 900px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(0, 61, 122, 0.06);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .breadcrumb__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .breadcrumb__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .breadcrumb__item:not(:last-child)::after {
+            content: '›';
+            color: var(--color-gray-400);
+        }
+
+        .breadcrumb__link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb__link:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+        }
+
+        .article-header__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .article-header__category {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--color-accent);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .article-header__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .article-header__meta {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-100);
+        }
+
+        .article-header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Article Content */
+        .article {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .article__sidebar {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .article__sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article__sidebar-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .article__sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article__sidebar-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+        }
+
+        .article__sidebar-list a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .article__content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .article__content li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
+        }
+
+        .article__content strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .article__content a {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article__content a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .step-card__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content p {
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content ul {
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .step-card__image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            margin-top: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Code/URL boxes */
+        .code-box {
+            background: var(--color-gray-100);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: var(--font-size-sm);
+            margin: var(--space-md) 0;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .article-header__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .article__content h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link nav__link--active">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="resources.html" class="breadcrumb__link">Resources</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span>Getting Started with Chromebooks</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="article-header">
+            <div class="article-header__container">
+                <span class="article-header__category">💻 Chromebook Basics</span>
+                <h1 class="article-header__title">Getting Started with Chromebooks</h1>
+                <div class="article-header__meta">
+                    <span class="article-header__meta-item">
+                        <span>📄</span> Guide
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>👥</span> For Students &amp; Staff
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>⏱️</span> 10 min read
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <aside class="article__sidebar">
+                <h2 class="article__sidebar-title">Quick Links</h2>
+                <ul class="article__sidebar-list">
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#first-time-setup">First-Time Setup</a></li>
+                    <li><a href="#signing-in">Signing In</a></li>
+                    <li><a href="#navigation">Basic Navigation</a></li>
+                    <li><a href="#apps">Essential Apps</a></li>
+                    <li><a href="#support">Need Help?</a></li>
+                </ul>
+            </aside>
+
+            <div class="article__content">
+                <div class="alert alert--info">
+                    <div class="alert__title">ℹ️ About This Guide</div>
+                    <p>This comprehensive guide will help you get started with your PVNCCDSB Chromebook. Learn how to sign in, navigate the interface, and access essential applications.</p>
+                </div>
+
+                <h2 id="overview">What is a Chromebook?</h2>
+                <p>A Chromebook is a laptop that runs on Chrome OS, an operating system designed by Google. Chromebooks are:</p>
+                <ul>
+                    <li><strong>Fast</strong> - Boot up in seconds and run smoothly</li>
+                    <li><strong>Secure</strong> - Built-in virus protection and automatic updates</li>
+                    <li><strong>Simple</strong> - Easy to use with a familiar Chrome browser interface</li>
+                    <li><strong>Cloud-based</strong> - Your files are saved to Google Drive automatically</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Important Note</div>
+                    <p>Chromebooks are managed by PVNCCDSB IT. This means certain settings and installations are controlled to keep your device secure and working properly.</p>
+                </div>
+
+                <h2 id="first-time-setup">First-Time Setup</h2>
+                <p>When you receive your Chromebook for the first time, follow these steps:</p>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Charge Your Chromebook</h3>
+                    <div class="step-card__content">
+                        <p>Before using your Chromebook, plug it in and let it charge fully. The charging indicator light will show when it's charging and when the battery is full.</p>
+                        <img src="placeholder-chromebook-charging.png" alt="Chromebook charging port and indicator light" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Power On</h3>
+                    <div class="step-card__content">
+                        <p>Press the power button (usually located in the top-right corner of the keyboard) to turn on your Chromebook.</p>
+                        <img src="placeholder-chromebook-power.png" alt="Location of power button on Chromebook" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">3</div>
+                    <h3 class="step-card__title">Select Your Language and Network</h3>
+                    <div class="step-card__content">
+                        <p>Choose your preferred language and connect to a Wi-Fi network:</p>
+                        <ul>
+                            <li>At school: Connect to <strong>PVNC-Student</strong> or <strong>PVNC-Staff</strong></li>
+                            <li>At home: Select your home Wi-Fi network and enter the password</li>
+                        </ul>
+                        <img src="placeholder-chromebook-wifi.png" alt="Wi-Fi network selection screen" class="step-card__image">
+                    </div>
+                </div>
+
+                <h2 id="signing-in">Signing In to Your Chromebook</h2>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Enter Your PVNCCDSB Email</h3>
+                    <div class="step-card__content">
+                        <p>On the sign-in screen, enter your PVNCCDSB Google Workspace account:</p>
+                        <ul>
+                            <li><strong>Students:</strong> studentnumber@mypvnccdsb.ca (e.g., 123456@mypvnccdsb.ca)</li>
+                            <li><strong>Staff:</strong> firstname.lastname@pvnccdsb.on.ca</li>
+                        </ul>
+                        <img src="placeholder-chromebook-signin.png" alt="Chromebook sign-in screen" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Enter Your Password</h3>
+                    <div class="step-card__content">
+                        <p>Type your PVNCCDSB account password and click <strong>Next</strong>.</p>
+                        <p><strong>Forgot your password?</strong> See our <a href="resource-password-reset.html">Password Reset Guide</a> or contact your teacher/IT support.</p>
+                        <img src="placeholder-chromebook-password.png" alt="Password entry screen" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ You're Signed In!</div>
+                    <p>Once signed in, your Chromebook will load your personalized desktop with access to all your Google Workspace apps and settings.</p>
+                </div>
+
+                <h2 id="navigation">Basic Navigation</h2>
+
+                <h3>The Desktop</h3>
+                <p>Your Chromebook desktop includes:</p>
+                <ul>
+                    <li><strong>Wallpaper</strong> - The background image (customizable)</li>
+                    <li><strong>Shelf</strong> - The taskbar at the bottom showing pinned apps</li>
+                    <li><strong>Launcher</strong> - The circle icon to access all your apps</li>
+                    <li><strong>Status Area</strong> - Time, battery, Wi-Fi, and profile icon in the bottom-right corner</li>
+                </ul>
+
+                <h3>Essential Keyboard Shortcuts</h3>
+                <ul>
+                    <li><strong>Search key + L</strong> - Lock your Chromebook</li>
+                    <li><strong>Ctrl + T</strong> - Open a new browser tab</li>
+                    <li><strong>Ctrl + W</strong> - Close current tab</li>
+                    <li><strong>Ctrl + Shift + Q (twice)</strong> - Sign out</li>
+                    <li><strong>Search key + Arrow</strong> - Snap window to side</li>
+                    <li><strong>Alt + Tab</strong> - Switch between open windows</li>
+                </ul>
+
+                <h3>Touchpad Gestures</h3>
+                <ul>
+                    <li><strong>One finger tap</strong> - Click</li>
+                    <li><strong>Two finger tap</strong> - Right-click</li>
+                    <li><strong>Two finger scroll</strong> - Scroll up/down pages</li>
+                    <li><strong>Three finger swipe up</strong> - See all open windows</li>
+                </ul>
+
+                <h2 id="apps">Essential Apps</h2>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Google Chrome</h3>
+                    <div class="step-card__content">
+                        <p>Your main web browser for accessing websites, online resources, and web-based applications. Chrome is always available and automatically opens when you click most links.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Google Classroom</h3>
+                    <div class="step-card__content">
+                        <p>Access your classes, view assignments, submit work, and communicate with teachers. Find it in your app launcher or go to <strong>classroom.google.com</strong>.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">3</div>
+                    <h3 class="step-card__title">Google Drive</h3>
+                    <div class="step-card__content">
+                        <p>Store and access all your files in the cloud. Your work automatically saves to Drive, so you can access it from any device.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">4</div>
+                    <h3 class="step-card__title">Google Docs, Sheets, &amp; Slides</h3>
+                    <div class="step-card__content">
+                        <p>Create documents, spreadsheets, and presentations. These apps work like Microsoft Word, Excel, and PowerPoint but save automatically to your Drive.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">5</div>
+                    <h3 class="step-card__title">Gmail</h3>
+                    <div class="step-card__content">
+                        <p>Access your PVNCCDSB email account to communicate with teachers and classmates. Available at <strong>gmail.com</strong> or through the Gmail app.</p>
+                    </div>
+                </div>
+
+                <h2 id="support">Need Help?</h2>
+                <p>If you encounter any issues with your Chromebook:</p>
+
+                <ul>
+                    <li><strong>Won't turn on:</strong> Make sure it's charged - plug it in for at least 30 minutes</li>
+                    <li><strong>Can't connect to Wi-Fi:</strong> Make sure you're selecting the correct network (PVNC-Student or PVNC-Staff)</li>
+                    <li><strong>Forgot password:</strong> See our <a href="resource-password-reset.html">Password Reset Guide</a></li>
+                    <li><strong>Screen is frozen:</strong> Hold the power button for 10 seconds to force restart</li>
+                    <li><strong>Apps won't open:</strong> Try restarting your Chromebook</li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">📞 Contact IT Support</div>
+                    <p>For technical support with your Chromebook, contact the IT Help Desk:</p>
+                    <ul>
+                        <li><strong>Submit a Ticket:</strong> <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">pvnccdsb.ebasefm.com</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+17057481811">705-748-1811</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support &amp; Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

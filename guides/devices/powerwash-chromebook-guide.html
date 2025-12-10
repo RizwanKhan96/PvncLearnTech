@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Powerwash a Chromebook | Learning Technologies | PVNCCDSB</title>
+    <meta name="description" content="Complete guide to powerwashing (factory resetting) your Chromebook, including when to do it, step-by-step instructions, and what to backup.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Catholic School Brand Colors */
+            --color-primary: #003D7A;
+            --color-primary-dark: #002952;
+            --color-primary-light: #1E5B99;
+            --color-accent: #D4AF37;
+            --color-accent-dark: #B8942E;
+            --color-secondary: #6B2C91;
+            --color-success: #0F8A3D;
+            --color-info: #0073B1;
+            --color-warning: #F59E0B;
+            
+            /* Neutrals */
+            --color-white: #FFFFFF;
+            --color-gray-50: #F9FAFB;
+            --color-gray-100: #F3F4F6;
+            --color-gray-200: #E5E7EB;
+            --color-gray-300: #D1D5DB;
+            --color-gray-400: #9CA3AF;
+            --color-gray-500: #6B7280;
+            --color-gray-600: #4B5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1F2937;
+            --color-gray-900: #111827;
+            
+            /* Semantic */
+            --color-background: var(--color-gray-50);
+            --color-surface: var(--color-white);
+            --color-text-primary: var(--color-gray-900);
+            --color-text-secondary: var(--color-gray-600);
+            --color-border: var(--color-gray-200);
+            
+            /* Spacing */
+            --space-xs: 0.25rem;
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            
+            /* Layout */
+            --container-max: 1280px;
+            --content-max: 900px;
+            
+            /* Effects */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            font-size: var(--font-size-base);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: var(--space-md);
+            background: var(--color-primary);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: var(--space-md);
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header__top {
+            background: var(--color-primary-dark);
+            padding: var(--space-sm) 0;
+            font-size: var(--font-size-sm);
+        }
+
+        .header__top-content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--color-gray-200);
+        }
+
+        .header__top-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+
+        .header__top-links a {
+            color: var(--color-gray-200);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .header__top-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .header__main {
+            padding: var(--space-md) 0;
+        }
+
+        .header__content {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__branding {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .header__logo {
+            width: 50px;
+            height: 50px;
+            background: var(--color-white);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .header__title-group h1 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .header__subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-200);
+            font-weight: 400;
+        }
+
+        .nav {
+            display: flex;
+            gap: var(--space-xs);
+        }
+
+        .nav__link {
+            color: var(--color-white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        .nav__link:hover,
+        .nav__link--active {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .nav__link--active {
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-base);
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: rgba(0, 61, 122, 0.06);
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .breadcrumb__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .breadcrumb__list {
+            display: flex;
+            gap: var(--space-sm);
+            list-style: none;
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .breadcrumb__item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .breadcrumb__item:not(:last-child)::after {
+            content: '›';
+            color: var(--color-gray-400);
+        }
+
+        .breadcrumb__link {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb__link:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Article Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            color: white;
+            padding: var(--space-3xl) 0;
+        }
+
+        .article-header__container {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .article-header__category {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--color-accent);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .article-header__title {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+
+        .article-header__meta {
+            display: flex;
+            gap: var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-100);
+        }
+
+        .article-header__meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+
+        /* Article Content */
+        .article {
+            max-width: var(--content-max);
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .article__sidebar {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .article__sidebar-title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__sidebar-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .article__sidebar-list li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid rgba(0, 61, 122, 0.15);
+        }
+
+        .article__sidebar-list li:last-child {
+            border-bottom: none;
+        }
+
+        .article__sidebar-list a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition);
+        }
+
+        .article__sidebar-list a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        .article__content h2 {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--color-accent);
+        }
+
+        .article__content h2:first-child {
+            margin-top: 0;
+        }
+
+        .article__content h3 {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .article__content p {
+            margin-bottom: var(--space-lg);
+            line-height: 1.7;
+        }
+
+        .article__content ul,
+        .article__content ol {
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-xl);
+        }
+
+        .article__content li {
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
+        }
+
+        .article__content strong {
+            color: var(--color-primary-dark);
+            font-weight: 600;
+        }
+
+        .article__content a {
+            color: var(--color-primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .article__content a:hover {
+            color: var(--color-primary-light);
+            text-decoration: underline;
+        }
+
+        /* Alert Boxes */
+        .alert {
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-xl);
+            border-left: 4px solid;
+        }
+
+        .alert--info {
+            background: rgba(0, 115, 177, 0.1);
+            border-color: var(--color-info);
+            color: var(--color-gray-800);
+        }
+
+        .alert--warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+            color: var(--color-gray-800);
+        }
+
+        .alert--success {
+            background: rgba(15, 138, 61, 0.1);
+            border-color: var(--color-success);
+            color: var(--color-gray-800);
+        }
+
+        .alert__title {
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        /* Step Cards */
+        .step-card {
+            background: rgba(0, 61, 122, 0.06);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+        }
+
+        .step-card__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+            color: white;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__title {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            color: var(--color-primary-dark);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content p {
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content ul {
+            margin-left: var(--space-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .step-card__content li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .step-card__image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 61, 122, 0.25);
+            margin-top: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-gray-900), var(--color-gray-800));
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .footer__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .footer__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer__column h3 {
+            color: white;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .footer__column p {
+            margin-bottom: var(--space-sm);
+            line-height: 1.6;
+        }
+
+        .footer__column a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer__column a:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer__bottom {
+            border-top: 1px solid var(--color-gray-700);
+            padding-top: var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer__social {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        .footer__social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: var(--font-size-lg);
+        }
+
+        .footer__social-link:hover {
+            background: var(--color-accent);
+            color: var(--color-primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header__top {
+                display: none;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .article-header__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .article__content h2 {
+                font-size: var(--font-size-xl);
+            }
+
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="header">
+        <div class="header__top">
+            <div class="header__top-content">
+                <div>PVNCCDSB - Faith • Excellence • Service</div>
+                <div class="header__top-links">
+                    <a href="https://www.pvnccdsb.on.ca" target="_blank">
+                        <span>🏠</span> Board Website
+                    </a>
+                    <a href="mailto:helpdesk@pvnccdsb.on.ca">
+                        <span>✉️</span> Contact IT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header__main">
+            <div class="header__content">
+                <div class="header__branding">
+                    <div class="header__logo">LT</div>
+                    <div class="header__title-group">
+                        <h1>Learning Technologies</h1>
+                        <p class="header__subtitle">Supporting Catholic Education Through Technology</p>
+                    </div>
+                </div>
+
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="index.html" class="nav__link">
+                        <span>🏠</span> Home
+                    </a>
+                    <a href="resources.html" class="nav__link nav__link--active">
+                        <span>📚</span> Resources
+                    </a>
+                    <a href="calendar.html" class="nav__link">
+                        <span>📅</span> Training
+                    </a>
+                    <a href="support.html" class="nav__link">
+                        <span>🆘</span> Support
+                    </a>
+                    <a href="about.html" class="nav__link">
+                        <span>👥</span> About
+                    </a>
+                </nav>
+
+                <button class="mobile-menu-btn" aria-label="Open menu">Menu</button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">Home</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <a href="resources.html" class="breadcrumb__link">Resources</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span>How to Powerwash a Chromebook</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <section class="article-header">
+            <div class="article-header__container">
+                <span class="article-header__category">🔄 System Maintenance</span>
+                <h1 class="article-header__title">How to Powerwash a Chromebook</h1>
+                <div class="article-header__meta">
+                    <span class="article-header__meta-item">
+                        <span>📄</span> Guide
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>👥</span> For Students &amp; Staff
+                    </span>
+                    <span class="article-header__meta-item">
+                        <span>⏱️</span> 10 min read
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article">
+            <aside class="article__sidebar">
+                <h2 class="article__sidebar-title">Quick Links</h2>
+                <ul class="article__sidebar-list">
+                    <li><a href="#overview">What is Powerwash?</a></li>
+                    <li><a href="#when">When to Powerwash</a></li>
+                    <li><a href="#before">Before You Start</a></li>
+                    <li><a href="#steps">Powerwash Steps</a></li>
+                    <li><a href="#after">After Powerwash</a></li>
+                    <li><a href="#support">Need Help?</a></li>
+                </ul>
+            </aside>
+
+            <div class="article__content">
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Important Warning</div>
+                    <p><strong>Powerwashing will erase all data stored locally on your Chromebook.</strong> Make sure all important files are saved to Google Drive or backed up elsewhere before proceeding. This action cannot be undone.</p>
+                </div>
+
+                <h2 id="overview">What is a Powerwash?</h2>
+                <p>A Powerwash is Chrome OS's version of a factory reset. It completely wipes your Chromebook's local storage and returns it to the state it was in when you first received it. This includes:</p>
+                <ul>
+                    <li>All downloaded files in the Downloads folder</li>
+                    <li>All locally installed apps and extensions</li>
+                    <li>Saved Wi-Fi networks and passwords</li>
+                    <li>All settings and preferences</li>
+                    <li>Browser history, cookies, and cache</li>
+                </ul>
+
+                <h3>What Powerwash Does NOT Delete</h3>
+                <p>Files stored in your Google Drive are safe because they're stored in the cloud, not on your Chromebook:</p>
+                <ul>
+                    <li>Google Drive files (Docs, Sheets, Slides, etc.)</li>
+                    <li>Gmail emails and contacts</li>
+                    <li>Google Calendar events</li>
+                    <li>Chrome bookmarks synced to your Google account</li>
+                    <li>Google Photos</li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">ℹ️ About This Process</div>
+                    <p>The Powerwash process typically takes 5-10 minutes to complete. Your Chromebook will restart automatically when finished, and you'll need to go through the initial setup process again.</p>
+                </div>
+
+                <h2 id="when">When Should You Powerwash?</h2>
+                <p>Consider powerwashing your Chromebook if you're experiencing:</p>
+
+                <h3>Performance Issues</h3>
+                <ul>
+                    <li>Chromebook is running very slowly</li>
+                    <li>Apps or browser tabs freeze frequently</li>
+                    <li>System becomes unresponsive often</li>
+                    <li>Boot time has increased significantly</li>
+                </ul>
+
+                <h3>Software Problems</h3>
+                <ul>
+                    <li>Persistent error messages</li>
+                    <li>Apps won't install or update properly</li>
+                    <li>Chrome OS updates fail repeatedly</li>
+                    <li>Settings won't save or keep reverting</li>
+                </ul>
+
+                <h3>Before Returning Device</h3>
+                <ul>
+                    <li>Returning Chromebook to school at end of year</li>
+                    <li>Transferring device to another student</li>
+                    <li>Selling or donating your personal Chromebook</li>
+                    <li>Device is being repaired or replaced</li>
+                </ul>
+
+                <h3>Security Concerns</h3>
+                <ul>
+                    <li>Someone else had access to your device</li>
+                    <li>Suspicious activity or potential malware</li>
+                    <li>Want to ensure complete data removal</li>
+                </ul>
+
+                <div class="alert alert--warning">
+                    <div class="alert__title">⚠️ Try These First</div>
+                    <p>Before powerwashing, try these simpler solutions:</p>
+                    <ul>
+                        <li>Restart your Chromebook (turn it off and on)</li>
+                        <li>Clear browsing data (Ctrl + Shift + Delete)</li>
+                        <li>Remove unnecessary extensions</li>
+                        <li>Delete downloaded files you no longer need</li>
+                    </ul>
+                    <p>If these don't help, then proceed with powerwashing.</p>
+                </div>
+
+                <h2 id="before">Before You Powerwash: Important Preparation</h2>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Backup Your Files</h3>
+                    <div class="step-card__content">
+                        <p>Save any important files to Google Drive:</p>
+                        <ul>
+                            <li>Open the <strong>Files</strong> app</li>
+                            <li>Navigate to <strong>Downloads</strong> folder</li>
+                            <li>Select files you want to keep</li>
+                            <li>Right-click and choose <strong>Copy to &gt; Google Drive</strong></li>
+                            <li>Wait for upload to complete (check Drive to confirm)</li>
+                        </ul>
+                        <p><strong>Double-check:</strong> Verify files appear in Google Drive before proceeding.</p>
+                        <img src="placeholder-backup-files.png" alt="Backing up files to Google Drive" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Note Your Wi-Fi Passwords</h3>
+                    <div class="step-card__content">
+                        <p>You'll need to reconnect to Wi-Fi networks after powerwashing:</p>
+                        <ul>
+                            <li>Write down your home Wi-Fi network name and password</li>
+                            <li>School networks will require re-authentication</li>
+                            <li>Any other networks you regularly use</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">3</div>
+                    <h3 class="step-card__title">Make Note of Important Settings</h3>
+                    <div class="step-card__content">
+                        <p>Consider writing down:</p>
+                        <ul>
+                            <li>Printer settings (if you added a home printer)</li>
+                            <li>Custom accessibility settings</li>
+                            <li>Important browser extensions you use</li>
+                            <li>Any specific preferences you'll want to restore</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">4</div>
+                    <h3 class="step-card__title">Charge Your Chromebook</h3>
+                    <div class="step-card__content">
+                        <p>Ensure your Chromebook has at least <strong>50% battery</strong> or is plugged into power. The powerwash process should not be interrupted.</p>
+                    </div>
+                </div>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ Ready to Proceed?</div>
+                    <p>Before continuing, confirm:</p>
+                    <ul>
+                        <li>✓ All important files are backed up to Google Drive</li>
+                        <li>✓ You have your Wi-Fi passwords written down</li>
+                        <li>✓ Chromebook is charged or plugged in</li>
+                        <li>✓ You understand this will erase all local data</li>
+                    </ul>
+                </div>
+
+                <h2 id="steps">How to Powerwash Your Chromebook</h2>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Open Settings</h3>
+                    <div class="step-card__content">
+                        <p>Click the <strong>time</strong> in the bottom-right corner of your screen, then click the <strong>Settings gear icon</strong>.</p>
+                        <img src="placeholder-open-settings.png" alt="Opening Chromebook settings" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Navigate to Reset Settings</h3>
+                    <div class="step-card__content">
+                        <p>In the Settings window:</p>
+                        <ul>
+                            <li>Scroll down to the bottom of the left sidebar</li>
+                            <li>Click <strong>Advanced</strong> to expand options</li>
+                            <li>Click <strong>Reset settings</strong></li>
+                        </ul>
+                        <img src="placeholder-reset-settings.png" alt="Reset settings menu" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">3</div>
+                    <h3 class="step-card__title">Select Powerwash</h3>
+                    <div class="step-card__content">
+                        <p>In the Reset settings section:</p>
+                        <ul>
+                            <li>Look for <strong>"Powerwash"</strong></li>
+                            <li>Click <strong>Powerwash</strong></li>
+                            <li>A dialog box will appear explaining what will be erased</li>
+                        </ul>
+                        <img src="placeholder-powerwash-option.png" alt="Powerwash option" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">4</div>
+                    <h3 class="step-card__title">Confirm Powerwash</h3>
+                    <div class="step-card__content">
+                        <p>Read the warning carefully, then:</p>
+                        <ul>
+                            <li>Click <strong>Restart</strong> to begin the powerwash</li>
+                            <li>Another confirmation may appear - click <strong>Powerwash</strong> or <strong>Continue</strong></li>
+                        </ul>
+                        <p><strong>This is your last chance to cancel!</strong> Once you confirm, the process cannot be stopped or reversed.</p>
+                        <img src="placeholder-confirm-powerwash.png" alt="Powerwash confirmation dialog" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">5</div>
+                    <h3 class="step-card__title">Wait for Process to Complete</h3>
+                    <div class="step-card__content">
+                        <p>Your Chromebook will:</p>
+                        <ul>
+                            <li>Restart automatically</li>
+                            <li>Display a progress screen (5-10 minutes)</li>
+                            <li>Restart again when finished</li>
+                            <li>Show the initial setup screen</li>
+                        </ul>
+                        <p><strong>Do not:</strong> Turn off your Chromebook, close the lid, or unplug it during this process.</p>
+                        <img src="placeholder-powerwash-progress.png" alt="Powerwash progress screen" class="step-card__image">
+                    </div>
+                </div>
+
+                <h3>Alternative Method: Powerwash from Login Screen</h3>
+                <p>If you can't access Settings (because Chrome OS won't boot properly), you can powerwash from the login screen:</p>
+                <ol>
+                    <li>On the login screen, press <strong>Ctrl + Alt + Shift + R</strong></li>
+                    <li>Click <strong>Restart</strong> in the dialog box</li>
+                    <li>In the box that appears, select <strong>Powerwash &gt; Continue</strong></li>
+                    <li>Follow the on-screen instructions</li>
+                </ol>
+
+                <h2 id="after">After Powerwashing: Initial Setup</h2>
+
+                <div class="step-card">
+                    <div class="step-card__number">1</div>
+                    <h3 class="step-card__title">Welcome Screen</h3>
+                    <div class="step-card__content">
+                        <p>After powerwashing completes, you'll see the initial Chrome OS welcome screen:</p>
+                        <ul>
+                            <li>Select your <strong>language</strong></li>
+                            <li>Select your <strong>keyboard layout</strong></li>
+                            <li>Click <strong>Let's go</strong></li>
+                        </ul>
+                        <img src="placeholder-welcome-screen.png" alt="Chrome OS welcome screen" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">2</div>
+                    <h3 class="step-card__title">Connect to Wi-Fi</h3>
+                    <div class="step-card__content">
+                        <p>Connect to your Wi-Fi network:</p>
+                        <ul>
+                            <li>Select your network from the list</li>
+                            <li>Enter the password (you wrote this down earlier)</li>
+                            <li>At school: Connect to <strong>PVNC-Student</strong> or <strong>PVNC-Staff</strong></li>
+                        </ul>
+                        <img src="placeholder-wifi-setup.png" alt="Wi-Fi setup after powerwash" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">3</div>
+                    <h3 class="step-card__title">Sign In with Your Google Account</h3>
+                    <div class="step-card__content">
+                        <p>Sign in with your PVNCCDSB Google account:</p>
+                        <ul>
+                            <li><strong>Students:</strong> studentnumber@mypvnccdsb.ca</li>
+                            <li><strong>Staff:</strong> firstname.lastname@pvnccdsb.on.ca</li>
+                        </ul>
+                        <p>Enter your password and follow any additional prompts.</p>
+                        <img src="placeholder-signin-after-powerwash.png" alt="Sign in screen after powerwash" class="step-card__image">
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">4</div>
+                    <h3 class="step-card__title">Wait for Sync</h3>
+                    <div class="step-card__content">
+                        <p>After signing in, Chrome OS will automatically:</p>
+                        <ul>
+                            <li>Restore your Chrome bookmarks</li>
+                            <li>Reinstall synced extensions (if enabled)</li>
+                            <li>Apply your Chrome settings</li>
+                            <li>Connect to Google Drive</li>
+                        </ul>
+                        <p>This process takes a few minutes. Be patient and let it complete.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-card__number">5</div>
+                    <h3 class="step-card__title">Restore Your Settings</h3>
+                    <div class="step-card__content">
+                        <p>You'll need to manually reconfigure some settings:</p>
+                        <ul>
+                            <li>Wallpaper and theme preferences</li>
+                            <li>Printer settings (re-add home printers)</li>
+                            <li>Accessibility options</li>
+                            <li>Display and sound preferences</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="alert alert--success">
+                    <div class="alert__title">✅ Powerwash Complete!</div>
+                    <p>Your Chromebook is now restored to factory settings. All your Google Drive files should be accessible, and your device should run more smoothly.</p>
+                </div>
+
+                <h2>What If Something Goes Wrong?</h2>
+
+                <h3>Powerwash Won't Start</h3>
+                <ul>
+                    <li>Make sure you're signed in with your Google account</li>
+                    <li>Try the keyboard shortcut method (Ctrl + Alt + Shift + R from login screen)</li>
+                    <li>Perform a hard reset first: Hold Refresh + Power for 10 seconds, then try again</li>
+                </ul>
+
+                <h3>Process Gets Stuck</h3>
+                <ul>
+                    <li>Wait at least 20 minutes - some Chromebooks take longer</li>
+                    <li>If truly frozen, perform hard reset (Refresh + Power) and start over</li>
+                    <li>Contact IT support if problem persists</li>
+                </ul>
+
+                <h3>Can't Sign In After Powerwash</h3>
+                <ul>
+                    <li>Verify you're using the correct PVNCCDSB email address</li>
+                    <li>Check that Wi-Fi connection is active</li>
+                    <li>Try password reset if you forgot password</li>
+                    <li>For school Chromebooks, IT may need to re-enroll device</li>
+                </ul>
+
+                <h3>Files Are Missing</h3>
+                <ul>
+                    <li>Check Google Drive - files should be there if backed up</li>
+                    <li>Files only in Downloads folder cannot be recovered</li>
+                    <li>Check "Trash" in Google Drive for accidentally deleted files</li>
+                </ul>
+
+                <h2 id="support">Need Help?</h2>
+                <p>If you encounter problems during or after powerwashing:</p>
+
+                <ul>
+                    <li><strong>School Chromebook issues:</strong> Contact your teacher or school office</li>
+                    <li><strong>Technical problems:</strong> Submit an IT support ticket</li>
+                    <li><strong>Lost files:</strong> Unfortunately, local files deleted during powerwash cannot be recovered</li>
+                    <li><strong>Login issues:</strong> See our <a href="resource-password-reset.html">Password Reset Guide</a></li>
+                </ul>
+
+                <div class="alert alert--info">
+                    <div class="alert__title">📞 Contact IT Support</div>
+                    <p>For technical support with Chromebook powerwashing or setup, contact the IT Help Desk:</p>
+                    <ul>
+                        <li><strong>Submit a Ticket:</strong> <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">pvnccdsb.ebasefm.com</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:+17057481811">705-748-1811</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h3>About Learning Technologies</h3>
+                    <p>
+                        The Learning Technologies department supports teaching and learning 
+                        through effective integration of technology across all PVNCCDSB schools.
+                    </p>
+                    <p>
+                        We provide resources, training, and technical support aligned with 
+                        our Catholic mission and values.
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Quick Links</h3>
+                    <p><a href="index.html">Home</a></p>
+                    <p><a href="resources.html">Resources Library</a></p>
+                    <p><a href="calendar.html">Training Calendar</a></p>
+                    <p><a href="support.html">Support Information</a></p>
+                    <p><a href="about.html">About Our Team</a></p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Support &amp; Contact</h3>
+                    <p>
+                        <strong>IT Helpdesk:</strong><br>
+                        <a href="http://pvnccdsb.ebasefm.com/" target="_blank" rel="noopener noreferrer">Submit a Ticket</a>
+                    </p>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:helpdesk@pvnccdsb.on.ca">helpdesk@pvnccdsb.on.ca</a>
+                    </p>
+                    <p>
+                        <strong>Phone:</strong><br>
+                        <a href="tel:+17057481811">705-748-1811</a>
+                    </p>
+                </div>
+
+                <div class="footer__column">
+                    <h3>Board Resources</h3>
+                    <p><a href="https://www.pvnccdsb.on.ca" target="_blank">PVNCCDSB Main Site</a></p>
+                    <p><a href="https://classroom.google.com" target="_blank">Google Classroom</a></p>
+                    <p><a href="https://drive.google.com" target="_blank">Google Drive</a></p>
+                    <p><a href="https://mail.google.com" target="_blank">Gmail</a></p>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div>
+                    &copy; <span id="year"></span> Peterborough Victoria Northumberland and Clarington Catholic District School Board. All rights reserved.
+                </div>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link" aria-label="Facebook" title="Facebook">f</a>
+                    <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter">𝕏</a>
+                    <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">▶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
