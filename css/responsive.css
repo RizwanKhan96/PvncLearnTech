@@ -365,30 +365,3 @@
     scroll-behavior: auto !important;
   }
 }
-
-/* ===== DARK MODE (optional - not primary) ===== */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #1a1a1a;
-    --color-bg-alt: #2d2d2d;
-    --color-text-primary: #f5f5f5;
-    --color-text-secondary: #b0b0b0;
-    --color-border: #404040;
-  }
-
-  body {
-    background-color: var(--color-bg);
-    color: var(--color-text-primary);
-  }
-
-  .card,
-  .feature-card {
-    background: rgba(29, 53, 87, 0.15);
-    border-color: rgba(29, 53, 87, 0.3);
-  }
-
-  .alert {
-    background-color: rgba(29, 53, 87, 0.2);
-  }
-}
