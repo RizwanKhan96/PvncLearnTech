@@ -10,10 +10,72 @@
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* Hero Section - Specific to homepage */
+        .hero {
+            background: linear-gradient(135deg, #2C5282 0%, #1D3557 100%);
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .hero__container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero__content {
+            max-width: 800px;
+        }
+
+        .hero__badge {
+            display: inline-block;
+            background: rgba(244, 162, 97, 0.2);
+            color: #F4A261;
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-lg);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            border: 1px solid rgba(244, 162, 97, 0.3);
+        }
+
+        .hero__title {
+            font-size: var(--font-size-5xl);
+            font-weight: 700;
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+            color: white;
+        }
+
+        .hero__description {
+            font-size: var(--font-size-lg);
+            line-height: 1.7;
+            margin-bottom: var(--space-xl);
+            color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
+    <!-- Header -->
     <header class="header">
         <div class="header__top">
             <div class="header__top-content">
@@ -54,12 +116,12 @@
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" style="background: linear-gradient(135deg, #2C5282 0%, #1D3557 100%);">
-            <div class="hero__container" style="max-width: var(--container-max); margin: 0 auto; padding: 0 var(--space-lg); position: relative; z-index: 1;">
-                <div style="max-width: 800px;">
-                    <span style="display: inline-block; background: rgba(244, 162, 97, 0.2); color: #F4A261; padding: var(--space-xs) var(--space-md); border-radius: var(--radius-lg); font-size: var(--font-size-sm); font-weight: 600; margin-bottom: var(--space-md); border: 1px solid rgba(244, 162, 97, 0.3);">✝️ Catholic Education Technology</span>
-                    <h2 style="font-size: var(--font-size-4xl); font-weight: 700; margin-bottom: var(--space-md); line-height: 1.2; color: white;">Empowering Learning Through Technology</h2>
-                    <p style="font-size: var(--font-size-lg); line-height: 1.7; margin-bottom: var(--space-xl); color: rgba(255, 255, 255, 0.9);">
+        <section class="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <span class="hero__badge">✝️ Catholic Education Technology</span>
+                    <h2 class="hero__title">Empowering Learning Through Technology</h2>
+                    <p class="hero__description">
                         Comprehensive resources, training, and support for using technology 
                         in PVNCCDSB classrooms. Discover guides, best practices, and tools 
                         that align with our Catholic values and educational mission.
@@ -109,7 +171,7 @@
                 <!-- Support Alert -->
                 <div class="alert alert--warning">
                     <div class="alert__content">
-                        <div style="flex-shrink: 0; width: 48px; height: 48px; background: rgba(255, 255, 255, 0.9); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-2xl);">⚠️</div>
+                        <div class="alert__icon">⚠️</div>
                         <div class="alert__body">
                             <h3 class="alert__title">Need Technical Support?</h3>
                             <p class="alert__description">
