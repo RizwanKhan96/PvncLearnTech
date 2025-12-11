@@ -135,11 +135,11 @@
                  - Click on .team-member__header calls toggleMember(this)
                  - Toggles .active class on .team-member__body and .team-member__toggle
                  - Animation: max-height 0 (closed) to 2000px (open) in 0.3s
+                 - Each card is independent - multiple can be open at once
                  
                  STYLING NOTES:
                  - .team-member__body.active: max-height: 2000px
                  - .team-member__toggle.active: transform: rotate(180deg)
-                 - Closes other open members when new one clicked (accordion behavior)
                  ==================================================== -->
             <div class="section">
                 <h2 class="section__title">Meet Our Team</h2>
@@ -588,14 +588,14 @@
          
          toggleMember() FUNCTION:
          - Called when .team-member__header is clicked (onclick="toggleMember(this)")
-         - Closes any other open team member cards
          - Toggles .active class on current card's .team-member__body
          - Rotates toggle icon (uses CSS transition)
+         - Each card can be opened independently (not accordion)
          
          CSS Animation Notes:
          - max-height transitions from 0 to 2000px in 0.3s ease
-         - Only first 6 team members for accessibility (avoid too many toggles)
-         - Each card is independent but only one open at a time (accordion pattern)
+         - Multiple cards can be open at the same time
+         - Each member card is completely independent
          ============================================================ -->
     <script>
         // Set current year in footer copyright notice
@@ -608,8 +608,8 @@
          * BEHAVIOR:
          * 1. Get the parent .team-member element
          * 2. Find the .team-member__body and .team-member__toggle within it
-         * 3. Close all other open .team-member__body.active elements
-         * 4. Toggle .active class on current card
+         * 3. Toggle .active class on current card (independent of other cards)
+         * 4. Multiple cards can be open at the same time
          * 
          * STYLING:
          * - .team-member__body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
@@ -622,15 +622,7 @@
             const body = member.querySelector('.team-member__body');
             const toggle = header.querySelector('.team-member__toggle');
             
-            // Close all other open members (accordion pattern)
-            document.querySelectorAll('.team-member__body.active').forEach(openBody => {
-                if (openBody !== body) {
-                    openBody.classList.remove('active');
-                    openBody.parentElement.querySelector('.team-member__toggle').classList.remove('active');
-                }
-            });
-            
-            // Toggle current member
+            // Toggle current member independently
             body.classList.toggle('active');
             toggle.classList.toggle('active');
         }
